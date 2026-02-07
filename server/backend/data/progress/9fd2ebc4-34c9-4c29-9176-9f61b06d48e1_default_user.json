@@ -1,0 +1,22 @@
+{
+  "course_id": "9fd2ebc4-34c9-4c29-9176-9f61b06d48e1",
+  "user_id": "default_user",
+  "modules": {
+    "97625f79-73c6-40ca-93fc-b8b54d95d862": {
+      "module_id": "97625f79-73c6-40ca-93fc-b8b54d95d862",
+      "lessons": {
+        "54ec39b1-a9e6-4f09-996b-44fd602b3690": {
+          "lesson_id": "54ec39b1-a9e6-4f09-996b-44fd602b3690",
+          "completed": true,
+          "quiz_attempts": 1,
+          "best_score": 100.0,
+          "current_difficulty": "medium",
+          "smoothed_score": 0.6499999999999999
+        }
+      }
+    }
+  },
+  "overall_progress": 33.33333333333333,
+  "started_at": "2026-01-24T15:12:20.274010",
+  "last_accessed": "2026-01-24T15:13:20.970194"
+}

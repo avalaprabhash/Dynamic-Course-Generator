@@ -1,0 +1,16 @@
+[
+  {
+    "attempt_id": "5dc49c2e-924d-4488-a3b3-e156b111f6e7",
+    "user_id": "4f5ba648-c8cd-4ea8-bdeb-cd28ecca0733",
+    "course_id": "08e0fd92-ca29-4d27-b69d-22a2a3a3841f",
+    "lesson_id": "bb049a7d-b506-4c30-8ba5-8269a6224e06",
+    "initial_bloom_level": "Remember",
+    "final_bloom_level": "Remember",
+    "feedback_entries": [],
+    "too_difficult_count": 0,
+    "concept_unclear_count": 0,
+    "need_more_examples_count": 0,
+    "wrong_questions": [],
+    "recommended_bloom_level": null,
+    "adaptation_strategy": null,
+    "created_at": 

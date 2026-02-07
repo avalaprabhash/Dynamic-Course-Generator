@@ -1,0 +1,456 @@
+{
+  "id": "f0437d21-453e-442d-b30e-c63927d1349b",
+  "title": "Python Basics: From Zero to Confident Coder",
+  "topic": "Python Basics",
+  "overview": "In this 4-hour professional course, you'll master the foundational elements of Python programming, starting with installation and basic syntax, progressing through data types, control structures, and functions. By the end, you'll be able to write, debug, and execute complete Python programs, applying concepts to real-world scenarios like calculators and simple games. This course builds progressively, equipping you with the skills to tackle intermediate Python topics confidently.",
+  "duration_hours": 4,
+  "difficulty": "Intermediate",
+  "confirmed": true,
+  "modules": [
+    {
+      "module_id": "01645bfe-c020-4937-8cc7-f2a21816b874",
+      "module_title": "Module 1: Python Foundations",
+      "module_description": "This module establishes the bedrock of Python programming by covering setup, basic syntax, variables, data types, and operators. Mastering these fundamentals is crucial because they form the vocabulary and grammar of Python, enabling you to express any computational idea clearly and correctly.",
+      "lessons": [
+        {
+          "lesson_id": "b84e0649-37f0-49d2-8b6d-c32065157bed",
+          "lesson_title": "Getting Started: Installation, First Program, and Basic Syntax",
+          "bloom_level": "Remember",
+          "learning_outcomes": [
+            "Install Python and set up a development environment on your system",
+            "Identify and recall Python's core syntax rules including indentation, comments, and print statements"
+          ],
+          "content": {
+            "introduction": "Welcome to your first step into Python! If you've never programmed before or are switching from another language, this lesson will feel like learning the alphabet before writing sentences. We'll start by getting Python running on your machine and writing your very first 'Hello, World!' program. Why does this matter? Because a proper setup eliminates frustration later, and understanding basic syntax builds confidence to experiment freely. By the end, you'll have a working Python environment and know the essential rules that make Python code readable and executable.\n\nThink of this as unpacking your toolbox before building anything \u2013 skip it, and everything else becomes harder. Python's simplicity shines here: no complex compilers, just immediate feedback as you type.",
+            "lesson_overview": [
+              "Installing Python and choosing the right editor",
+              "Writing and running your first Python program",
+              "Understanding comments, indentation, and print statements",
+              "Recall Python's execution model and basic syntax rules"
+            ],
+            "core_concepts": [
+              {
+                "title": "Python Installation and Interpreter",
+                "explanation": "Python is an interpreted language, meaning your code runs line-by-line through an interpreter rather than being compiled into machine code beforehand. This makes development fast and beginner-friendly \u2013 you write, run, test, repeat. To install, download the latest version from python.org (currently 3.12+ as of 2026). During installation, check 'Add Python to PATH' so you can run 'python' from your terminal anywhere.\n\nWhy PATH matters: Without it, your system can't find the Python executable, like trying to call a friend without their phone number. After installation, verify with 'python --version' in terminal (Command Prompt on Windows, Terminal on macOS/Linux). You'll also want an editor: VS Code with Python extension is excellent for beginners due to IntelliSense and debugging. IDLE comes bundled with Python for simplicity.\n\nThe interpreter runs in interactive mode (type 'python' in terminal) for quick tests or script mode for full programs. This duality lets you prototype ideas instantly while building larger scripts.",
+                "code_example": "print('Hello, World!')\n# Save as hello.py, then run: python hello.py"
+              },
+              {
+                "title": "Syntax Fundamentals: Indentation and Comments",
+                "explanation": "Python uses indentation (spaces or tabs, conventionally 4 spaces) to define code blocks, unlike languages with braces {}. This enforces readability \u2013 think of it as visual hierarchy in a document, where deeper indents show nested structure. Forget indentation, and you'll get IndentationError, Python's way of keeping code clean.\n\nComments start with # (single-line) or triple quotes ''' for multi-line. They explain *why* code exists, not what it does (since good code is self-documenting). Why care? Readable code is maintainable; teams (and future you) thank you. Python ignores comments during execution, so use liberally.\n\nKey rule: No semicolons needed; newlines end statements. This whitespace sensitivity is Python's 'one way to format' philosophy, reducing bike-shedding debates.",
+                "code_example": "# This is a single-line comment\nprint('Hello')\n\n\"\"\"\nThis is a multi-line\ncomment or docstring\n\"\"\"\nprint('World')"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Download Python from python.org. Choose the latest stable release for your OS. Run the installer and ensure 'Add to PATH' is checked. Why? PATH lets you run Python from anywhere without full file paths.",
+              "Step 2: Open terminal/Command Prompt. Type 'python --version' to confirm installation. Then type 'python' to enter interactive REPL (Read-Eval-Print Loop). Type print('Hello') and press Enter \u2013 see immediate output. Exit with exit().",
+              "Step 3: Install VS Code, add Python extension. Create new file 'hello.py'. Write print('Hello, World!') with proper indentation (none needed here). Save.",
+              "Step 4: In terminal, navigate to file directory (cd path/to/folder). Run 'python hello.py'. Success! Now add a comment # My first program above the print.",
+              "Step 5: Test edge cases: Add indented code without context (should error). Run in VS Code's integrated terminal. Use Ctrl+C to stop infinite prints. Verify with 'python -i hello.py' for post-run REPL."
+            ],
+            "practical_examples": [
+              {
+                "description": "Your first complete program: Greeting generator",
+                "code": "print(\"Welcome to Python!\")\n# Personalize it\nname = \"Learner\"\nprint(f\"Hello, {name}! Let's code.\")",
+                "explanation": "This combines print with f-strings (formatted strings, introduced later but previewed). Line 1 prints static text. Line 3 uses f-prefix for variable insertion \u2013 efficient for dynamic output. Run it: outputs personalized greeting. Why each part? print displays results; quotes contain strings; f-string embeds variables seamlessly, avoiding messy concatenation."
+              },
+              {
+                "description": "Interactive mode for quick math",
+                "code": ">>> 2 + 3\n5\n>>> print(2 * 8)\n16",
+                "explanation": "In REPL, type expressions directly. Python evaluates and prints. Step-by-step: Arithmetic works immediately; print forces output for complex expressions. This workflow shines for testing ideas before scripting."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Forgetting to add Python to PATH \u2013 'python is not recognized'. Why? Installer default doesn't always set PATH. Fix: Reinstall with checkbox or manually add to environment variables.",
+              "Mistake 2: Mixing tabs and spaces for indentation \u2013 TabError. Why? Python treats them differently. Fix: Editor settings: 'insert spaces' and 'show whitespace'.",
+              "Mistake 3: Running .py files without 'python' prefix \u2013 'file not executable'. Why? Windows doesn't auto-execute; use full command or shebang #!/usr/bin/env python on Unix."
+            ],
+            "mental_model": "Think of Python's interpreter like a conversational translator: you speak simple English-like sentences (code), it instantly translates to computer actions. Indentation is like paragraph breaks in a recipe \u2013 tells the reader (interpreter) where steps group together.",
+            "summary": "This lesson covered installing Python, running first programs via REPL and scripts, and mastering syntax like indentation and comments. You now recall how Python executes code interactively or as files, print statements for output, and rules for clean formatting. These basics let you focus on logic without setup hurdles.",
+            "further_thinking": [
+              "What are the three ways to run Python code mentioned, and when would you use each?",
+              "Why does Python enforce indentation instead of braces, and how does this affect code readability?",
+              "Design a simple program that prints your name and today's date using what you've learned."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "c0ec4dfb-56b1-4ffa-8e14-d9e1feecbb6e",
+              "question": "What command verifies Python installation?",
+              "options": [
+                "python --version",
+                "pip install",
+                "py check",
+                "python run"
+              ],
+              "correct_answer": "python --version",
+              "difficulty": "easy",
+              "bloom_level": "Remember",
+              "explanation": "This displays the installed version, confirming PATH and executable availability. Others: pip is for packages, py is Windows alias, no 'check' exists."
+            },
+            {
+              "question_id": "fd889d69-30a7-48a5-b1d0-ab45dcf6ae1b",
+              "question": "What defines code blocks in Python?",
+              "options": [
+                "Curly braces {}",
+                "Semicolons ;",
+                "Indentation",
+                "Parentheses ()"
+              ],
+              "correct_answer": "Indentation",
+              "difficulty": "medium",
+              "bloom_level": "Remember",
+              "explanation": "Python uses consistent indentation (4 spaces) for blocks, promoting readable code. Braces/semicolons are other languages; no parens for blocks."
+            },
+            {
+              "question_id": "18ce099d-7e16-4ee3-a093-b9589196385b",
+              "question": "What happens if you mix tabs and spaces?",
+              "options": [
+                "Warning only",
+                "TabError",
+                "Runs fine",
+                "IndentationError"
+              ],
+              "correct_answer": "TabError",
+              "difficulty": "hard",
+              "bloom_level": "Remember",
+              "explanation": "Python strictly distinguishes tabs/spaces in indentation since 2.0+, raising TabError to enforce consistency and prevent subtle bugs."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        },
+        {
+          "lesson_id": "c0dd49b3-f884-4f12-9fa2-3c8517c3a47d",
+          "lesson_title": "Variables, Data Types, and Operators",
+          "bloom_level": "Understand",
+          "learning_outcomes": [
+            "Explain Python's primitive data types and their use cases with analogies",
+            "Apply operators correctly in expressions, understanding precedence"
+          ],
+          "content": {
+            "introduction": "Great job on setup! Now that Python runs smoothly, let's store and manipulate data \u2013 the real power of programming. Variables are like labeled boxes holding values; data types define what's inside (numbers, text). Operators let you perform math, comparisons. Why master this? Everything in Python is data; understanding types prevents errors like adding text to numbers.\n\nWe'll use analogies like kitchen ingredients: integers are whole apples, floats sliced ones, strings recipe labels. Building here ensures your code doesn't crash on type mismatches.",
+            "lesson_overview": [
+              "Declaring variables and dynamic typing",
+              "Core data types: int, float, str, bool",
+              "Arithmetic, comparison, logical operators",
+              "Grasp why type matters and how to inspect it"
+            ],
+            "core_concepts": [
+              {
+                "title": "Variables and Dynamic Typing",
+                "explanation": "In Python, variables are created on first assignment: age = 25 binds name 'age' to integer 25. No 'var' or 'let' keywords \u2013 Python infers type dynamically. Change it: age = 'twenty-five' reassigns to string. Why dynamic? Flexibility: write age = 25; age += 1 without declarations.\n\nBut beware: types are checked at runtime, so name = 'John'; name + 1 errors (TypeError). Like a mailbox holding letters or packages \u2013 shape must fit. Use type() to inspect: type(age) returns <class 'int'>.\n\nNames: snake_case (lowercase_with_underscores), start with letter/underscore, no spaces. Reserved keywords like 'if', 'for' forbidden \u2013 check with keyword.iskeyword().",
+                "code_example": "age = 30\ntype(age)  # <class 'int'>\nage = 'thirty'\ntype(age)  # <class 'str'>"
+              },
+              {
+                "title": "Primitive Data Types",
+                "explanation": "Python has four basics: int (unlimited integers, e.g., 42), float (decimals, 3.14), str (text, 'hello' or \"hello\"), bool (True/False). Ints handle big numbers without overflow unlike C++; floats for precision math.\n\nStrings are immutable sequences; access like word == 'h'. Bools power conditions: if True. Why care? Wrong type = crash; e.g., '5' + 5 is error, but int('5') + 5 == 10. Analogy: ints whole numbers, floats fractions, str words, bool yes/no.\n\nNone is special: absence of value, like empty box. Assign x = None for defaults.",
+                "code_example": "pi = 3.14159\nmessage = \"Python rocks\"\nis_adult = True\nnothing = None\nprint(type(pi))  # <class 'float'>"
+              },
+              {
+                "title": "Operators: Arithmetic, Comparison, Logical",
+                "explanation": "Arithmetic: + - * / // (floor div) % (modulo) ** (power). Comparison: == != > < >= <= return bools. Logical: and or not combine bools.\n\nPrecedence: ** > * / % > + - > comparisons > logical. Use () for clarity. E.g., 2 + 3 * 4 == 14, not 20. Why? Mirrors math; short-circuit eval: False and anything skips right side for efficiency.",
+                "code_example": "x = 10\ny = 3\nprint(x // y)  # 3 (floor div)\nprint(x % y)   # 1 (remainder)\nprint(x ** 2)  # 100\nprint(x > 5 and y < 5)  # True"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Create variables: name = 'Alice', age = 25, height = 5.6. Print each with type(). Why? See dynamic assignment and inspection.",
+              "Step 2: Math: area = 10 * 5; circle_area = 3.14 * (5 ** 2). Print. Connects arithmetic to variables.",
+              "Step 3: Comparisons: is_tall = height > 5.5. Logical: is_adult = age >= 18 and is_tall. Handle bools.",
+              "Step 4: Full expression: bmi = 70 / (height ** 2); healthy = 18.5 <= bmi <= 24.9. Combines all.",
+              "Step 5: Edge cases: '5' + 5 (error); fix with int('5'). Check 0 / 1 == 0, but 1 / 0 errors (ZeroDivisionError). Use print(type()) to verify."
+            ],
+            "practical_examples": [
+              {
+                "description": "Simple calculator storing results in variables",
+                "code": "num1 = float(input(\"Enter first number: \"))\nnum2 = float(input(\"Enter second: \"))\nsum_result = num1 + num2\nprint(f\"Sum: {sum_result}\")\nprint(type(sum_result))",
+                "explanation": "input() gets user string; float() converts to number. Variables hold inputs/outputs. f-string displays. Why? Demonstrates type conversion, operators, variables in flow. input always str, so convert before math."
+              },
+              {
+                "description": "Temperature converter",
+                "code": "celsius = 25\nfahrenheit = (celsius * 9/5) + 32\nprint(f\"{celsius}\u00b0C = {fahrenheit:.1f}\u00b0F\")\nis_hot = fahrenheit > 86",
+                "explanation": "Step-by-step: Assign input-like value; apply formula with operators; format float output; bool check. Precise because handles float precision, logical use."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: name = '5'; age = 10; print(name + age) \u2013 TypeError. Why? str + int incompatible. Fix: str(age) or int(name).",
+              "Mistake 2: Using = for comparison \u2013 if x = 5 errors. Why? = assigns; use ==. Syntax separates intent.",
+              "Mistake 3: 10 / 0 \u2013 ZeroDivisionError. Why? Undefined. Fix: check if denominator != 0 before divide."
+            ],
+            "mental_model": "Variables are sticky notes on values in a shared notebook (memory). Data types are the value's 'species' dictating operations \u2013 can't add apples to oranges without peeling (converting) first.",
+            "summary": "You now understand variables as dynamic labels, core types (int/float/str/bool), and operators for manipulation/comparison. Analogies clarify mismatches; precedence ensures correct math. This foundation lets you handle real data flows without type surprises.",
+            "further_thinking": [
+              "Why is dynamic typing flexible yet risky compared to static languages?",
+              "Create a program checking if a year is leap: divisible by 4, not 100 unless 400.",
+              "Analyze: What does 10 // 3 * 2 + 1 % 2 evaluate to, step-by-step?"
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "8f06a493-5800-41da-9797-33e65c30073a",
+              "question": "Which is a valid variable name?",
+              "options": [
+                "my_var",
+                "2ndPlace",
+                "my-var",
+                "if"
+              ],
+              "correct_answer": "my_var",
+              "difficulty": "easy",
+              "bloom_level": "Understand",
+              "explanation": "Snake_case starts with letter/underscore, no hyphens or numbers first. 2nd invalid start; my-var syntax error; if keyword."
+            },
+            {
+              "question_id": "50c6e105-9eba-4ded-97dc-7b71ae60d9d8",
+              "question": "What does 'abc' + 123 do?",
+              "options": [
+                "TypeError",
+                "abc123",
+                "abc 123",
+                "Works if converted"
+              ],
+              "correct_answer": "TypeError",
+              "difficulty": "medium",
+              "bloom_level": "Understand",
+              "explanation": "Can't concatenate str + int directly. Must convert: 'abc' + str(123) or int('123') + numeric."
+            },
+            {
+              "question_id": "d116c04f-6de0-4f28-ba75-9756ae109636",
+              "question": "Operator precedence: 2 ** 3 * 4 == ?",
+              "options": [
+                "32",
+                "14",
+                "24",
+                "128"
+              ],
+              "correct_answer": "32",
+              "difficulty": "hard",
+              "bloom_level": "Understand",
+              "explanation": "** before *: (2^3)=8 *4=32. Use parens for clarity: 2 ** (3 * 4)=4096."
+            }
+          ],
+          "estimated_duration_minutes": 60
+        }
+      ]
+    },
+    {
+      "module_id": "f7fbe4fa-d8f7-4d72-b434-e9b6948c27ce",
+      "module_title": "Module 2: Control Flow and Functions",
+      "module_description": "Building on data mastery, this module introduces decision-making (if/else), repetition (loops), and reusable code (functions). These enable programs to react to data and avoid repetition, turning scripts into robust applications like games or analyzers.",
+      "lessons": [
+        {
+          "lesson_id": "3ef991ae-6249-4d8b-8dc0-2eaead8d4dbf",
+          "lesson_title": "Control Flow: If Statements and Loops",
+          "bloom_level": "Apply",
+          "learning_outcomes": [
+            "Write conditional statements to handle multiple scenarios step-by-step",
+            "Implement for/while loops for iteration, applying to list processing"
+          ],
+          "content": {
+            "introduction": "Variables let you store data; now make it *do* things based on conditions or repeat tasks. Control flow is Python's decision engine. If you've used data types, imagine if/else as a fork in the road, loops as a treadmill. Why essential? Static code is boring; dynamic responds to inputs, processes lists efficiently.\n\nWe'll apply these in walkthroughs, like grade calculators or number sum. This shifts from 'what data' to 'what actions'.",
+            "lesson_overview": [
+              "Conditional statements: if/elif/else",
+              "Loops: for over sequences, while for conditions",
+              "Nested control and break/continue",
+              "Apply to practical iteration problems"
+            ],
+            "core_concepts": [
+              {
+                "title": "If/Elif/Else Statements",
+                "explanation": "if condition: executes if bool(condition) True. Indent block. elif for alternatives, else catch-all. Conditions use comparisons/logicals from prior lesson.\n\nTruthy/falsy: Non-empty str True, 0/None/empty False. Chained: if age >= 18 and points > 100: VIP. Why? Programs simulate decisions; without, just linear scripts.\n\nPass for empty blocks: if x: pass. Elif chains efficient \u2013 stops at first True.",
+                "code_example": "score = 85\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelse:\n    grade = 'C'\nprint(grade)  # B"
+              },
+              {
+                "title": "For and While Loops",
+                "explanation": "for item in sequence: iterates each (lists later). range(n) for 0 to n-1. While condition: repeats till False.\n\nFor counting: for i in range(5): print(i). While user input: while True: break on quit. Infinite risk: while True without break crashes.\n\nBreak exits loop, continue skips iteration. Why both loops? For known length (range), while unknown (sentinel).",
+                "code_example": "for i in range(3):\n    print(i)\n\ncount = 0\nwhile count < 3:\n    print(count)\n    count += 1"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Basic if: age = 17; if age >= 18: print('Adult'). Why? Tests bool conversion.",
+              "Step 2: Add elif/else for teen/child. Chain connects to prior operators.",
+              "Step 3: For loop sum: total=0; for i in range(1,6): total+=i. Handles iteration.",
+              "Step 4: While with input: guess=input(); while guess != 'secret': guess=input(). Full interactive.",
+              "Step 5: Nest: for i in range(3): if i==1: continue; print(i). Verify skips, breaks work; add counters."
+            ],
+            "practical_examples": [
+              {
+                "description": "FizzBuzz: Apply loops/conditions",
+                "code": "for num in range(1, 101):\n    if num % 15 == 0:\n        print('FizzBuzz')\n    elif num % 3 == 0:\n        print('Fizz')\n    elif num % 5 == 0:\n        print('Buzz')\n    else:\n        print(num)",
+                "explanation": "Classic interview task. range generates 1-100; % checks divisibility (operators); elif order matters (15 before 3/5). Demonstrates nested logic in loop \u2013 efficient, readable."
+              },
+              {
+                "description": "Guessing game with while",
+                "code": "import random\nsecret = random.randint(1, 10)\nguess = 0\nwhile guess != secret:\n    guess = int(input('Guess (1-10): '))\nprint('Correct!')",
+                "explanation": "random for secret; while loops till match; input/convert. Break could replace != but while clearer. Handles user errors implicitly."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: if x = 5: SyntaxError. Why? = assigns, == compares. Off-by-one thinking.",
+              "Mistake 2: While loop without increment/update \u2013 infinite loop. Why? Condition never falsifies. Fix: count +=1.",
+              "Mistake 3: Forgetting colon : after if/for/while \u2013 SyntaxError. Why? Python expects indented block."
+            ],
+            "mental_model": "Control flow is a flowchart: diamonds (if conditions) split paths, rectangles (loops) repeat sections till exit arrows (break/condition false).",
+            "summary": "You've applied if/elif/else for branches, for/while for repetition, with break/continue refinements. These turn data into dynamic behavior, as in FizzBuzz. Loops process collections efficiently; conditions make responsive code.",
+            "further_thinking": [
+              "When use while vs for? Give criteria.",
+              "Implement countdown timer with while and user interrupt.",
+              "Modify FizzBuzz for custom multiples from input."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "271f563e-0f44-4a1b-9dd2-60a6e145545e",
+              "question": "What does 'if x:' test?",
+              "options": [
+                "x == True",
+                "Truthy value",
+                "x is not None",
+                "len(x) > 0"
+              ],
+              "correct_answer": "Truthy value",
+              "difficulty": "easy",
+              "bloom_level": "Apply",
+              "explanation": "Python coerces to bool: non-zero/non-empty/non-None True. Covers all options implicitly."
+            },
+            {
+              "question_id": "9f6e0fba-00b3-48c3-a735-ec22906f9b50",
+              "question": "range(5) generates:",
+              "options": [
+                "0-5",
+                "1-5",
+                "0-4",
+                "[0,1,2,3,4]"
+              ],
+              "correct_answer": "0-4",
+              "difficulty": "medium",
+              "bloom_level": "Apply",
+              "explanation": "range(stop) is 0 to stop-1. Use range(1,6) for 1-5."
+            },
+            {
+              "question_id": "dd971fe0-dbbe-4984-b0f0-42e87ddae892",
+              "question": "Infinite loop fix?",
+              "options": [
+                "Add break",
+                "Use for instead",
+                "Increment var",
+                "All above"
+              ],
+              "correct_answer": "All above",
+              "difficulty": "hard",
+              "bloom_level": "Apply",
+              "explanation": "Depends: sentinel needs break; known iter for; condition needs update. Context-aware."
+            }
+          ],
+          "estimated_duration_minutes": 60
+        },
+        {
+          "lesson_id": "9e2221aa-c471-49e3-a639-3c11d77b8fd9",
+          "lesson_title": "Functions: Reusability and Modularity",
+          "bloom_level": "Analyze",
+          "learning_outcomes": [
+            "Analyze function components: parameters, return, scope",
+            "Evaluate when to define functions vs inline code"
+          ],
+          "content": {
+            "introduction": "Loops repeat code; functions *reuse* it across programs. Like recipes: define once, call anywhere with ingredients (args). From prior lessons, you'll analyze why functions prevent duplication, organize logic. Why now? Large code without functions is spaghetti; modularity scales.\n\nWe'll dissect scopes, defaults, *args/**kwargs \u2013 tools pros use. Apply to refactor prior examples.",
+            "lesson_overview": [
+              "Defining and calling functions",
+              "Parameters, return values, defaults",
+              "Scope: local vs global, lambdas intro",
+              "Analyze pros/cons of functional decomposition"
+            ],
+            "core_concepts": [
+              {
+                "title": "Defining and Calling Functions",
+                "explanation": "def name(params): body; return value. Call: result = name(args). No parens/return? Returns None. Why? Abstracts logic; test independently.\n\nPositional args match order; keywords by name. Multiple: def greet(name, greeting='Hi'). Analyze: reduces repetition, clearer intent than copy-paste.\n\nDocstrings: \"\"\"Desc\"\"\" after def \u2013 auto-help with help(func).",
+                "code_example": "def add(a, b):\n    \"\"\"Add two numbers\"\"\"\n    return a + b\n\nresult = add(3, 5)\nprint(result)  # 8"
+              },
+              {
+                "title": "Advanced Parameters and Scope",
+                "explanation": "Defaults: def power(base, exp=2):. *args packs extras tuple; **kwargs dict. Analyze: flexible for varying inputs.\n\nScope: LEGB (Local, Enclosing, Global, Built-in). x=1 global; def(): x=2 local shadows. nonlocal/enclosing for nests. Why? Prevents leaks, accidental mods.\n\nLambda: anon funcs, one expr: lambda x: x*2. Map/filter use.",
+                "code_example": "def flexible(*args, **kwargs):\n    print(args, kwargs)\n\nflexible(1,2, name='Bob')  # (1,2) {'name':'Bob'}"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: def greet(name): print(f'Hi {name}'). Call greet('Alice'). Basic reuse.",
+              "Step 2: Add return: def square(x): return x**2. Analyze: math_result = square(4).",
+              "Step 3: Defaults: def power(base, exp=2). power(3) ==9. Flexible.",
+              "Step 4: Scope test: x=10; def func(): x=20; print(x). Local! Full program.",
+              "Step 5: Refactor FizzBuzz into func(is_fizzbuzz(num)). Verify modularity; check globals."
+            ],
+            "practical_examples": [
+              {
+                "description": "Modular calculator",
+                "code": "def add(x, y): return x + y\ndef multiply(x, y): return x * y\n\ndef calculator():\n    op = input('Op (+/*): ')\n    a, b = map(float, input('Nums: ').split())\n    if op == '+': print(add(a,b))\n    elif op == '*': print(multiply(a,b))\n\ncalculator()",
+                "explanation": "Functions isolate ops; calculator orchestrates. Pros: testable (add(2,3)), extensible. input parsing with map/split \u2013 clean."
+              },
+              {
+                "description": "Factorial with recursion preview",
+                "code": "def factorial(n):\n    if n <= 1: return 1\n    return n * factorial(n-1)\n\nprint(factorial(5))  # 120",
+                "explanation": "Self-call breaks problem down. Base case prevents infinite. Analyzes divide-conquer pattern."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Modifying param lists \u2013 mutable args change caller. Why? Pass-by-object-ref. Fix: copy.",
+              "Mistake 2: Global vars in funcs \u2013 shadows/unexpected. Why? Scope isolation broken. Use returns.",
+              "Mistake 3: No return \u2013 implicit None. Why? Funcs compute, must explicit output."
+            ],
+            "mental_model": "Functions are black-box vending machines: insert args (coins), get return (snack). Internals hidden; scope walls prevent tampering from outside.",
+            "summary": "Functions modularize via def/params/return; scope protects data. Analyze: defaults/*args scale inputs; refactor prior code cleaner. Enables larger programs without mess.",
+            "further_thinking": [
+              "Compare inline vs function: when threshold for extraction?",
+              "Refactor guessing game using functions for generate_secret, get_guess.",
+              "Design func avg(*numbers) handling empty with default."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "66cc14ed-1e77-4e56-b8c8-36746ff9dd72",
+              "question": "What does def func(): return? ",
+              "options": [
+                "Error",
+                "None",
+                "0",
+                "True"
+              ],
+              "correct_answer": "None",
+              "difficulty": "easy",
+              "bloom_level": "Analyze",
+              "explanation": "No explicit return yields None. Always specify for values."
+            },
+            {
+              "question_id": "7cc94263-dac1-4e51-a7cb-ef4fb0f46f5d",
+              "question": "Scope order: LEGB means?",
+              "options": [
+                "Local first",
+                "Global first",
+                "Built-in only",
+                "Enclosing last"
+              ],
+              "correct_answer": "Local first",
+              "difficulty": "medium",
+              "bloom_level": "Analyze",
+              "explanation": "Local > Enclosing > Global > Built-in resolves names inward-out."
+            },
+            {
+              "question_id": "8f058910-fd8a-4a59-9e8d-8d2b5c58ab52",
+              "question": "Mutable arg pitfall?",
+              "options": [
+                "Changes don't persist",
+                "Caller list modified",
+                "TypeError",
+                "Scope error"
+              ],
+              "correct_answer": "Caller list modified",
+              "difficulty": "hard",
+              "bloom_level": "Analyze",
+              "explanation": "Lists passed by ref; func(lst.append(1)) alters original. Use lst[:] copy."
+            }
+          ],
+          "estimated_duration_minutes": 90
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-01-24T15:24:07.225313",
+  "version": 1
+}

@@ -1,0 +1,456 @@
+{
+  "id": "4a1a40d6-0a9f-4961-9780-f13222a1bdc7",
+  "title": "Web Security Basics: Protecting Your Sites from Day One",
+  "topic": "Web Security Basics",
+  "overview": "In this beginner course, you'll master the foundational principles of web security, learning to identify common threats like XSS and CSRF, and implement basic defenses using HTTPS, input validation, and secure practices. By the end, you'll confidently build safer web applications, understanding the CIA triad and how to apply real-world protections in your code. This 1-hour course builds your skills progressively through hands-on examples and practical walkthroughs.",
+  "duration_hours": 1,
+  "difficulty": "Beginner",
+  "confirmed": false,
+  "modules": [
+    {
+      "module_id": "bdae0520-00bb-49ae-a0cc-1883f6dc74f0",
+      "module_title": "Module 1: Foundations of Web Security",
+      "module_description": "This module introduces the core principles of web security, including the CIA triad and why browsers can't be trusted. You'll learn the fundamental threats and build a mental model for secure web development, setting a strong base for protecting user data and applications.",
+      "lessons": [
+        {
+          "lesson_id": "b1880a75-29e3-41ae-b3c1-e60c4e34e46e",
+          "lesson_title": "Understanding the CIA Triad and Why Browsers Lie",
+          "bloom_level": "Remember",
+          "learning_outcomes": [
+            "Define the CIA triad (Confidentiality, Integrity, Availability) and explain each component with real-world examples.",
+            "Recall why you must never trust data from the browser and list 3 common risks of doing so."
+          ],
+          "content": {
+            "introduction": "Welcome to your first lesson in web security! If you've built any websites before, you know how exciting it is to see them come alive in the browser. But here's the gentle reality check: the web is a wild place full of clever attackers waiting to exploit even the smallest mistakes. This lesson focuses on the CIA triad\u2014Confidentiality, Integrity, and Availability\u2014which are the bedrock principles every web developer must remember. Why does this matter right now? Because without grasping these basics, your apps risk data leaks, tampering, or crashes that frustrate users and damage trust. Think of it like locking your front door before inviting guests over; these principles ensure your digital home stays safe from the start.",
+            "lesson_overview": [
+              "The CIA triad: Confidentiality, Integrity, and Availability explained simply",
+              "Why browsers and user inputs are untrustworthy by design",
+              "Fundamental rules for secure web thinking",
+              "You'll be able to identify security risks in basic web scenarios"
+            ],
+            "core_concepts": [
+              {
+                "title": "The CIA Triad: Your Security Compass",
+                "explanation": "Imagine your website is like a bank vault. The CIA triad is the three locks that keep it secure: **Confidentiality** means only authorized people can see the money (data)\u2014no peeking by strangers. For example, user passwords or credit card info should stay hidden from attackers. **Integrity** ensures the money isn't secretly swapped with counterfeit bills; data can't be altered without permission. If someone changes a user's balance without logging in, that's an integrity breach. **Availability** guarantees the vault opens when customers need it\u2014no Denial of Service (DoS) attacks locking everyone out. In web terms, this means your site stays up even under heavy traffic or attacks. Remembering CIA helps you evaluate every feature: Does it protect secrets? Prevent tampering? Keep things running? This triad, from cybersecurity basics, guides all defenses[6].",
+                "code_example": null
+              },
+              {
+                "title": "Never Trust the Browser: The Golden Rule",
+                "explanation": "Browsers are like chatty messengers who might deliver forged letters. Users can tamper with data using DevTools, as hackers do\u2014changing form values, reading network requests, or injecting scripts[3][4]. For instance, a form saying 'admin=true' can be edited to bypass logins. Why? Browsers prioritize speed and flexibility, not security; they're client-side, under user control. Server-side code must validate everything: sanitize inputs, check permissions. This 'zero trust' mindset prevents injection attacks where bad data slips into your database or HTML[2][4]. Always assume inputs are malicious\u2014treat them like unverified mail from strangers.",
+                "code_example": "// BAD: Trusting client-side input\ndocument.getElementById('userInput').value; // User can change this!\n\n// GOOD: Server validates\nconst safeInput = sanitize(userInput); // Strip dangerous chars"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Identify CIA in your app. List data needing Confidentiality (e.g., passwords), Integrity (e.g., user scores), Availability (e.g., login page uptime). Why? This maps risks upfront.",
+              "Step 2: Inspect a form in DevTools. Open Network tab, submit data, edit request payload. See how easy tampering is? This shows why server validation is essential.",
+              "Step 3: Add basic input logging. On server, log raw vs. sanitized input. Notice differences? Handles 'edge' like scripts in names.",
+              "Step 4: Combine: Build a simple login checker that applies CIA\u2014hash password (confidentiality), verify unchanged (integrity), respond quickly (availability).",
+              "Step 5: Test with DevTools: Try bypassing. Verify server rejects bad inputs. Watch for logs showing failed tampering."
+            ],
+            "practical_examples": [
+              {
+                "description": "Scenario: Simple login form vulnerable to browser tampering",
+                "code": "// Client-side (BAD - don't do this)\nfunction login() {\n  const user = document.getElementById('username').value;\n  const pass = document.getElementById('password').value;\n  if (user === 'admin' && pass === '123') alert('Welcome!');\n}\n\n// Server-side fix (Node.js pseudocode)\napp.post('/login', (req, res) => {\n  const { username, password } = req.body;\n  const hashedPass = hash(password); // Integrity & Confidentiality\n  if (db.verify(username, hashedPass)) res.send('OK');\n  else res.status(401).send('Denied');\n});",
+                "explanation": "The client code fails CIA: Confidentiality lost (pass visible), Integrity broken (editable), Availability fine but useless. Server version hashes for secrecy, verifies to prevent tampering, responds fast. Step-by-step: 1) Extract input safely, 2) Hash without storing plain text, 3) Query DB securely, 4) Respond without leaking info. This protects against DevTools edits."
+              },
+              {
+                "description": "Scenario: User profile display without trust",
+                "code": "// Unsafe display\nres.send(`<h1>Welcome ${req.query.name}</h1>`); // Attacker: ?name=<script>alert('hack')</script>\n\n// Safe with sanitization\nfunction sanitize(input) {\n  return input.replace(/[<>]/g, ''); // Basic escape\n}\nres.send(`<h1>Welcome ${sanitize(req.query.name)}</h1>`);",
+                "explanation": "First code trusts query, risking XSS (script injection). Sanitize step strips <>, upholding Integrity (no code exec). Walkthrough: 1) Get input, 2) Regex removes tags, 3) Insert safely. Tests CIA: Keeps content confidential from scripts, intact, available."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Logging sensitive data plainly\u2014exposes Confidentiality in logs; attackers read server logs if breached. Always hash first.",
+              "Mistake 2: Client-side only validation\u2014users bypass with DevTools, breaking Integrity since server doesn't check.",
+              "Mistake 3: Ignoring Availability in loops\u2014user inputs causing infinite loops DoS your server; limit iterations."
+            ],
+            "mental_model": "Think of the CIA triad like a three-legged stool: Confidentiality is the privacy screen, Integrity the tamper-proof seal, Availability the always-open door. If any leg wobbles (trusting browser), the whole stool\u2014and your app\u2014topples.",
+            "summary": "You've now committed the CIA triad to memory: Confidentiality hides data, Integrity prevents changes, Availability ensures access. Never trust browsers, as they let users tamper freely\u2014always validate server-side. These basics let you spot risks early, fulfilling our objectives to define terms and recall threats.",
+            "further_thinking": [
+              "What CIA principle is violated if a hacker reads all users' emails?",
+              "How would you apply 'never trust browser' to a contact form?",
+              "Design a quick checklist for CIA in a new feature."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "19f23d12-4c6e-4fc8-a78b-fbc71a8c8c5e",
+              "question": "What does the 'C' in CIA triad stand for?",
+              "options": [
+                "Confidentiality",
+                "Connectivity",
+                "Caching",
+                "Compilation"
+              ],
+              "correct_answer": "Confidentiality",
+              "difficulty": "easy",
+              "bloom_level": "Remember",
+              "explanation": "Confidentiality ensures only authorized users access data, like hiding passwords. Remembering this is key for basics."
+            },
+            {
+              "question_id": "6411a4c6-2044-4357-9b1a-836adcda22cc",
+              "question": "Why must you never trust data from the browser?",
+              "options": [
+                "Browsers are slow",
+                "Users can tamper with DevTools",
+                "Browsers crash often",
+                "They use too much memory"
+              ],
+              "correct_answer": "Users can tamper with DevTools",
+              "difficulty": "medium",
+              "bloom_level": "Remember",
+              "explanation": "DevTools let users edit forms/requests, so server must re-validate to prevent attacks like fake logins."
+            },
+            {
+              "question_id": "5c489f59-667c-4cc8-af9c-f56e2b64705b",
+              "question": "Which CIA principle is broken if an attacker changes user scores without permission?",
+              "options": [
+                "Confidentiality",
+                "Integrity",
+                "Availability",
+                "All of them"
+              ],
+              "correct_answer": "Integrity",
+              "difficulty": "hard",
+              "bloom_level": "Remember",
+              "explanation": "Integrity means data stays unchanged by unauthorized parties; tampering violates this core fact."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        },
+        {
+          "lesson_id": "69658040-ba2a-4285-b722-1e30acfad297",
+          "lesson_title": "HTTPS and Protecting Data in Transit",
+          "bloom_level": "Understand",
+          "learning_outcomes": [
+            "Explain how HTTPS secures data using TLS and why it's essential over plain HTTP.",
+            "Describe HSTS and secure cookies, with examples of their role in web security."
+          ],
+          "content": {
+            "introduction": "Great job on the foundations! Now that you remember CIA and browser distrust, let's understand how data travels the web unsafely without protection\u2014like sending postcards anyone can read. This lesson dives into HTTPS, the lockbox for your data in transit. It matters because even secure apps leak secrets over public Wi-Fi without it; attackers sniff passwords mid-flight. You'll grasp why HTTPS is non-negotiable today, using analogies like sealed envelopes vs. open mail.",
+            "lesson_overview": [
+              "How HTTP leaks data and HTTPS fixes it with TLS",
+              "Server setup basics and HSTS enforcement",
+              "Secure cookies and session protection",
+              "You'll explain HTTPS benefits and spot unsafe connections"
+            ],
+            "core_concepts": [
+              {
+                "title": "HTTP vs HTTPS: Plaintext vs Encrypted Transit",
+                "explanation": "Picture HTTP as shouting your PIN across a crowded room\u2014anyone hears. HTTPS wraps it in TLS (successor to SSL), encrypting with keys only endpoints know[2]. TLS handshakes verify identities via certificates from trusted authorities, then symmetric encryption secures data. Why? Upholds CIA: Confidentiality (no eavesdropping), Integrity (tamper detection), Availability (standard everywhere). Without HTTPS, man-in-the-middle attacks steal logins on coffee shop Wi-Fi[1]. Modern sites use it everywhere, not just payments.",
+                "code_example": null
+              },
+              {
+                "title": "HSTS and Secure Cookies: Locking Down Connections",
+                "explanation": "HSTS (HTTP Strict Transport Security) tells browsers 'always use HTTPS here,' preventing downgrade attacks[2]. Server sends header: Strict-Transport-Security: max-age=31536000. Cookies get 'Secure' flag (HTTPS-only) and 'HttpOnly' (no JS access), blocking theft via XSS[2]. Sessions use these to store auth tokens safely. Connects to CIA by enforcing encryption, understanding builds on prior distrust\u2014browsers enforce what servers demand.",
+                "code_example": "// Node.js/Express HTTPS setup\napp.use(helmet.hsts({\n  maxAge: 31536000\n})); // Enforce HSTS\nres.cookie('sessionId', token, {\n  secure: true, // HTTPS only\n  httpOnly: true // No JS access\n});"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Check site HTTPS. Visit http://example.com\u2014see redirect? Inspect headers for HSTS. Why? Reveals transit protection.",
+              "Step 2: Generate self-signed cert (dev only). Use openssl req -newkey. Install on local server. Why? Simulates TLS handshake.",
+              "Step 3: Add secure cookie. Set flags in response. Test: Try accessing via JS console\u2014blocked? Handles cookie theft variation.",
+              "Step 4: Full flow: HTTPS server + HSTS + secure session. Curl https://localhost\u2014verify encryption.",
+              "Step 5: Scan with browser devtools/why-no-padlock? Fix leaks like mixed content. Verify padlock icon."
+            ],
+            "practical_examples": [
+              {
+                "description": "Scenario: Securing a login endpoint with HTTPS and cookies",
+                "code": "// Express.js with HTTPS\nconst https = require('https');\nconst fs = require('fs');\nconst options = {\n  key: fs.readFileSync('key.pem'),\n  cert: fs.readFileSync('cert.pem')\n};\nhttps.createServer(options, app).listen(443);\n\napp.post('/login', (req, res) => {\n  res.cookie('auth', 'token', { secure: true, httpOnly: true });\n  res.json({ success: true });\n});",
+                "explanation": "Creates TLS server for encryption. Cookie flags ensure Confidentiality (HTTPS-only), Integrity (no JS tamper). Steps: 1) Load certs, 2) Bind HTTPS server, 3) Set secure cookie post-auth. Tests: Wireshark shows gibberish, not plaintext."
+              },
+              {
+                "description": "Scenario: Adding HSTS to prevent HTTP downgrades",
+                "code": "// Using helmet middleware\nconst helmet = require('helmet');\napp.use(helmet.hsts({\n  maxAge: 31536000, // 1 year\n  includeSubDomains: true\n}));",
+                "explanation": "Helmet auto-adds HSTS header. Browser caches, forces HTTPS forever. Step-by-step: 1) Install helmet, 2) Apply middleware, 3) Visit\u2014check Network tab for header. Protects against attackers forcing HTTP."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: HTTPS only on /login\u2014leaks everywhere else; attackers sniff sessions. Use site-wide.",
+              "Mistake 2: Forgetting HttpOnly\u2014XSS steals cookies. JS can't read, safe from scripts.",
+              "Mistake 3: Weak HSTS max-age\u2014short expiry lets downgrades. Use 1+ year after testing."
+            ],
+            "mental_model": "HTTPS is like mailing a locked briefcase with a trusted courier: TLS is the combo lock (handshake verifies), HSTS mandates couriers only\u2014no cheap mail. Data arrives intact, unseen by passersby.",
+            "summary": "HTTPS encrypts transit with TLS for CIA protection, while HSTS and secure cookies enforce it browser-side. You've understood why plaintext HTTP fails and how setups like helmet simplify defense. This builds on Module 1, letting you explain secure flows confidently.",
+            "further_thinking": [
+              "Why might a site use HTTPS everywhere now, not just payments?",
+              "Compare HTTP cookie theft vs secure flags\u2014what changes?",
+              "Propose HTTPS checklist for a blog app."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "17b3dc72-c598-4542-86a5-f89f7b3363dd",
+              "question": "What does HTTPS use to encrypt data?",
+              "options": [
+                "SSL only",
+                "TLS protocol",
+                "Base64 encoding",
+                "JavaScript"
+              ],
+              "correct_answer": "TLS protocol",
+              "difficulty": "easy",
+              "bloom_level": "Understand",
+              "explanation": "TLS (successor to SSL) provides encryption, ensuring confidentiality in transit."
+            },
+            {
+              "question_id": "2e74b0b3-7dac-4cf2-92aa-f8884e152345",
+              "question": "What does the 'Secure' cookie flag do?",
+              "options": [
+                "Allows HTTP access",
+                "Sends only over HTTPS",
+                "Makes it editable by JS",
+                "Expires immediately"
+              ],
+              "correct_answer": "Sends only over HTTPS",
+              "difficulty": "medium",
+              "bloom_level": "Understand",
+              "explanation": "Prevents transmission over insecure HTTP, upholding confidentiality."
+            },
+            {
+              "question_id": "8d58d66d-9572-4d3e-9557-a11b4cc71cc7",
+              "question": "Why use HSTS headers?",
+              "options": [
+                "Speed up site",
+                "Force HTTPS always",
+                "Cache images",
+                "Compress data"
+              ],
+              "correct_answer": "Force HTTPS always",
+              "difficulty": "hard",
+              "bloom_level": "Understand",
+              "explanation": "Prevents downgrade attacks by instructing browsers to use only secure connections."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        }
+      ]
+    },
+    {
+      "module_id": "dd46f4ba-0a1f-4ce0-b4a0-2da7de157dd0",
+      "module_title": "Module 2: Defending Against Common Web Attacks",
+      "module_description": "Building on foundations, this module teaches understanding and applying defenses against top threats like XSS and CSRF. You'll analyze risks and implement fixes, progressing to evaluate secure code practices for beginner web apps.",
+      "lessons": [
+        {
+          "lesson_id": "60df16ed-82cb-4eb2-9539-294ca664a812",
+          "lesson_title": "Cross-Site Scripting (XSS): Sanitizing User Input",
+          "bloom_level": "Apply",
+          "learning_outcomes": [
+            "Apply input sanitization to prevent XSS in forms and outputs.",
+            "Implement encoding for safe HTML display using real libraries."
+          ],
+          "content": {
+            "introduction": "You're doing fantastic\u2014CIA and HTTPS give you a secure highway, but now attackers throw potholes like XSS. Building on 'never trust browser,' this lesson shows how to apply sanitization to block script injection. It matters because XSS lets hackers steal cookies or deface sites via innocent inputs like comments. We'll use simple, step-by-step fixes so you can protect your apps hands-on.",
+            "lesson_overview": [
+              "What XSS is and 3 types (reflected, stored, DOM)",
+              "Sanitization and output encoding techniques",
+              "Using libraries like DOMPurify",
+              "You'll code defenses for common XSS scenarios"
+            ],
+            "core_concepts": [
+              {
+                "title": "XSS Attacks: Injecting Malicious Scripts",
+                "explanation": "XSS (Cross-Site Scripting) happens when untrusted input lands in HTML/JS without cleaning, running attacker code in victims' browsers[1][4][6]. Reflected: via URL (?name=<script>alert(1)</script>). Stored: DB-saved, loads for all. DOM: JS manipulates poorly. Why dangerous? Steals sessions (bypasses HTTPS cookies if not HttpOnly), upholds no CIA. Analogy: Unsanitized comments like leaving guestbook pages editable\u2014hackers scribble 'alert('owned')'. Apply by escaping outputs[2].",
+                "code_example": "// Vulnerable: Direct insert\n<h1>${userInput}</h1> // XSS!\n\n// Safe: Escape\n<h1>${escapeHtml(userInput)}</h1>"
+              },
+              {
+                "title": "Sanitization and Encoding: Your Cleaning Crew",
+                "explanation": "Sanitization strips dangerous chars; encoding converts to safe HTML (&lt; for <). Use context-aware: HTML escape tags, JS escape quotes. Libraries like DOMPurify auto-clean[4]. Builds on prior: Server sanitizes before DB/storage, client encodes before render. Why? Prevents execution while preserving text. E.g., '<script>' becomes '&lt;script&gt;', inert.",
+                "code_example": "// Simple escape function\nfunction escapeHtml(text) {\n  const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;' };\n  return text.replace(/[&<>\"]/g, m => map[m]);\n}\n// Use: document.body.innerHTML = escapeHtml(userInput);"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Create vulnerable page. Add input echo: <div>${input}</div>. Submit <script>alert(1)</script>\u2014pops? XSS confirmed.",
+              "Step 2: Apply escapeHtml. Reuse code above. Resubmit\u2014text shows, no alert? Sanitization works.",
+              "Step 3: Add stored sim: 'Save' to localStorage, load with innerHTML. Vary with DOM XSS: location.hash exploit.",
+              "Step 4: Integrate DOMPurify CDN. Purify before insert. Full safe comment system.",
+              "Step 5: Test vectors: Quotes, events (onerror=alert(1)). Verify no pops; console clean."
+            ],
+            "practical_examples": [
+              {
+                "description": "Scenario: Safe user comment box",
+                "code": "<script src=\"https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.es.min.js\"></script>\n<input id=\"comment\">\n<div id=\"display\"></div>\n<script>\n  document.getElementById('comment').oninput = () => {\n    const clean = DOMPurify.sanitize(input.value);\n    document.getElementById('display').innerHTML = clean;\n  };\n</script>",
+                "explanation": "Purify strips scripts/tags. Steps: 1) Load lib, 2) On input, sanitize, 3) Safe innerHTML. Even <script> shows as text, no exec\u2014protects Integrity."
+              },
+              {
+                "description": "Scenario: Server-side Node.js sanitization",
+                "code": "const createDOMPurify = require('isomorphic-dompurify');\napp.post('/comment', (req, res) => {\n  const clean = createDOMPurify.sanitize(req.body.text);\n  db.save(clean); // Safe for all users\n  res.send(clean);\n});",
+                "explanation": "Server cleans before DB. Walkthrough: 1) Sanitize input, 2) Store/retrieve safe, 3) Serves non-XSS. Prevents stored attacks."
+              },
+              {
+                "description": "Scenario: URL reflected XSS fix",
+                "code": "const urlParams = new URLSearchParams(window.location.search);\nconst name = urlParams.get('name');\ndocument.getElementById('greeting').textContent = name; // Safe, no innerHTML",
+                "explanation": "textContent escapes auto. Steps: Parse URL safe, use textContent vs innerHTML. No script run."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Sanitizing input only, not output\u2014DB clean but HTML echoes raw. Always encode at render.",
+              "Mistake 2: Whitelisting wrong\u2014allowing 'javascript:' URLs. Blacklist/escape safer for beginners.",
+              "Mistake 3: Forgetting DOM XSS\u2014location.hash or eval(userData). Audit JS manipulations."
+            ],
+            "mental_model": "XSS is like mailing a bomb disguised as a letter; sanitization is the bomb squad X-raying every envelope, defusing <script> before it explodes in the reader's browser.",
+            "summary": "XSS injects scripts via unsanitized inputs\u2014defend by escaping outputs and using libraries like DOMPurify for all contexts. You've applied fixes to reflected/stored cases, connecting to CIA by preserving Integrity. Now you can secure forms confidently.",
+            "further_thinking": [
+              "Apply sanitization to a search box\u2014what changes?",
+              "Analyze: Why textContent over innerHTML?",
+              "Create a safe guestbook HTML file."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "7695c3b7-990c-4688-8bdd-d1877bd25ce9",
+              "question": "What does XSS stand for?",
+              "options": [
+                "Cross-Site Scripting",
+                "Cross-Server Security",
+                "Client-Side Sanitization",
+                "Code Sharing Standard"
+              ],
+              "correct_answer": "Cross-Site Scripting",
+              "difficulty": "easy",
+              "bloom_level": "Apply",
+              "explanation": "XSS injects malicious scripts into web pages viewed by others."
+            },
+            {
+              "question_id": "3fb6aaab-5331-408b-a5f0-fa9346febaf4",
+              "question": "How do you prevent XSS in HTML output?",
+              "options": [
+                "Hash it",
+                "Encode/escape special chars",
+                "Use HTTPS",
+                "Add HSTS"
+              ],
+              "correct_answer": "Encode/escape special chars",
+              "difficulty": "medium",
+              "bloom_level": "Apply",
+              "explanation": "Converting < to &lt; prevents tag parsing and script execution."
+            },
+            {
+              "question_id": "66098f0c-dd06-419b-84ef-8c2d64968dad",
+              "question": "Why use textContent instead of innerHTML?",
+              "options": [
+                "Faster",
+                "Auto-escapes content",
+                "Supports styles",
+                "Loads images"
+              ],
+              "correct_answer": "Auto-escapes content",
+              "difficulty": "hard",
+              "bloom_level": "Apply",
+              "explanation": "textContent treats input as text only, blocking XSS without extra code."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        },
+        {
+          "lesson_id": "a9e4fcfa-9b85-4970-b9ca-6d966b07aaaa",
+          "lesson_title": "CSRF and Input Validation: Locking Down Actions",
+          "bloom_level": "Analyze",
+          "learning_outcomes": [
+            "Analyze CSRF attack flows and implement tokens to prevent them.",
+            "Evaluate input validation strategies, comparing client vs server."
+          ],
+          "content": {
+            "introduction": "Excellent progress on XSS! Now analyze CSRF (Cross-Site Request Forgery), where attackers trick browsers into unwanted actions using your auth. Assumes prior lessons: HTTPS protects transit, but CSRF exploits logged-in states. Vital because it bypasses logins, e.g., forcing transfers. We'll break down attacks, compare defenses, evaluate pros/cons.",
+            "lesson_overview": [
+              "CSRF mechanics: Forged requests abusing sessions",
+              "Tokens, same-site cookies, and validation rules",
+              "Analyzing client vs server protections",
+              "You'll dissect attacks and build robust defenses"
+            ],
+            "core_concepts": [
+              {
+                "title": "CSRF: Abusing Trusted Sessions",
+                "explanation": "CSRF tricks your logged-in browser into POSTing to evil.com/transfer?amount=999 (your bank). Why? Cookies auto-send cross-site[2][4]. Breaks Integrity (unauth actions). Types: Login CSRF (bad creds), but focus state-changing. Analogy: Forged check using your signed blank\u2014bank trusts signature (cookie). Analyze: Same-Origin Policy blocks reads, not writes[1].",
+                "code_example": null
+              },
+              {
+                "title": "CSRF Tokens and SameSite: Verification Layers",
+                "explanation": "Tokens: Unique per-session secret in forms, server verifies. SameSite=Lax/Strict on cookies blocks cross-site sends[2]. Input validation: Whitelist expected formats (e.g., email regex). Compare: Client validation fast/UI but bypassable; server definitive. Evaluate: Tokens 100% vs SameSite 90% (legacy browsers). Builds progressively: Combines with XSS sanitization, HTTPS.",
+                "code_example": "// Generate token\napp.use((req, res, next) => {\n  if (!req.session.csrfToken) req.session.csrfToken = crypto.randomBytes(32).toString('hex');\n  res.locals.csrfToken = req.session.csrfToken;\n  next();\n});\n\n// Form: <input type=\"hidden\" name=\"_csrf\" value=\"<%= csrfToken %>\">\n\n// Verify\napp.post('/action', (req, res) => {\n  if (req.body._csrf !== req.session.csrfToken) return res.status(403).send('CSRF!');\n});"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Build vulnerable /transfer POST. Login sim with cookie. Load img src='attacker.com/transfer?to=hacker&amt=1000'\u2014funds gone? CSRF.",
+              "Step 2: Add SameSite=Strict cookie. Reload img\u2014no send? Partial fix.",
+              "Step 3: Implement tokens. Generate, embed form, verify. Vary: No token fails.",
+              "Step 4: Full: Token + validation (amt number, 0-1000). Components analyzed.",
+              "Step 5: Test vectors: Multi-tab, iframe. Evaluate logs for blocks."
+            ],
+            "practical_examples": [
+              {
+                "description": "Scenario: Secure transfer form with token",
+                "code": "// Server (Express + csurf middleware sim)\napp.use(csurf({ cookie: true }));\napp.get('/transfer', (req, res) => {\n  res.render('form', { csrfToken: req.csrfToken() });\n});\napp.post('/transfer', (req, res) => {\n  // Action safe\n});",
+                "explanation": "csurf generates/verifies. Analysis: Token per-request, cookie-bound. Pros: Simple. Steps: 1) Middleware, 2) Pass to template, 3) POST checks."
+              },
+              {
+                "description": "Scenario: Input validation for emails",
+                "code": "function validateEmail(email) {\n  return /^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(email);\n}\nif (!validateEmail(req.body.email)) {\n  return res.status(400).send('Invalid email');\n}",
+                "explanation": "Regex whitelists format. Evaluate: Blocks injections. Steps: Test input, reject bad, proceed safe."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Reusable tokens\u2014predictable, attackers forge. Regenerate per action.",
+              "Mistake 2: GET for state changes\u2014idempotent, CSRFable via img/link. Force POST.",
+              "Mistake 3: Weak validation (length only)\u2014allows 'a@b.c<script>'. Use regex/context."
+            ],
+            "mental_model": "CSRF is like a pickpocket using your open wallet (session cookie) while you're logged in; tokens are a combination lock only you know, checked by the bank (server) before any withdrawal.",
+            "summary": "CSRF forges requests via cookies\u2014analyze with tokens/SameSite for verification, plus strict validation. You've dissected flows, compared defenses, evaluated effectiveness against prior threats. Secure actions now!",
+            "further_thinking": [
+              "Analyze: Token vs SameSite\u2014which for login CSRF?",
+              "Evaluate pros/cons of regex validation.",
+              "Design CSRF defense for a todo app."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "c68c4083-549d-4468-a580-4fea8376ac28",
+              "question": "What triggers a CSRF attack?",
+              "options": [
+                "HTTPS failure",
+                "Auto-sent cookies cross-site",
+                "Weak passwords",
+                "No sanitization"
+              ],
+              "correct_answer": "Auto-sent cookies cross-site",
+              "difficulty": "easy",
+              "bloom_level": "Analyze",
+              "explanation": "Browsers send cookies automatically, enabling forged requests."
+            },
+            {
+              "question_id": "5d37b186-92ac-4439-bfbe-0ab9f5ebb046",
+              "question": "Best CSRF prevention for forms?",
+              "options": [
+                "HTTPS",
+                "Unique per-request tokens",
+                "Captcha",
+                "Email verify"
+              ],
+              "correct_answer": "Unique per-request tokens",
+              "difficulty": "medium",
+              "bloom_level": "Analyze",
+              "explanation": "Tokens verify intent; server checks match, blocking forgeries."
+            },
+            {
+              "question_id": "405c1b65-5520-4889-8376-768c04705d1e",
+              "question": "Compare: Why server validation over client?",
+              "options": [
+                "Client faster",
+                "Server un-bypassable",
+                "Client secure",
+                "No difference"
+              ],
+              "correct_answer": "Server un-bypassable",
+              "difficulty": "hard",
+              "bloom_level": "Analyze",
+              "explanation": "Users control client; server enforces definitively."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-01-27T18:34:20.828041",
+  "version": 1
+}

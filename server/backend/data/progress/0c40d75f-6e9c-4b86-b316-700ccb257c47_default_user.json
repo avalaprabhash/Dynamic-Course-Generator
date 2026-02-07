@@ -1,0 +1,30 @@
+{
+  "course_id": "0c40d75f-6e9c-4b86-b316-700ccb257c47",
+  "user_id": "default_user",
+  "modules": {
+    "9315ddcf-e4d2-48aa-b1ef-3da6663dc09b": {
+      "module_id": "9315ddcf-e4d2-48aa-b1ef-3da6663dc09b",
+      "lessons": {
+        "3b25addb-0a58-489b-aece-b2d5cc10b33f": {
+          "lesson_id": "3b25addb-0a58-489b-aece-b2d5cc10b33f",
+          "completed": true,
+          "quiz_attempts": 1,
+          "best_score": 100.0,
+          "current_difficulty": "medium",
+          "smoothed_score": 0.6499999999999999
+        },
+        "f538cee2-a2be-41c3-afd2-434be562b6cd": {
+          "lesson_id": "f538cee2-a2be-41c3-afd2-434be562b6cd",
+          "completed": false,
+          "quiz_attempts": 1,
+          "best_score": 66.66666666666666,
+          "current_difficulty": "medium",
+          "smoothed_score": 0.5499999999999999
+        }
+      }
+    }
+  },
+  "overall_progress": 25.0,
+  "started_at": "2026-01-24T15:24:03.887887",
+  "last_accessed": "2026-01-24T15:24:59.193835"
+}

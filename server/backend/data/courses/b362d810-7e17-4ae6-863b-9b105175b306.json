@@ -1,0 +1,452 @@
+{
+  "id": "b362d810-7e17-4ae6-863b-9b105175b306",
+  "user_id": "6c39818f-d9bf-43f1-b3cd-d71d5a7816e5",
+  "title": "Cloud Computing with AWS: Beginner Fundamentals",
+  "topic": "Cloud Computing with AWS",
+  "overview": "In this beginner course, you'll master the essential concepts of cloud computing and gain hands-on experience with AWS's core services like EC2, S3, and IAM. By the end, you'll confidently create your first AWS resources, understand cloud benefits, and build a simple web application in the cloud. This course builds a strong foundation for your AWS journey with practical steps and real-world examples.",
+  "duration_hours": 1,
+  "difficulty": "Beginner",
+  "confirmed": true,
+  "modules": [
+    {
+      "module_id": "43e485df-b530-41ca-b966-97887268f2de",
+      "module_title": "Module 1: Foundations of Cloud Computing with AWS",
+      "module_description": "This module introduces the core ideas of cloud computing and gets you set up with AWS. You'll learn what the cloud is, why AWS is the leader, and how to securely access your first AWS account, building confidence for hands-on work ahead.",
+      "lessons": [
+        {
+          "lesson_id": "6d649a25-bbd5-4647-9e40-24efdf2d3449",
+          "lesson_title": "Lesson 1: What is Cloud Computing and Why AWS?",
+          "bloom_level": "Remember",
+          "learning_outcomes": [
+            "Define cloud computing and identify AWS as a leading provider",
+            "Recall the key benefits of using AWS over traditional servers"
+          ],
+          "content": {
+            "introduction": "Welcome to your first step into the world of cloud computing with AWS! If you've ever wondered what it means to 'put your app in the cloud' or why companies like Netflix and Airbnb rely on AWS, this lesson is for you. We'll start from the very basics\u2014no prior tech experience needed\u2014explaining cloud computing like renting an apartment instead of building your own house. This foundation matters because understanding these concepts will make every future AWS service feel intuitive, saving you time and frustration as you build real projects.",
+            "lesson_overview": [
+              "The definition and basic types of cloud computing",
+              "What makes AWS the top choice for cloud services",
+              "Key benefits of cloud computing with real-world examples",
+              "What you'll be able to do after this lesson: Explain cloud computing to a friend and list AWS's main advantages"
+            ],
+            "core_concepts": [
+              {
+                "title": "What is Cloud Computing?",
+                "explanation": "Cloud computing is like renting computing power from a massive global utility company instead of buying and maintaining your own hardware. Imagine electricity: you don't build a power plant in your garage; you plug into the grid and pay for what you use. Similarly, cloud computing lets you access servers, storage, databases, and software over the internet from providers like AWS, without owning physical machines.\n\nThere are three main service models: IaaS (Infrastructure as a Service, like renting raw servers), PaaS (Platform as a Service, where the provider handles the operating system), and SaaS (Software as a Service, fully managed apps like email). AWS offers all three, but we'll focus on basics. Deployment models include public cloud (shared with others, like AWS), private (your own), and hybrid. This matters because it scales effortlessly\u2014if your website gets popular, you add more power instantly, unlike buying new servers which takes weeks[1][4].\n\nThe 'why' is cost savings (pay only for use), reliability (AWS has data centers worldwide), and speed (launch a server in minutes). For beginners, think of it as Lego blocks: AWS provides pre-built pieces you snap together for apps, websites, or data storage.",
+                "code_example": null
+              },
+              {
+                "title": "Why Choose AWS?",
+                "explanation": "AWS, or Amazon Web Services, is the world's largest cloud provider, powering over a third of the cloud market. It's like the Walmart of cloud services\u2014reliable, affordable, and with everything you need under one roof. AWS launched in 2006 and now offers 200+ services, from simple storage (S3) to AI tools[1][5].\n\nKey benefits include the global infrastructure: AWS Regions (like US East) contain Availability Zones (separate data centers) for high availability\u2014if one fails, others keep running[4]. Security is baked in: AWS handles physical security, while you manage your data (shared responsibility model). Pricing is pay-as-you-go, with a generous free tier for learning[1].\n\nCompared to competitors like Google Cloud or Azure, AWS has the most mature ecosystem and community resources. For beginners, this means tons of free tutorials and tools to get started quickly, building your skills without breaking the bank.",
+                "code_example": null
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Grasp the core idea\u2014write down in your notes: 'Cloud computing = internet-based computing resources on-demand.' Why? This anchors the definition before diving into AWS specifics.",
+              "Step 2: Identify service models: List IaaS (EC2), PaaS (Elastic Beanstalk), SaaS (like AWS WorkMail). Connect to real life: IaaS is like renting a bare apartment; PaaS adds furniture.",
+              "Step 3: Explore deployment types: Sketch public (AWS shared), private (company-only), hybrid (mix). Note how hybrid combines on-premises security with cloud scale.",
+              "Step 4: See the full picture\u2014AWS Regions and AZs ensure 99.99% uptime. Your app runs across zones for reliability.",
+              "Step 5: Verify understanding: Quiz yourself\u2014'Why pay-as-you-go?' (No upfront costs, scale instantly). Watch for confusion between models; revisit analogies if needed."
+            ],
+            "practical_examples": [
+              {
+                "description": "Scenario: A small bakery wants to host a menu website without buying servers.",
+                "code": null,
+                "explanation": "Instead of $5,000 on hardware, they use AWS S3 for static files (cheap storage) and pay pennies monthly. This demonstrates pay-as-you-go: traffic spikes during lunch? Scale automatically. Each part matters\u2014S3 handles files reliably worldwide, no server management needed. Real benefit: Bakery focuses on cakes, not IT."
+              },
+              {
+                "description": "Scenario: Student storing homework files securely.",
+                "code": null,
+                "explanation": "Upload to S3 bucket (storage container). Step-by-step: Create bucket, upload files, set public/private. Why? Files accessible anywhere, backed up automatically. S3's durability (99.999999999% over a year) means no lost homework\u2014beats USB drives."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Thinking cloud is 'magic' with no costs\u2014why? Forgetting pay-per-use leads to surprise bills; always check free tier limits.",
+              "Mistake 2: Confusing service models (e.g., using IaaS for simple apps)\u2014why? Overcomplicates; pick PaaS/SaaS for less management.",
+              "Mistake 3: Ignoring Regions\u2014why? Default might be far, slowing apps; choose closest for speed."
+            ],
+            "mental_model": "Think of AWS like a vast self-serve buffet: Servers (EC2), storage (S3), databases (RDS) are dishes ready to grab. You pay per plate, scale portions instantly, and the kitchen (AWS) handles cooking/cleaning\u2014focus on your meal (app).",
+            "summary": "You've now defined cloud computing as on-demand internet resources, explored models like IaaS/PaaS/SaaS, and understood AWS's benefits like global scale and free tier. These fundamentals connect directly to your outcomes: confidently explain concepts and AWS advantages. Building here ensures smooth progress to hands-on lessons.",
+            "further_thinking": [
+              "What are two key differences between public and private clouds?",
+              "How would a startup benefit from AWS's pay-as-you-go model?",
+              "Design a simple cloud setup for a photo-sharing app using AWS services."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "618f42f2-5ebb-4e27-a2f1-d43905d1c561",
+              "question": "What is cloud computing?",
+              "options": [
+                "On-demand delivery of computing services over the internet",
+                "Buying physical servers for your data center",
+                "Installing software on your local computer",
+                "Using only free software tools"
+              ],
+              "correct_answer": "On-demand delivery of computing services over the internet",
+              "difficulty": "easy",
+              "bloom_level": "Remember",
+              "explanation": "This definition captures the essence: access resources like servers and storage via internet without owning hardware, as per AWS basics[4]. Others describe traditional or local setups."
+            },
+            {
+              "question_id": "5be47aea-a242-4f0f-bedf-64b0cdb956f6",
+              "question": "Which AWS infrastructure feature provides high availability?",
+              "options": [
+                "Single data center",
+                "Regions and Availability Zones",
+                "Local hard drives",
+                "Personal laptop"
+              ],
+              "correct_answer": "Regions and Availability Zones",
+              "difficulty": "medium",
+              "bloom_level": "Remember",
+              "explanation": "Regions are global locations with multiple AZs (separate data centers) for fault tolerance[4]. This ensures apps keep running if one AZ fails."
+            },
+            {
+              "question_id": "2abbc1d5-9b06-4216-907c-e735218586b3",
+              "question": "What is a key benefit of AWS's shared responsibility model?",
+              "options": [
+                "AWS manages everything including your data",
+                "You manage security of your data while AWS secures infrastructure",
+                "No security needed in cloud",
+                "Only for enterprises"
+              ],
+              "correct_answer": "You manage security of your data while AWS secures infrastructure",
+              "difficulty": "hard",
+              "bloom_level": "Remember",
+              "explanation": "AWS protects physical data centers; you handle access policies and encryption[4]. This balances responsibility for secure, scalable cloud use."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        },
+        {
+          "lesson_id": "1d026b90-6234-4007-ae31-627b04c7b062",
+          "lesson_title": "Lesson 2: Getting Started with AWS Account and Console",
+          "bloom_level": "Understand",
+          "learning_outcomes": [
+            "Explain how to create and secure an AWS account using IAM",
+            "Navigate the AWS Management Console and identify key services"
+          ],
+          "content": {
+            "introduction": "Great job on Lesson 1\u2014now that you understand cloud basics, let's get you hands-on with AWS! We'll walk through creating your free account and exploring the Management Console, like getting your first library card to access a world of books (services). This matters because a secure setup prevents common newbie mistakes like surprise bills, and familiarizing with the console builds confidence for launching real resources like EC2 instances next.",
+            "lesson_overview": [
+              "Signing up for AWS Free Tier",
+              "Understanding IAM for security",
+              "Navigating the AWS Management Console",
+              "What you'll be able to do: Securely log in and find core services like EC2 and S3"
+            ],
+            "core_concepts": [
+              {
+                "title": "Creating Your AWS Account",
+                "explanation": "Signing up for AWS is straightforward, like opening a bank account online. Visit aws.amazon.com, click 'Create an AWS Account,' enter email, password, and billing info (needed even for free tier). AWS offers 12 months free on select services (e.g., 750 hours/month EC2) plus always-free limits[1][5].\n\nWhy? Free tier lets you experiment risk-free. Post-signup, enable MFA (multi-factor authentication) for security\u2014like a second lock on your door. Billing alerts prevent overspending; set to $0 threshold.",
+                "code_example": null
+              },
+              {
+                "title": "IAM: Securing Your Account",
+                "explanation": "IAM (Identity and Access Management) is AWS's security system, controlling who accesses what\u2014like user permissions in a shared house. Root account is god-mode (avoid using); create IAM users/roles with least privilege (minimal permissions needed).\n\nWhy IAM? Prevents accidents, like one user deleting everything. Example: Policy denies S3 access. Connects to shared responsibility: You manage IAM[3]. Start with IAM dashboard to create users.",
+                "code_example": "// Example IAM policy JSON (via AWS CLI, covered later)\n{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [{\n    \"Effect\": \"Deny\",\n    \"Action\": \"s3:*\",\n    \"Resource\": \"*\"\n  }]\n}"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Go to aws.amazon.com > Create account. Enter details, verify phone/email. Why? Establishes your root identity securely.",
+              "Step 2: Add billing (use card; no charge for free tier). Enable MFA in 'My Security Credentials.' Connection: Protects root access.",
+              "Step 3: Log into Console (console.aws.amazon.com). Search 'IAM,' create user/group with 'Attach AmazonEC2FullAccess' policy. Handles permissions.",
+              "Step 4: Full picture\u2014navigate Services > Compute > EC2. See dashboard overview.",
+              "Step 5: Verify: Check billing dashboard (no charges), test IAM login. Watch for: Region selector (top-right)."
+            ],
+            "practical_examples": [
+              {
+                "description": "Scenario: Secure team access for a student project.",
+                "code": "// AWS CLI to create IAM user (install CLI first)\naws iam create-user --user-name myprojectuser\naws iam create-access-key --user-name myprojectuser",
+                "explanation": "Step-by-step: 1) Creates user. 2) Generates keys for programmatic access. Why? CLI safer than console for automation. Attach policy next for EC2 read-only. Builds secure habits."
+              },
+              {
+                "description": "Scenario: Exploring console for first time.",
+                "code": null,
+                "explanation": "Login > Services > All Services > Filter 'EC2.' Click 'Launch Instance.' Cancel before launch. Explains layout: Left nav for services, top for regions. Each click teaches navigation."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Using root account daily\u2014why? High risk; IAM users limit damage.",
+              "Mistake 2: No billing alerts\u2014why? Free tier exceeded unnoticed racks up costs.",
+              "Mistake 3: Wrong Region\u2014why? Services region-specific; app in US but user in Europe lags."
+            ],
+            "mental_model": "AWS Console is like a pilot's cockpit: Dashboard shows status, IAM is the keychain (roles limit access), Regions are airports (pick closest for fast takeoff). Fly safely by checking instruments first.",
+            "summary": "You've learned to create a free AWS account, secure it with IAM users/policies, and navigate the Management Console to find services. This directly achieves your outcomes: explaining setup and console use. You're now ready for Module 2's compute hands-on.",
+            "further_thinking": [
+              "Why is 'least privilege' crucial in IAM?",
+              "Compare console vs. CLI for account management.",
+              "Plan IAM setup for a 3-person dev team."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "9fbbc713-b3da-46d0-986e-1a2f00ed68c2",
+              "question": "What is the AWS Free Tier?",
+              "options": [
+                "Unlimited free services forever",
+                "12 months free on select services plus always-free offers",
+                "Only for students",
+                "No billing info needed"
+              ],
+              "correct_answer": "12 months free on select services plus always-free offers",
+              "difficulty": "easy",
+              "bloom_level": "Understand",
+              "explanation": "Provides safe learning (e.g., EC2 hours, S3 GB)[1][5]. Requires billing but no charges within limits."
+            },
+            {
+              "question_id": "b98af40c-07b5-4dd3-b3a7-8d168511e911",
+              "question": "What does IAM stand for and its purpose?",
+              "options": [
+                "Identity Access Management, secure resources",
+                "Internet App Manager, build apps",
+                "Image Archive Manager, store photos",
+                "Instant Access Module, quick login"
+              ],
+              "correct_answer": "Identity Access Management, secure resources",
+              "difficulty": "medium",
+              "bloom_level": "Understand",
+              "explanation": "Manages users/roles/policies for least-privilege access[3]. Essential for security."
+            },
+            {
+              "question_id": "dc1406d4-cef7-486e-8116-e2b7005850d4",
+              "question": "Why avoid using the root account daily?",
+              "options": [
+                "It's slower",
+                "Has full unrestricted access, risky for mistakes",
+                "Can't access console",
+                "Only for billing"
+              ],
+              "correct_answer": "Has full unrestricted access, risky for mistakes",
+              "difficulty": "hard",
+              "bloom_level": "Understand",
+              "explanation": "Root can delete everything; use IAM for daily tasks[3]. Aligns with best practices."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        }
+      ]
+    },
+    {
+      "module_id": "489fadf8-bc8a-4f7b-adf0-60c9fb714973",
+      "module_title": "Module 2: Core AWS Services Hands-On",
+      "module_description": "Building on your foundation, this module dives into practical AWS services like EC2 and S3. You'll launch real resources and understand basic computing/storage, essential for deploying simple apps.",
+      "lessons": [
+        {
+          "lesson_id": "adddde07-5277-4d5b-8a5e-c39ccb5017a7",
+          "lesson_title": "Lesson 3: Launching Your First EC2 Instance",
+          "bloom_level": "Apply",
+          "learning_outcomes": [
+            "Launch and connect to an EC2 virtual server step-by-step",
+            "Apply basic security groups for safe access"
+          ],
+          "content": {
+            "introduction": "Excellent progress\u2014your account is ready, so now apply that knowledge by launching an EC2 instance, AWS's virtual server! Think of EC2 as renting a computer in the cloud, customizable like picking a car size for your trip. Mastering this unlocks hosting websites or running scripts, a core skill every AWS beginner needs.",
+            "lesson_overview": [
+              "What EC2 is and instance types",
+              "Step-by-step launch process",
+              "Security groups and connecting",
+              "What you'll be able to do: Run commands on your cloud server"
+            ],
+            "core_concepts": [
+              {
+                "title": "Understanding EC2 Instances",
+                "explanation": "EC2 (Elastic Compute Cloud) provides resizable virtual machines\u2014like virtual PCs in AWS data centers. Choose instance type (e.g., t2.micro: free tier eligible, 1 vCPU, 1GB RAM). Pricing: On-Demand (pay/hour), Spot (cheap but interruptible)[1][3].\n\nWhy? Scale from tiny test servers to massive clusters. Launch via console: Pick AMI (OS image, like Amazon Linux), configure storage (EBS volumes like hard drives), security groups (firewalls).",
+                "code_example": null
+              },
+              {
+                "title": "Security Groups and Connection",
+                "explanation": "Security Groups act as virtual firewalls, allowing specific traffic (e.g., SSH port 22 from your IP). Like a bouncer at a club\u2014only approved guests enter.\n\nConnect via SSH (Linux): Use .pem key downloaded at launch. Command: ssh -i key.pem ec2-user@public-ip. Builds on IAM: Groups control inbound/outbound[1].",
+                "code_example": "// SSH connection example\nssh -i \"my-key-pair.pem\" ec2-user@ec2-3-131-62-126.us-east-2.compute.amazonaws.com"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Console > EC2 > Launch Instance. Pick t2.micro, Amazon Linux AMI. Why? Free, beginner-friendly OS.",
+              "Step 2: Add storage (8GB default), tags (name 'MyFirstServer'). Review security: Create group allowing SSH (22) from your IP.",
+              "Step 3: Download .pem key, chmod 400 key.pem (secure it). Launch\u2014wait 'running' status.",
+              "Step 4: Get public IP, connect via SSH. Run 'sudo yum update -y'. Full app hosting ready.",
+              "Step 5: Verify: ping IP, check instance status. Pitfall: Wrong IP/key\u2014use EC2 dashboard."
+            ],
+            "practical_examples": [
+              {
+                "description": "Scenario: Host a simple 'Hello World' web server.",
+                "code": "// After SSH: Install/update Apache\nsudo yum update -y\nsudo yum install httpd -y\nsudo systemctl start httpd\ncurl localhost  # Test: sees Apache page",
+                "explanation": "Step-by-step: Connect SSH, install httpd (web server), start service. Add HTTP port 80 to security group. Access public-ip in browser. Teaches compute + networking."
+              },
+              {
+                "description": "Scenario: Run a script to monitor uptime.",
+                "code": "// SSH then:\nwhile true; do echo \"$(date) - Uptime OK\" >> /home/ec2-user/uptime.log; sleep 60; done",
+                "explanation": "Infinite loop logs timestamp every minute. Why? Demonstrates persistent compute. View with tail -f uptime.log."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Public security group\u2014why? Exposes server to world; restrict to your IP.",
+              "Mistake 2: Lost .pem key\u2014why? Can't connect; download new keypair next time.",
+              "Mistake 3: Wrong instance type\u2014why? t2.micro free; larger bills unexpectedly."
+            ],
+            "mental_model": "EC2 is like a remote-control car: Instance type=engine size, security group=locks on doors, SSH=key to start. Drive safely by setting rules first.",
+            "summary": "You've applied EC2 knowledge by launching/connecting instances, configuring security groups. Meets outcomes: Step-by-step server management. Next, store data with S3.",
+            "further_thinking": [
+              "How does security group inbound differ from outbound?",
+              "Adapt launch for Windows instance.",
+              "Build a 2-instance setup for redundancy."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "e9cc545c-0764-46db-af67-5fc0c089ed4f",
+              "question": "What is an EC2 instance?",
+              "options": [
+                "Physical server",
+                "Resizable virtual machine in cloud",
+                "Database service",
+                "Storage bucket"
+              ],
+              "correct_answer": "Resizable virtual machine in cloud",
+              "difficulty": "easy",
+              "bloom_level": "Apply",
+              "explanation": "EC2 provides VMs you configure and scale[1][3]. Core compute service."
+            },
+            {
+              "question_id": "947e0302-b670-4a58-a5d0-89b8deddb751",
+              "question": "How do you connect to a Linux EC2 instance?",
+              "options": [
+                "FTP",
+                "SSH with .pem key",
+                "Telnet",
+                "Direct console"
+              ],
+              "correct_answer": "SSH with .pem key",
+              "difficulty": "medium",
+              "bloom_level": "Apply",
+              "explanation": "Secure shell using private key for authentication[1]. Command: ssh -i key.pem user@ip."
+            },
+            {
+              "question_id": "3c94713b-3dae-44e0-aff0-4a5f1c02ffcf",
+              "question": "What role do security groups play?",
+              "options": [
+                "Manage storage",
+                "Act as virtual firewalls for traffic",
+                "Install software",
+                "Choose instance type"
+              ],
+              "correct_answer": "Act as virtual firewalls for traffic",
+              "difficulty": "hard",
+              "bloom_level": "Apply",
+              "explanation": "Control inbound/outbound ports/IPs, stateful (response traffic auto-allowed)[3]. Essential security."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        },
+        {
+          "lesson_id": "5f904fdb-045b-427f-9728-c1b2712e8405",
+          "lesson_title": "Lesson 4: Storing Files with S3 and Building a Simple App",
+          "bloom_level": "Analyze",
+          "learning_outcomes": [
+            "Analyze S3 for storage and compare to EC2",
+            "Combine EC2 and S3 for a basic website deployment"
+          ],
+          "content": {
+            "introduction": "You're crushing it\u2014EC2 servers are running! Now analyze S3, AWS's infinite storage, like a cloud Dropbox for files. We'll compare it to EC2 and deploy a full website, helping you see how services interconnect for real apps. This analytical step cements why AWS excels at scalable architectures.",
+            "lesson_overview": [
+              "S3 buckets and object storage",
+              "Comparing S3 vs. EC2 use cases",
+              "Integrating services for a website",
+              "What you'll be able to do: Host static site with EC2 backend"
+            ],
+            "core_concepts": [
+              {
+                "title": "Amazon S3 Fundamentals",
+                "explanation": "S3 (Simple Storage Service) stores unlimited objects (files up to 5TB) in buckets (containers like folders). Durable (11 9's), accessible globally. Public buckets host websites[1].\n\nWhy? Cheaper/long-term than EBS (EC2 disks). Features: Versioning, lifecycle policies (auto-delete old files). Analyze: S3 for static/unstructured data; EC2 for compute.",
+                "code_example": null
+              },
+              {
+                "title": "S3 + EC2 Integration",
+                "explanation": "Combine: EC2 serves dynamic content, S3 static (images/CSS). Example: Website pulls images from S3 bucket.\n\nRelationships: Use IAM roles for EC2 to access S3 securely (no keys). Analyze pros: S3 scales infinitely, offloads EC2 storage. Cons: S3 eventual consistency for overwrites.",
+                "code_example": "// On EC2: AWS CLI to upload from server to S3\naws s3 cp /var/www/images/ s3://mybucket/images/ --recursive"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Console > S3 > Create bucket (unique name, e.g., my-first-bucket-2026). Enable public access for website.",
+              "Step 2: Upload index.html with <h1>Hello AWS!</h1>. Set bucket policy for public read. Compare: S3 static-only vs. EC2 full server.",
+              "Step 3: Enable static hosting. Note endpoint URL. Handle versioning if uploads conflict.",
+              "Step 4: On EC2, install AWS CLI, configure IAM role, sync files to S3. Full stack: EC2 app uses S3 assets.",
+              "Step 5: Verify site loads, check costs/logs. Pitfall: Bucket naming global-unique."
+            ],
+            "practical_examples": [
+              {
+                "description": "Scenario: Deploy static portfolio site.",
+                "code": "// Bucket policy JSON for public read\n{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [{\n    \"Effect\": \"Allow\",\n    \"Principal\": \"*\",\n    \"Action\": \"s3:GetObject\",\n    \"Resource\": \"arn:aws:s3:::mybucket/*\"\n  }]\n}",
+                "explanation": "1) Create bucket. 2) Upload HTML/CSS. 3) Apply policy via JSON editor. Site at bucket.s3-website-region.amazonaws.com. Analyzes public access setup."
+              },
+              {
+                "description": "Scenario: EC2 backs up logs to S3.",
+                "code": "// Cron job on EC2\n0 * * * * aws s3 sync /var/log/ s3://mylogs/",
+                "explanation": "Hourly sync logs. IAM role grants putObject. Compares: S3 cheaper than EBS for archives."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Non-unique bucket name\u2014why? Global namespace; add timestamp.",
+              "Mistake 2: Public without policy\u2014why? Files inaccessible; explicit permissions needed.",
+              "Mistake 3: Forgetting IAM for EC2-S3\u2014why? Access denied without roles."
+            ],
+            "mental_model": "S3 is an unbreakable vault network: Buckets=rooms, objects=items. EC2 rents the vault temporarily for processing; send keepers to S3 for eternal safe storage.",
+            "summary": "Analyzed S3 storage vs. EC2 compute, integrated for websites meeting outcomes. Key: Buckets/objects scale infinitely, IAM enables secure combo. Course complete\u2014you're AWS-ready!",
+            "further_thinking": [
+              "Compare S3 durability to local HDD.",
+              "Evaluate costs: Static site S3 vs. EC2.",
+              "Design architecture: Blog with EC2 dynamic + S3 static."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "1338dfa4-aa6b-4e16-bf7a-87a352d45a26",
+              "question": "What is an S3 bucket?",
+              "options": [
+                "Virtual server",
+                "Container for objects/files",
+                "Database",
+                "Networking rule"
+              ],
+              "correct_answer": "Container for objects/files",
+              "difficulty": "easy",
+              "bloom_level": "Analyze",
+              "explanation": "Organizes unlimited durable storage[1]. Like root folders."
+            },
+            {
+              "question_id": "2a3d295d-b61e-41e6-ac2c-69dcff877058",
+              "question": "Key difference: S3 vs. EC2?",
+              "options": [
+                "S3 for compute, EC2 storage",
+                "S3 static/object storage, EC2 virtual machines",
+                "Both same",
+                "S3 only free"
+              ],
+              "correct_answer": "S3 static/object storage, EC2 virtual machines",
+              "difficulty": "medium",
+              "bloom_level": "Analyze",
+              "explanation": "S3 excels at files/web hosting; EC2 runs code[1][3]. Complementary."
+            },
+            {
+              "question_id": "370fcef9-6bbd-48db-866a-158d8d869f82",
+              "question": "How to make S3 bucket public?",
+              "options": [
+                "Default",
+                "Bucket policy allowing GetObject",
+                "Security group",
+                "IAM user"
+              ],
+              "correct_answer": "Bucket policy allowing GetObject",
+              "difficulty": "hard",
+              "bloom_level": "Analyze",
+              "explanation": "JSON policy grants public read access[1]. Block public access must be off."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-01-30T13:13:58.363023",
+  "version": 1
+}

@@ -1,0 +1,42 @@
+{
+  "course_id": "0c054598-b695-4a28-abdb-b8da3bcb40d1",
+  "user_id": "1e50b4e4-cd1d-44bc-a172-4495f71b1623",
+  "current_module_index": 0,
+  "current_lesson_index": 0,
+  "completed_lessons": [],
+  "modules": {
+    "db475cbb-7fe1-4f00-a7d5-a96f9ad79949": {
+      "module_id": "db475cbb-7fe1-4f00-a7d5-a96f9ad79949",
+      "lessons": {
+        "9bfb389b-9db2-4dd4-ac94-19439334769e": {
+          "lesson_id": "9bfb389b-9db2-4dd4-ac94-19439334769e",
+          "completed": false,
+          "quiz_attempts": 2,
+          "best_score": 0.0,
+          "current_difficulty": "easy",
+          "current_bloom_level": "Remember",
+          "smoothed_score": 0.0,
+          "attempt_history": [
+            {
+              "attempt_number": 1,
+              "score": 0.0,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-30T13:11:35.616571"
+            },
+            {
+              "attempt_number": 2,
+              "score": 0.0,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-30T13:12:02.171281"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "overall_progress": 0.0,
+  "started_at": "2026-01-30T13:10:21.553821",
+  "last_accessed_at": "2026-01-30T13:12:25.333055"
+}

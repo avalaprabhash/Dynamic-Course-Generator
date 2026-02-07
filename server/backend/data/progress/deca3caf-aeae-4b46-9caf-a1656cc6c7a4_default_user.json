@@ -1,0 +1,132 @@
+{
+  "course_id": "deca3caf-aeae-4b46-9caf-a1656cc6c7a4",
+  "user_id": "default_user",
+  "current_module_index": 0,
+  "current_lesson_index": 0,
+  "completed_lessons": [],
+  "modules": {
+    "7fe3243b-0bba-468e-a87a-5bd131944d06": {
+      "module_id": "7fe3243b-0bba-468e-a87a-5bd131944d06",
+      "lessons": {
+        "23b31ebc-1992-44c0-b959-e5e897770656": {
+          "lesson_id": "23b31ebc-1992-44c0-b959-e5e897770656",
+          "completed": true,
+          "quiz_attempts": 3,
+          "best_score": 100.0,
+          "current_difficulty": "easy",
+          "current_bloom_level": "Understand",
+          "smoothed_score": 0.5904999999999999,
+          "attempt_history": [
+            {
+              "attempt_number": 1,
+              "score": 33.33333333333333,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-27T23:22:48.656014"
+            },
+            {
+              "attempt_number": 2,
+              "score": 33.33333333333333,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-27T23:23:01.505932"
+            },
+            {
+              "attempt_number": 3,
+              "score": 100.0,
+              "passed": true,
+              "feedback": null,
+              "timestamp": "2026-01-27T23:23:20.786355"
+            }
+          ]
+        },
+        "101d6850-6018-4f9c-aedf-694e5168dc2d": {
+          "lesson_id": "101d6850-6018-4f9c-aedf-694e5168dc2d",
+          "completed": false,
+          "quiz_attempts": 7,
+          "best_score": 33.33333333333333,
+          "current_difficulty": "easy",
+          "current_bloom_level": "Understand",
+          "smoothed_score": 0.09948714999999997,
+          "attempt_history": [
+            {
+              "attempt_number": 1,
+              "score": 0.0,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-27T23:35:50.118967"
+            },
+            {
+              "attempt_number": 2,
+              "score": 0.0,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-27T23:37:47.089606"
+            },
+            {
+              "attempt_number": 3,
+              "score": 33.33333333333333,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-27T23:48:42.735259"
+            },
+            {
+              "attempt_number": 4,
+              "score": 33.33333333333333,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-27T23:49:05.890174"
+            },
+            {
+              "attempt_number": 5,
+              "score": 0.0,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-27T23:53:40.925510"
+            },
+            {
+              "attempt_number": 6,
+              "score": 0.0,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-28T00:01:29.002540"
+            },
+            {
+              "attempt_number": 7,
+              "score": 0.0,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-28T00:01:43.385529"
+            }
+          ]
+        }
+      }
+    },
+    "7cafd4cf-871d-42cd-97cb-1a0997295f94": {
+      "module_id": "7cafd4cf-871d-42cd-97cb-1a0997295f94",
+      "lessons": {
+        "41ef6c90-6f0f-4a4a-a796-bf7a29dd85de": {
+          "lesson_id": "41ef6c90-6f0f-4a4a-a796-bf7a29dd85de",
+          "completed": false,
+          "quiz_attempts": 1,
+          "best_score": 0.0,
+          "current_difficulty": "easy",
+          "current_bloom_level": "Apply",
+          "smoothed_score": 0.35,
+          "attempt_history": [
+            {
+              "attempt_number": 1,
+              "score": 0.0,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-27T23:26:38.752077"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "overall_progress": 25.0,
+  "started_at": "2026-01-27T23:22:48.655164",
+  "last_accessed_at": "2026-01-28T00:01:43.385991"
+}

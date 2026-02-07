@@ -1,0 +1,44 @@
+[
+  {
+    "id": "d8e50889-3a6e-47b6-9c58-ccc3ba0488e2",
+    "email": "user@test.com",
+    "password_hash": "$argon2id$v=19$m=65536,t=3,p=4$854TopSyNkZICaHUmtPamw$DjwcF+xHpY04hgpdM5L0f4OxU+VBO5HEUblK9YaLYrw",
+    "created_at": "2026-01-27 17:11:56.540050"
+  },
+  {
+    "id": "4f5ba648-c8cd-4ea8-bdeb-cd28ecca0733",
+    "email": "revanthg2607@gmail.com",
+    "password_hash": "$argon2id$v=19$m=65536,t=3,p=4$du49R8i5d46xltJaK0WoFQ$A/tl/MbJjHcpyupecmzfOeBr2mlFt28bSwR+pZsjI3o",
+    "created_at": "2026-01-27 17:34:58.869292"
+  },
+  {
+    "id": "6dfb8a44-105f-42aa-812e-8599f5fc0d01",
+    "email": "revanthgwork@gmail.com",
+    "password_hash": "$argon2id$v=19$m=65536,t=3,p=4$2ZvTute61/rfG4PQmvNeiw$Ry+xRHHllr3Roe/4JIqy2kCsg+arWa7lOR96XABHjvY",
+    "created_at": "2026-01-27 23:05:45.778509"
+  },
+  {
+    "id": "db7d8cc4-6096-4411-98f0-2ea667c8fc9c",
+    "email": "sample@gmail.com",
+    "password_hash": "$argon2id$v=19$m=65536,t=3,p=4$l7J2jlHK+b+3ViplTAlBCA$TcKHJWElLqbDopYynHKY44q8PXcqWirQaozOpBzQL08",
+    "created_at": "2026-01-29 17:52:58.597886"
+  },
+  {
+    "id": "899a6c9b-34c8-46d3-b68b-362fcc2864c2",
+    "email": "demo@gmail.com",
+    "password_hash": "$2b$12$p9SkEsUd.LRUUitRuAdVTOFtA.JT/GtP.pz4VkAXL1.fVldlP/XDK",
+    "created_at": "2026-01-30 12:54:53.340290"
+  },
+  {
+    "id": "1e50b4e4-cd1d-44bc-a172-4495f71b1623",
+    "email": "testingnewmail@gmail.com",
+    "password_hash": "$2b$12$uFABq134LFNiTKCZKAYloO2nhkQVEFUqlWlv42fvQ9MLpMR.4s30e",
+    "created_at": "2026-01-30 13:00:09.915684"
+  },
+  {
+    "id": "6c39818f-d9bf-43f1-b3cd-d71d5a7816e5",
+    "email": "user@gmail.com",
+    "password_hash": "$2b$12$aBgnh.bb6pqtOdCr/H0ZpeOprI7ppnI6kzA4nHh.1pOIgR73lHKqS",
+    "created_at": "2026-01-30 13:12:54.339150"
+  }
+]

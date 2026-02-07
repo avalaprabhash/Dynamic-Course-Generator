@@ -1,0 +1,459 @@
+{
+  "id": "0c40d75f-6e9c-4b86-b316-700ccb257c47",
+  "title": "Python Fundamentals: From Zero to Confident Coder",
+  "topic": "Python",
+  "overview": "This intensive 1-hour course introduces motivated beginners to Python programming, covering essential syntax, data structures, control flow, and functions. Learners will build practical programs, understand Python's design philosophy, and gain the confidence to create their own scripts. By course end, you'll write, debug, and execute complete Python programs independently.",
+  "duration_hours": 1,
+  "modules": [
+    {
+      "module_id": "9315ddcf-e4d2-48aa-b1ef-3da6663dc09b",
+      "module_title": "Module 1: Python Foundations",
+      "module_description": "This module establishes the core building blocks of Python programming: syntax, variables, data types, and control structures. Mastering these fundamentals enables you to think computationally and build simple yet functional programs, forming the essential groundwork for all Python development.",
+      "lessons": [
+        {
+          "lesson_id": "3b25addb-0a58-489b-aece-b2d5cc10b33f",
+          "lesson_title": "Python Syntax, Variables, and Data Types",
+          "bloom_level": "Remember",
+          "learning_outcomes": [
+            "Recall Python's key syntax rules including indentation and dynamic typing",
+            "Identify and define Python's primitive data types: int, float, str, bool"
+          ],
+          "content": {
+            "introduction": "Welcome to your first hands-on Python lesson! Assuming you're new to programming or coming from another language, we'll start at ground level with Python's syntax and basic data types. Python stands out because its syntax reads almost like English, making it incredibly approachable while powerful enough for NASA's space missions and Instagram's backend. Understanding these fundamentals matters because they form the vocabulary of every Python program you'll ever write\u2014get these right, and everything else clicks into place naturally.\n\nThink of this lesson as learning the alphabet before writing sentences. By the end, you'll not only remember the rules but start seeing how Python's design choices (like no semicolons or type declarations) make coding faster and less error-prone compared to languages like Java or C++.",
+            "lesson_overview": [
+              "Python's unique syntax rules and why indentation matters",
+              "Variables and dynamic typing fundamentals",
+              "Core data types: numbers, strings, and booleans",
+              "You'll be able to write and execute your first complete Python expressions"
+            ],
+            "core_concepts": [
+              {
+                "title": "Python Syntax and Indentation",
+                "explanation": "Python's syntax is designed for readability, using indentation (spaces or tabs) instead of curly braces {} to define code blocks. This enforces clean, consistent formatting\u2014four spaces per level is the standard. Why? It prevents the 'spaghetti code' common in other languages and makes your programs self-documenting. For example, inside a function or loop, all indented lines belong to that block; unindent to exit it.\n\nNo semicolons end statements; newlines do. This reduces visual clutter. Python is interpreted, so code runs line-by-line without compilation. Errors appear immediately, speeding up your edit-test cycle. The philosophy 'simple is better than complex' (from Python's official style guide, PEP 8) guides everything\u2014readability counts.\n\nHow it works: The interpreter reads your .py file or REPL (interactive shell) input, parses indentation first, then executes. Mistype indentation? You'll get IndentationError, Python's way of keeping code tidy.",
+                "code_example": "print('Hello, Python!')\n\nif True:\n    print('Indented block')\n    print('Still inside')\nprint('Outside if block')"
+              },
+              {
+                "title": "Variables and Dynamic Typing",
+                "explanation": "Variables in Python are labels pointing to objects\u2014no type declarations needed. Use assignment with = : name = 'Alice'. Python infers the type dynamically, changing if reassigned (name = 42 makes it int). This flexibility speeds development but requires care with type mismatches.\n\nWhy dynamic? It embodies Python's 'batteries included' ethos\u2014write less boilerplate. Memory management is automatic via garbage collection. Variables are case-sensitive; my_var != My_Var. Names should be descriptive (snake_case convention: all_lowercase_with_underscores).\n\nBuilding on syntax: Variables live in namespaces. Access via name; undefined? NameError. This connects to REPL practice: type python in terminal for interactive testing.",
+                "code_example": "age = 25\nname = 'Bob'\nis_student = True\n\nage = 'twenty-five'  # Type changes dynamically\nprint(name, age)"
+              },
+              {
+                "title": "Core Data Types",
+                "explanation": "Python has built-in types: int (unlimited size integers), float (decimals), str (immutable text with ' or \"), bool (True/False). Check type with type(). Strings support methods like .upper(), .len(). Numbers do arithmetic directly.\n\nWhy these? They cover 90% of beginner needs efficiently. Booleans power conditions; everything evaluates to bool (0/empty=False, others=True). Strings are sequences, enabling slicing [0:3].\n\nConnections: Variables hold these types. print(type(42)) shows <class 'int'>. This foundation leads to collections next.",
+                "code_example": "pi = 3.14159\nmessage = 'Hello'\nis_ready = True\n\nprint(type(pi))  # <class 'float'>\nprint(len(message))  # 5"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Install Python (python.org) and open REPL (type 'python'). Type print('Hello, World!') and press Enter. This verifies setup and teaches print\u2014Python's output function, essential for debugging.",
+              "Step 2: Assign variables: name = 'YourName'; age = 30. Print them: print(name, age). Notice no quotes around variables\u2014Python substitutes values.",
+              "Step 3: Experiment with types: score = 95.5; is_passing = score >= 90. Print is_passing (True). This introduces comparison operators and bool.",
+              "Step 4: Strings in action: greeting = f'Hi {name}, you are {age}' (f-string). Print it. See interpolation connect variables seamlessly.",
+              "Step 5: Verify: type() everything. Watch for IndentationError (fix spaces). Save as hello.py, run 'python hello.py'\u2014confirms file execution."
+            ],
+            "practical_examples": [
+              {
+                "description": "Personal Info Printer: A script that stores and displays user profile data",
+                "code": "name = 'Alice Johnson'\nage = 28\nheight = 5.6\nis_employed = True\n\nprint(f'Name: {name}')\nprint(f'Age: {age} years')\nprint(f'Height: {height} feet')\nprint(f'Employed: {is_employed}')\nprint(f'Data types: name={type(name)}, age={type(age)}')",
+                "explanation": "This example ties syntax, variables, types together. f-strings (formatted strings) embed variables efficiently\u2014no + concatenation. print handles multiple args with commas (spaces auto-added). type() reveals classes, showing Python's object model. Run it: outputs formatted info, teaching real output formatting."
+              },
+              {
+                "description": "Simple Temperature Converter (Celsius to Fahrenheit)",
+                "code": "celsius = 25.0\nfahrenheit = (celsius * 9/5) + 32\nprint(f'{celsius}\u00b0C is {fahrenheit:.1f}\u00b0F')\nprint(type(fahrenheit))",
+                "explanation": "Uses float arithmetic, f-string formatting ({:.1f} rounds to 1 decimal). Demonstrates expressions (right side of =). Builds math intuition\u2014Python handles operator precedence naturally. Output: '25.0\u00b0C is 77.0\u00b0F'. Extend by input() later."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Forgetting quotes around strings ('Hello' vs Hello)\u2014causes NameError as Python seeks undefined variable. Why? Strings are literals needing delimiters.",
+              "Mistake 2: Mixing indentation (spaces vs tabs)\u2014leads to IndentationError. Why? Python treats them differently; use 4 spaces always (editor auto-fix).",
+              "Mistake 3: Reassigning without understanding types (age = 'old' after int)\u2014works but breaks math. Why? Dynamic typing hides issues until operations fail."
+            ],
+            "mental_model": "Think of Python variables like sticky notes on objects in a warehouse: the note (variable name) points to a box (object with type/value). Change the note to point elsewhere? Old box stays, new one gets labeled. Indentation is like room dividers\u2014everything inside the room belongs to that space.",
+            "summary": "This lesson covered Python's readable syntax (indentation over braces), dynamic variables (no type declarations), and core types (int/float/str/bool). You learned to assign, print, and type-check via hands-on REPL and scripts. These form the atoms of all Python code, enabling you to express any computation simply.",
+            "further_thinking": [
+              "What are three syntax differences between Python and languages like JavaScript?",
+              "Why might dynamic typing be advantageous for quick prototyping?",
+              "Create a variable holding your favorite color as string, length as int, and 'favorite' as bool\u2014print formatted."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "fc0ed60f-a8a7-4b0b-9791-9ffe1c4d12bb",
+              "question": "What ends a Python statement instead of a semicolon?",
+              "options": [
+                "Newline",
+                "Colon (:)",
+                "Indentation",
+                "print()"
+              ],
+              "correct_answer": "Newline",
+              "difficulty": "easy",
+              "bloom_level": "Remember",
+              "explanation": "Python uses newlines to separate statements, promoting readability without punctuation clutter."
+            },
+            {
+              "question_id": "653f750a-2bee-416c-b2d7-ef2a9db11fea",
+              "question": "Which function reveals an object's type?",
+              "options": [
+                "len()",
+                "print()",
+                "type()",
+                "str()"
+              ],
+              "correct_answer": "type()",
+              "difficulty": "medium",
+              "bloom_level": "Remember",
+              "explanation": "type(42) returns <class 'int'>, essential for debugging type-related issues in dynamic typing."
+            },
+            {
+              "question_id": "4df9ccae-c9e9-4704-afe5-da5c598b4a67",
+              "question": "What error occurs from inconsistent indentation?",
+              "options": [
+                "SyntaxError",
+                "NameError",
+                "IndentationError",
+                "TypeError"
+              ],
+              "correct_answer": "IndentationError",
+              "difficulty": "hard",
+              "bloom_level": "Remember",
+              "explanation": "Python strictly enforces indentation for blocks; mixing spaces/tabs triggers this to maintain code clarity."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        },
+        {
+          "lesson_id": "f538cee2-a2be-41c3-afd2-434be562b6cd",
+          "lesson_title": "Control Flow: Conditionals and Loops",
+          "bloom_level": "Understand",
+          "learning_outcomes": [
+            "Explain how if-elif-else and for/while loops control program execution",
+            "Apply loops to iterate over sequences like range() and strings"
+          ],
+          "content": {
+            "introduction": "Great progress on syntax and data types! Now we'll add decision-making and repetition\u2014control flow\u2014to make programs dynamic and automate tasks. Conditionals (if statements) let code branch based on truth, while loops repeat actions efficiently. This matters because real programs react to data: check user input, process lists, avoid infinite repetition.\n\nBuilding directly on variables/types, imagine loops as conveyor belts processing items (data), conditionals as quality control gates. Mastering these unlocks automation, like scanning files or validating forms, turning static scripts into intelligent tools.",
+            "lesson_overview": [
+              "Conditional statements: if, elif, else for branching",
+              "Loops: for precise iteration, while for conditions",
+              "Breaking down flow control with real-world logic",
+              "You'll understand and implement decision-repetition patterns"
+            ],
+            "core_concepts": [
+              {
+                "title": "Conditional Statements (if-elif-else)",
+                "explanation": "if checks a boolean expression: if age >= 18: print('Adult'). Colon starts block, indented body executes if True. else handles False: else: print('Minor'). elif chains multiples: elif age < 13: print('Child').\n\nWhy? Programs need logic\u2014conditionals model real decisions like 'if raining, take umbrella'. Truthiness: non-empty/non-zero is True. Comparisons: ==, !=, >, <, >=, <=, in (membership).\n\nHow: Evaluates sequentially; first True branch runs, skips rest. No parentheses around conditions (unlike JS). Builds on bool from last lesson.",
+                "code_example": "score = 85\nif score >= 90:\n    print('A')\nelif score >= 80:\n    print('B')\nelse:\n    print('C')"
+              },
+              {
+                "title": "For Loops: Iterating Sequences",
+                "explanation": "for item in sequence: processes each. Sequences: strings ('abc' \u2192 a,b,c), range(5) \u2192 0-4, lists (next lesson). Why for? Precise repetition without manual counters.\n\nrange(start, stop, step) generates numbers efficiently (memory-friendly). Connects to strings: for char in 'Python':. Indentation defines loop body.\n\nEnumeration: for i, val in enumerate(['a','b']): gets index/value pairs.",
+                "code_example": "for i in range(3):\n    print(i)  # 0 1 2\n\nfor char in 'hi':\n    print(char)  # h i"
+              },
+              {
+                "title": "While Loops and Loop Control",
+                "explanation": "while condition: runs until False. Use for unknown iterations: count = 0; while count < 5: print(count); count +=1.\n\nControl: break exits early, continue skips iteration, else runs if no break (rare). Why while? Handles user input loops, sentinels.\n\nPitfall link: Infinite loops (forget increment)\u2014use Ctrl+C. Builds on conditionals for dynamic stops.",
+                "code_example": "count = 0\nwhile count < 3:\n    print(count)\n    count += 1\n    if count == 2:\n        break"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Basic if: age = 20; if age >= 18: print('Vote!'). Why? Tests bool from comparison.",
+              "Step 2: Add else/elif for grades: score=75; if score>=90: 'A' elif>=80:'B' else:'C'. See branching.",
+              "Step 3: For loop over range(5): print squares (i**2). Connects math expressions.",
+              "Step 4: While guessing game: secret=7; guess=0; while guess != secret: guess=int(input()). Full flow integration.",
+              "Step 5: Add break/continue: in loop, skip evens (if i%2==0: continue), break at 10. Test: python script.py."
+            ],
+            "practical_examples": [
+              {
+                "description": "Grade Calculator: Processes score input, outputs letter grade",
+                "code": "score = int(input('Enter score (0-100): '))\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\nprint(f'Grade: {grade}')",
+                "explanation": "input() reads string, int() converts (builds on types). Conditionals chain for ranges. Handles real input validation basics. Run: enter 85 \u2192 'B'. Why each part? input for interactivity, elif efficiency (stops at first match)."
+              },
+              {
+                "description": "Multiplication Table Printer using nested loops",
+                "code": "num = 5\nfor i in range(1, 11):\n    print(f'{num} x {i} = {num * i}')",
+                "explanation": "Outer print structures, inner range(1,11) iterates multipliers. f-string formats table. Demonstrates nesting: each i runs full line. Output: neat 5x table. Extend to user num=input()."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: == vs = in conditions (if x=5 assigns, always True). Why? = assigns, == compares.",
+              "Mistake 2: Off-by-one in range(5) expecting 1-5 (gives 0-4). Why? range exclusive end.",
+              "Mistake 3: Infinite while (no increment). Why? Condition never falsifies\u2014add counters."
+            ],
+            "mental_model": "Control flow is like a flowchart: conditionals are diamonds (yes/no paths), loops are circles with arrows back (repeat until exit). Data flows through pipes; decisions divert, loops cycle.",
+            "summary": "We explored if-elif-else for decisions, for loops for known iterations (range/strings), while for conditional repeats (with break/continue). These structures let programs adapt and automate based on prior data types/variables. You now grasp how Python orchestrates logic flow.",
+            "further_thinking": [
+              "Why use elif chains over nested ifs?",
+              "Compare for vs while: when each shines with examples.",
+              "Design a loop printing even numbers 0-20, skipping multiples of 10."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "153c650f-f4dd-41a2-a093-3414ebdb5280",
+              "question": "What does range(3) produce?",
+              "options": [
+                "[0,1,2]",
+                "[1,2,3]",
+                "[0,1,2,3]",
+                "3"
+              ],
+              "correct_answer": "[0,1,2]",
+              "difficulty": "easy",
+              "bloom_level": "Understand",
+              "explanation": "range(n) yields 0 to n-1, exclusive end for flexible iteration."
+            },
+            {
+              "question_id": "f884bf21-9d6f-434a-ae55-a881036848fb",
+              "question": "Which exits a loop immediately?",
+              "options": [
+                "continue",
+                "pass",
+                "break",
+                "return"
+              ],
+              "correct_answer": "break",
+              "difficulty": "medium",
+              "bloom_level": "Understand",
+              "explanation": "break terminates the entire loop; continue skips to next iteration."
+            },
+            {
+              "question_id": "ccaec680-a390-4249-8886-f1e24f5a611a",
+              "question": "In 'if x == 5:', what happens with single = ?",
+              "options": [
+                "SyntaxError",
+                "Always True",
+                "Assigns and crashes",
+                "Compares correctly"
+              ],
+              "correct_answer": "Always True",
+              "difficulty": "hard",
+              "bloom_level": "Understand",
+              "explanation": "if x = 5 assigns 5 to x (succeeds), condition treats assignment as True\u2014classic bug."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        }
+      ]
+    },
+    {
+      "module_id": "7334598d-39af-4932-aa1a-06ccfcb3c86d",
+      "module_title": "Module 2: Functions and Data Structures",
+      "module_description": "Building on control flow, this module introduces reusable code (functions) and collections (lists/tuples). These enable modular, scalable programs\u2014key for real applications like data analysis or automation scripts.",
+      "lessons": [
+        {
+          "lesson_id": "b3bb1307-ad15-4469-9754-5227e76807bc",
+          "lesson_title": "Functions: Reusability and Modularity",
+          "bloom_level": "Apply",
+          "learning_outcomes": [
+            "Define functions with parameters, defaults, return values",
+            "Apply functions to solve repetitive problems with scope awareness"
+          ],
+          "content": {
+            "introduction": "With control flow under your belt, functions let you package logic for reuse\u2014DRY principle (Don't Repeat Yourself). From prior lessons' print loops, imagine extracting grade logic into a callable. Why? Cuts code duplication, eases maintenance, enables libraries.\n\nFunctions introduce scope (local vs global), parameters (inputs), returns (outputs). This progression from linear scripts to modular code mirrors professional development, powering everything from scripts to frameworks like Django.",
+            "lesson_overview": [
+              "Defining functions: def, parameters, return",
+              "Scope, defaults, *args/**kwargs flexibility",
+              "Applying functions in real programs",
+              "You'll write and call custom functions confidently"
+            ],
+            "core_concepts": [
+              {
+                "title": "Defining and Calling Functions",
+                "explanation": "def name(params): body; return value. Call: result = name(arg). No params? def greet():. Why? Abstracts repetition\u2014call once, use everywhere.\n\nParams pass data; args fill them positionally/keyword (greet(name='Bob')). return exits early, sends back value (implicit None otherwise).\n\nBuilds on indentation: function body indented. Docstrings (\"\"\"desc\"\"\") self-document.",
+                "code_example": "def add(a, b):\n    return a + b\n\nresult = add(3, 5)\nprint(result)  # 8"
+              },
+              {
+                "title": "Parameters, Defaults, and Scope",
+                "explanation": "Defaults: def greet(name='World'):. *args packs extras tuple, **kwargs dict. Scope: local vars die post-function; global keyword shares (rare).\n\nLEGB rule: Local, Enclosing, Global, Built-in resolution. Why? Prevents namespace pollution.\n\nApplication: From loops, refactor into functions for testability.",
+                "code_example": "def multiply(x, y=2):\n    return x * y\n\nprint(multiply(10))  # 20\nprint(multiply(10, 3))  # 30"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: def hello(): print('Hi!'). Call hello(). Basic definition.",
+              "Step 2: Add param: def hello(name): print(f'Hi {name}!'). Call hello('Python').",
+              "Step 3: Return: def square(n): return n**2. Use: print(square(4)) #16.",
+              "Step 4: Default + call prior grade logic: def get_grade(score, min_a=90): ...",
+              "Step 5: Scope test: x=1; def func(): x=2; print(x) inside/out. Verify locals."
+            ],
+            "practical_examples": [
+              {
+                "description": "Reusable Calculator Functions",
+                "code": "def calculator(op, a, b):\n    if op == '+': return a + b\n    elif op == '-': return a - b\n    elif op == '*': return a * b\n    else: return 'Invalid'\n\nprint(calculator('+', 10, 5))  # 15",
+                "explanation": "Parameters for flexibility; if from Module 1. Single function handles ops via control flow. Scalable: add / later. Why? Encapsulates logic."
+              },
+              {
+                "description": "Factorial via Recursion (intro)",
+                "code": "def factorial(n):\n    if n <= 1: return 1\n    return n * factorial(n-1)\n\nprint(factorial(5))  # 120",
+                "explanation": "Self-calls (recursion) with base case. Builds on return. Stack depth limits large n."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Forgetting return\u2014prints None. Why? Functions return None implicitly.",
+              "Mistake 2: Modifying globals unintentionally (no global keyword). Why? Locals shadow.",
+              "Mistake 3: Mutable default args (def f(list=[])) shared across calls. Why? Evaluated once."
+            ],
+            "mental_model": "Functions are vending machines: insert args (params), get product (return). Inside is isolated factory (local scope)\u2014doesn't affect outside inventory.",
+            "summary": "Functions via def enable reusable code with params/defaults/*args, proper returns, and LEGB scoping. Applied to calculators, they modularize prior lessons' logic. You can now build libraries of tools.",
+            "further_thinking": [
+              "Refactor a prior loop into a function\u2014what changes?",
+              "Why avoid globals? Design a counter without.",
+              "Write func averaging 3 nums with *args."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "804b4841-a41c-40d8-9b49-96acc41ebe85",
+              "question": "What does a function return without explicit return?",
+              "options": [
+                "0",
+                "None",
+                "True",
+                "Error"
+              ],
+              "correct_answer": "None",
+              "difficulty": "easy",
+              "bloom_level": "Apply",
+              "explanation": "Implicit None ensures functions always return something usable."
+            },
+            {
+              "question_id": "78e355be-c7af-4a30-812c-febfffa4f9ef",
+              "question": "Scope resolution order: Local first, then?",
+              "options": [
+                "Global, Enclosing, Built-in",
+                "Built-in, Global",
+                "Enclosing only",
+                "All global"
+              ],
+              "correct_answer": "Global, Enclosing, Built-in",
+              "difficulty": "medium",
+              "bloom_level": "Apply",
+              "explanation": "LEGB: Local \u2192 Enclosing (nested funcs) \u2192 Global \u2192 Built-in prevents conflicts."
+            },
+            {
+              "question_id": "473b002e-a8f4-4685-86f5-70b7b6c4f0d9",
+              "question": "Mutable default param issue?",
+              "options": [
+                "Changes on call",
+                "Shared across calls",
+                "TypeError",
+                "No issue"
+              ],
+              "correct_answer": "Shared across calls",
+              "difficulty": "hard",
+              "bloom_level": "Apply",
+              "explanation": "Defaults evaluated once at def time\u2014use None instead: if list is None: list=[]."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        },
+        {
+          "lesson_id": "c112af54-3a97-4833-a7f3-9bac33d5e4c3",
+          "lesson_title": "Lists and Tuples: Working with Collections",
+          "bloom_level": "Analyze",
+          "learning_outcomes": [
+            "Analyze differences: mutable lists vs immutable tuples",
+            "Evaluate collection methods for data manipulation"
+          ],
+          "content": {
+            "introduction": "Functions set up modularity; now collections store multiple items efficiently. Lists [1,2,3] (mutable) and tuples (1,2,3) (immutable) build on scalars, enabling batch processing like user lists or configs.\n\nAnalyzing these reveals Python's balance: flexibility (lists) with safety (tuples). Crucial for data science, APIs\u2014most real data is collections.",
+            "lesson_overview": [
+              "Lists: creation, indexing, methods (append, pop)",
+              "Tuples: immutability, unpacking",
+              "Analysis: when to use each, with loops/functions",
+              "You'll dissect and manipulate collections expertly"
+            ],
+            "core_concepts": [
+              {
+                "title": "Lists: Mutable Sequences",
+                "explanation": "lists = [1, 'a', True]. Index: lst (0-based), slice lst[1:3], negative -1 last. Methods: .append(item), .pop() removes/returns last, .remove(value), len().\n\nWhy mutable? Dynamic growth: shopping_list.append('milk'). Loops iterate: for item in lst:.\n\nComprehensions: [x**2 for x in range(5)] \u2192 [0,1,4,9,16]. Efficient creation.",
+                "code_example": "fruits = ['apple', 'banana']\nfruits.append('cherry')\nprint(fruits[1])  # banana\nprint(len(fruits))  # 3"
+              },
+              {
+                "title": "Tuples: Immutable and Unpacking",
+                "explanation": "tup = (1,2,3). Can't change: tup=4 errors. Why? Hashable (dict keys), faster, thread-safe.\n\nUnpacking: a,b,c = (1,2,3). Functions return multiples: def divmod(x,y): return x//y, x%y.\n\nCompare lists: tuples for fixed data (coords), lists for modifiable.",
+                "code_example": "point = (10, 20)\nx, y = point\nprint(x, y)  # 10 20"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: lst=[1,2,3]; print(lst, lst[-1]). Indexing basics.",
+              "Step 2: lst.append(4); lst.pop(); print(lst). Mutability.",
+              "Step 3: for i in lst: print(i). Iteration with prior loops.",
+              "Step 4: squares = [x*x for x in lst]. Comprehension analysis.",
+              "Step 5: tup=(5,6); try tup=7 (fails). Contrast lists."
+            ],
+            "practical_examples": [
+              {
+                "description": "Integrates input/loops/functions. .append grows dynamically. len() for summary.",
+                "code": "cart = []\nwhile True:\n    item = input('Item (or quit): ')\n    if item == 'quit': break\n    cart.append(item)\nprint('Cart:', cart)\nprint('Total items:', len(cart))",
+                "explanation": "Explanation"
+              },
+              {
+                "description": "Tuple Unpacking in Coordinates",
+                "code": "def get_coords():\n    return (100, 200)\n\nx, y = get_coords()\nprint(f'Position: ({x}, {y})')",
+                "explanation": "Returns tuple; unpacking assigns. Immutable safe for returns."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: lst[10] on short list \u2192 IndexError. Why? Bounds check.",
+              "Mistake 2: Modifying tuple \u2192 TypeError. Why? Designed immutable.",
+              "Mistake 3: lst[-1]=new shadows, doesn't replace. Use pop/assign."
+            ],
+            "mental_model": "Lists are stretchy rubber bands holding items (add/remove); tuples are concrete blocks\u2014fixed shape, stackable safely.",
+            "summary": "Lists offer mutable indexing/methods for dynamic data; tuples provide immutability/unpacking for constants/returns. Analyze: lists for growth, tuples for integrity. Combined with loops/functions, handle real datasets.",
+            "further_thinking": [
+              "Lists vs tuples pros/cons table?",
+              "Rewrite list comp as for loop.",
+              "Design func returning unpacked tuple."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "67005647-4504-4a07-875a-4f2cc31165b3",
+              "question": "Which is mutable?",
+              "options": [
+                "Tuples",
+                "Lists",
+                "Strings",
+                "Both lists/tuples"
+              ],
+              "correct_answer": "Lists",
+              "difficulty": "easy",
+              "bloom_level": "Analyze",
+              "explanation": "Lists changeable post-creation; others immutable for safety."
+            },
+            {
+              "question_id": "40acbf10-8697-4225-b5c8-072b738cb696",
+              "question": "lst[-1] accesses?",
+              "options": [
+                "First",
+                "Last",
+                "Second",
+                "Error"
+              ],
+              "correct_answer": "Last",
+              "difficulty": "medium",
+              "bloom_level": "Analyze",
+              "explanation": "Negative indices count from end: -1 last, -2 second-last."
+            },
+            {
+              "question_id": "fa8ebc4c-4185-400a-b4e4-ffc3b9a9cc38",
+              "question": "Best for dict keys?",
+              "options": [
+                "Lists",
+                "Tuples",
+                "Both",
+                "Neither"
+              ],
+              "correct_answer": "Tuples",
+              "difficulty": "hard",
+              "bloom_level": "Analyze",
+              "explanation": "Hashable requirement; mutable lists can't be keys."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-01-24T15:24:03.840343",
+  "version": 1
+}

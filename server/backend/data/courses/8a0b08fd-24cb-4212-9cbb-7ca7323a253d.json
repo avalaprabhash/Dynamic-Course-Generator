@@ -1,0 +1,457 @@
+{
+  "id": "8a0b08fd-24cb-4212-9cbb-7ca7323a253d",
+  "user_id": "4f5ba648-c8cd-4ea8-bdeb-cd28ecca0733",
+  "title": "Machine Learning Fundamentals: A Beginner's Guide",
+  "topic": "Machine Learning Fundamentals",
+  "overview": "In this course, you'll master the essential concepts of machine learning, from understanding what it is and why it powers modern AI to exploring its core types and the basic process of building simple models. By the end, you'll be able to explain machine learning fundamentals confidently, identify different types of ML problems, and follow a basic workflow to apply simple algorithms like linear regression using Python. This foundation will prepare you to tackle real-world data problems with clarity and confidence.",
+  "duration_hours": 1,
+  "difficulty": "Beginner",
+  "confirmed": true,
+  "modules": [
+    {
+      "module_id": "5c8980a6-dd76-4be5-9776-f6608521257b",
+      "module_title": "Module 1: Foundations of Machine Learning",
+      "module_description": "This module introduces the core ideas behind machine learning, building your understanding from the ground up. You'll learn what machine learning is, how it differs from traditional programming, and the three main types, giving you a solid base for all future ML learning.",
+      "lessons": [
+        {
+          "lesson_id": "3ac3edbc-ef03-466b-a9a5-510b69a99cd8",
+          "lesson_title": "What is Machine Learning?",
+          "bloom_level": "Remember",
+          "learning_outcomes": [
+            "Define machine learning and distinguish it from traditional programming",
+            "Recall the three main types of machine learning: supervised, unsupervised, and reinforcement"
+          ],
+          "content": {
+            "introduction": "Welcome to your first lesson in Machine Learning Fundamentals! If you've ever wondered how computers can recognize your face in photos, recommend movies on Netflix, or even predict the weather, you're in the right place. Machine learning is the magic behind these everyday technologies, and it starts with a simple idea: teaching computers to learn from examples rather than following strict rules we write. \n\nThis lesson assumes you have no prior knowledge of ML, which is perfect because we'll start from first principles. Understanding what machine learning is\u2014and why it's different from regular programming\u2014matters because it unlocks a world of possibilities. Instead of programming every detail, you prepare data and let the computer find patterns, making it powerful for solving problems with tons of information, like spam detection or self-driving cars. By the end, you'll feel confident explaining ML to a friend.",
+            "lesson_overview": [
+              "The definition of machine learning and how it works",
+              "Machine learning vs. traditional programming with clear examples",
+              "The three main types of machine learning",
+              "What you'll be able to do after this lesson: Explain ML basics to anyone"
+            ],
+            "core_concepts": [
+              {
+                "title": "What is Machine Learning?",
+                "explanation": "Machine learning is a way to teach computers to make decisions or predictions by learning patterns from data, without being explicitly programmed for every scenario. Imagine you're teaching a child to identify animals: you don't list every possible animal with rules like 'if it has fur and barks, it's a dog.' Instead, you show lots of pictures of dogs and cats, and the child learns to spot the differences by seeing examples. Similarly, in ML, we feed the computer examples (data) with correct answers (labels), and it figures out the patterns itself.\n\nWhy does this matter? Traditional programming works great for simple, predictable tasks, but real-world problems like recognizing handwriting or predicting house prices involve too much complexity for hand-written rules. ML shines here because it generalizes from examples\u2014if you've seen 1,000 cat photos, it can likely identify a new one it hasn't seen. The 'how' involves algorithms that adjust internal settings based on errors, getting better over time, much like practicing a skill.\n\nThis core idea powers everything from voice assistants to medical diagnosis, and it's accessible even to beginners because modern tools like Python libraries handle the math behind the scenes.",
+                "code_example": null
+              },
+              {
+                "title": "Types of Machine Learning",
+                "explanation": "There are three primary types of machine learning, each suited to different problems. Supervised learning is like learning with a teacher: you have input data paired with correct output labels. For example, emails marked as 'spam' or 'not spam' train a model to classify new ones. It's used for predictions like stock prices (regression) or categories like disease diagnosis (classification).\n\nUnsupervised learning has no labels\u2014it's like sorting a pile of mixed fruits without knowing their names. The algorithm finds hidden patterns, such as grouping similar customers for marketing (clustering) or simplifying data (dimensionality reduction). Reinforcement learning is like training a dog with rewards: an agent takes actions in an environment, gets rewards or penalties, and learns the best strategy, powering games like chess AI or robotics.\n\nThese types build on each other\u2014supervised is most common for beginners, but understanding all three helps you pick the right tool. They connect through data: all rely on quality examples, but differ in guidance level.",
+                "code_example": "// No code yet - we'll implement types in later lessons\nconsole.log('Types: Supervised, Unsupervised, Reinforcement');"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Identify the problem type. Ask: Do I have labeled data? (Supervised), no labels but want patterns? (Unsupervised), or sequential decisions with rewards? (Reinforcement). This sets the foundation because wrong type wastes time.",
+              "Step 2: Gather example data. For supervised, collect inputs and outputs like house sizes and prices. Explain: Data is the fuel\u2014poor data leads to poor learning, like studying wrong notes.",
+              "Step 3: Choose a simple algorithm. Start with linear regression for supervised numbers. Connection: It builds on patterns found in step 2, adjusting a line to fit data points.",
+              "Step 4: Train and test. Split data 80/20, train on most, test on rest. Complete picture: Model learns patterns, then proves it on unseen data to check real skill.",
+              "Step 5: Verify with simple checks. Plot predictions vs actual\u2014close match? Watch for memorizing training data (overfitting). Debug by simplifying data first."
+            ],
+            "practical_examples": [
+              {
+                "description": "Classifying iris flowers (supervised learning classic)",
+                "code": "// Simple pseudocode for supervised classification\nconst irisData = [[5.1, 3.5, 'setosa'], [4.9, 3.0, 'setosa']];\nfunction classify(newFlower) {\n  // Find similar examples and vote\n  return 'setosa'; // Based on nearest matches\n}\nconsole.log(classify([5.0, 3.2])); // Output: 'setosa'",
+                "explanation": "This mimics supervised learning: data has features (petal length) and labels ('setosa'). The classify function finds nearest matches, like KNN algorithm. Step-by-step: 1) Input new data, 2) Compare to training examples by distance, 3) Majority vote decides class. Why each part? Data provides patterns, comparison simulates learning, vote handles noise. Real tools like scikit-learn do this efficiently."
+              },
+              {
+                "description": "Grouping customers by spending (unsupervised clustering)",
+                "code": "// Pseudocode for unsupervised clustering\nconst customers = [[100, 2], [50, 10], [200, 1]]; // [spend, visits]\nfunction cluster() {\n  // Group similar: low-spend high-visit, high-spend low-visit\n  return [['low-high'], ['high-low']];\n}\nconsole.log(cluster());",
+                "explanation": "No labels here\u2014algorithm groups by similarity. Step 1: Measure distances between points, 2: Form clusters around centers, 3: Assign each customer. Matters because it reveals hidden segments for targeted ads. Like sorting laundry by color without names."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Confusing ML with traditional programming\u2014writing if-else for all cases instead of using data. Why? Humans can't foresee every scenario; ML generalizes from examples.",
+              "Mistake 2: Ignoring data quality, using messy unlabeled data for supervised tasks. Cause: Garbage in, garbage out\u2014model learns wrong patterns.",
+              "Mistake 3: Thinking all problems fit one type, forcing clustering on labeled data. Subtle issue: Wastes time; match type to problem for efficiency."
+            ],
+            "mental_model": "Think of machine learning like teaching a puppy tricks. Supervised is showing treats for correct sits (labeled rewards), unsupervised is letting it explore toys and group similar ones naturally, reinforcement is trial-and-error with praise or scolding for actions. The puppy learns patterns from experience, just like ML from data.",
+            "summary": "This lesson covered machine learning as computers learning patterns from data, distinct from rule-based programming, with three key types: supervised (labeled predictions), unsupervised (pattern discovery), and reinforcement (reward-based actions). You now know the fundamentals to recognize ML in daily tech. These basics connect to building models next.",
+            "further_thinking": [
+              "What everyday app uses supervised learning? Name one and explain why.",
+              "Compare supervised and unsupervised: When would you choose each for a shopping recommendation system?",
+              "Design a simple reinforcement scenario, like training a virtual robot to walk."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "e4c417b4-1dac-4569-ad72-bf62daf8c689",
+              "question": "What is machine learning?",
+              "options": [
+                "Programming computers with explicit rules",
+                "Teaching computers to learn patterns from data",
+                "Only using neural networks",
+                "Drawing pictures for AI"
+              ],
+              "correct_answer": "Teaching computers to learn patterns from data",
+              "difficulty": "easy",
+              "bloom_level": "Remember",
+              "explanation": "ML is defined as systems improving from experience/data without explicit programming, per core concepts[2][3]. Others confuse it with traditional coding or advanced subsets."
+            },
+            {
+              "question_id": "e52d3cbf-dd01-43fd-a163-2b4491b9a933",
+              "question": "Which type uses labeled data?",
+              "options": [
+                "Unsupervised",
+                "Supervised",
+                "Reinforcement only",
+                "None"
+              ],
+              "correct_answer": "Supervised",
+              "difficulty": "medium",
+              "bloom_level": "Remember",
+              "explanation": "Supervised learning pairs inputs with outputs (labels) for training, as in classification/regression[1][2]. Builds direct 'remember' knowledge of types."
+            },
+            {
+              "question_id": "9894ab21-2106-4f40-ac4e-8b14511d8def",
+              "question": "ML vs traditional programming: In ML, you provide what primarily?",
+              "options": [
+                "Detailed if-else rules",
+                "Examples and data",
+                "Hardware specs",
+                "Artist drawings"
+              ],
+              "correct_answer": "Examples and data",
+              "difficulty": "hard",
+              "bloom_level": "Remember",
+              "explanation": "Traditional programming needs rules; ML uses data examples for pattern learning, key distinction for remembering fundamentals[4][5]."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        },
+        {
+          "lesson_id": "84f7c43e-5c1c-4e66-aa9e-c31f82989ba8",
+          "lesson_title": "The Machine Learning Workflow",
+          "bloom_level": "Understand",
+          "learning_outcomes": [
+            "Describe the step-by-step ML process from data to deployment",
+            "Explain why each workflow stage matters using real-world analogies"
+          ],
+          "content": {
+            "introduction": "Great job completing the first lesson\u2014you now know what machine learning is! Building on that, this lesson dives into the workflow: the roadmap to turn raw ideas into working ML models. Think of it as a recipe for baking a cake\u2014you can't just dump ingredients; there's measuring, mixing, baking, and tasting steps. \n\nWhy does the workflow matter? Without it, you'd waste time on bad data or untested models, like baking without preheating the oven. For beginners, mastering this process builds confidence to apply ML to problems like predicting sales or detecting fraud. We'll use simple Python examples to make it concrete.",
+            "lesson_overview": [
+              "Overview of the ML pipeline stages",
+              "Deep dive into data preparation and model training",
+              "Evaluating and improving models",
+              "What you'll be able to do: Map any ML project to this workflow"
+            ],
+            "core_concepts": [
+              {
+                "title": "The ML Pipeline Stages",
+                "explanation": "The ML workflow is a sequence: 1) Collect data, 2) Preprocess, 3) Choose/train model, 4) Evaluate, 5) Tune/deploy. Data collection gathers relevant examples, like photos for a fruit classifier. Why first? No data, no learning\u2014it's the foundation, like ingredients for cooking.\n\nPreprocessing cleans data: handle missing values, scale numbers (e.g., house sizes from 1000-5000 shouldn't dwarf tiny features). Analogy: Washing veggies before cooking. Training fits the model to data, adjusting parameters to minimize errors. Evaluation tests on unseen data to check generalization, not memorization.\n\nThis pipeline ensures reliable models; skipping steps leads to failures in production.",
+                "code_example": "// Simple data preprocessing example (Python-like)\nconst data = [null, 2, 3, null, 5];\nconst cleaned = data.map(x => x || 0); // Fill nulls\nconsole.log(cleaned); // [0,2,3,0,5]"
+              },
+              {
+                "title": "Training and Evaluation",
+                "explanation": "Training uses most data to teach the model patterns, like studying for a test. Evaluation splits off test data to grade honestly\u2014train/test split (80/20). Metrics like accuracy (correct predictions %) measure success. Why? Models can 'cheat' by memorizing training data (overfitting), failing on new info.\n\nBuilds on prior: Supervised needs labels for error calculation. Analogy: Practice exam (train) vs final exam (test). Tuning adjusts settings (hyperparameters) via cross-validation, testing multiple splits for robustness.\n\nConnects to types: All workflows adapt, but supervised emphasizes labels.",
+                "code_example": null
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Collect data. Find or create dataset, e.g., house prices CSV. Why? Relevant data captures real patterns, like using actual sales not guesses.",
+              "Step 2: Preprocess. Clean missing values, normalize features (scale to 0-1). Connection: Raw data confuses models; cleaning makes patterns clear.",
+              "Step 3: Split data. 80% train, 20% test. Handle by shuffling randomly\u2014prevents bias from order.",
+              "Step 4: Train model. Pick simple like linear regression, fit to train data. Full picture: Model learns line/curve matching points.",
+              "Step 5: Evaluate and iterate. Compute error on test (e.g., mean squared error low?). Watch overfitting: If train error low but test high, simplify model."
+            ],
+            "practical_examples": [
+              {
+                "description": "Predicting house prices (regression workflow)",
+                "code": "// Simple linear regression pseudocode (inspired by scikit-learn)\nconst houses = [[1000, 200000], [1500, 300000]]; // [size, price]\nfunction train(data) {\n  // Fit line: price = slope * size + intercept\n  const slope = 200; // Learned from data\n  return slope;\n}\nfunction predict(model, size) {\n  return model * size + 50000;\n}\nconsole.log(predict(train(houses), 1200)); // ~290k",
+                "explanation": "Walkthrough: 1) Data: size-price pairs. 2) Train computes slope from averages. 3) Predict applies formula. Why? Linear assumes straight pattern\u2014simple for beginners. Each part: Data teaches, model generalizes, predict applies."
+              },
+              {
+                "description": "Spam detection preprocessing",
+                "code": "// Cleaning email data\nconst emails = ['Buy now!!', null, 'Meeting?'];\nfunction preprocess(texts) {\n  return texts.map(t => (t || '').toLowerCase().replace(/[^a-z]/g, ''));\n}\nconsole.log(preprocess(emails)); // ['buy now', '', 'meeting']",
+                "explanation": "Step 1: Handle nulls, 2: Lowercase/normalize. Matters for consistent patterns (e.g., 'Buy' == 'buy'). Builds to training classifiers on cleaned text."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: No train/test split\u2014testing on training data inflates accuracy. Why? Hides overfitting; model memorizes, doesn't learn.",
+              "Mistake 2: Skipping preprocessing, letting outliers dominate. Cause: Models sensitive to scale; big numbers overshadow small.",
+              "Mistake 3: Over-tuning on test data, using it like training. Subtle: Leaks info, poor real-world performance."
+            ],
+            "mental_model": "The ML workflow is like making a smoothie: Collect fruits (data), wash/chop (preprocess), blend (train), taste a sip (evaluate), adjust recipe (tune). Spill it all in without steps? Messy inedible goop.",
+            "summary": "The ML workflow\u2014collect, preprocess, train, evaluate, tune\u2014ensures models learn reliable patterns from data. Each stage builds understanding of why clean data and honest testing prevent common failures. Connects back: Now you can apply ML types practically.",
+            "further_thinking": [
+              "Why might preprocessing take 80% of time? Give an analogy.",
+              "Explain overfitting using the workflow steps.",
+              "Adapt the workflow for an unsupervised clustering project like customer segments."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "d3f6097c-a2e3-4c21-b829-f31ad371c5dd",
+              "question": "What is the first stage of the ML workflow?",
+              "options": [
+                "Train model",
+                "Collect data",
+                "Evaluate",
+                "Tune"
+              ],
+              "correct_answer": "Collect data",
+              "difficulty": "easy",
+              "bloom_level": "Understand",
+              "explanation": "Data collection is initial, as no learning without examples[3][4]. Understands sequence."
+            },
+            {
+              "question_id": "abe313a4-8020-4ce5-85da-1534dd4c1555",
+              "question": "Why split data into train/test?",
+              "options": [
+                "Save time",
+                "Prevent overfitting by honest evaluation",
+                "Only for large datasets",
+                "Increase data size"
+              ],
+              "correct_answer": "Prevent overfitting by honest evaluation",
+              "difficulty": "medium",
+              "bloom_level": "Understand",
+              "explanation": "Test set checks generalization, not memorization[2][5]. Grasps 'why' behind step."
+            },
+            {
+              "question_id": "05b76413-a864-4b29-96cb-ffe1655e89fc",
+              "question": "What does preprocessing primarily fix?",
+              "options": [
+                "Model choice",
+                "Missing values and scaling",
+                "Deployment",
+                "Hyperparameters"
+              ],
+              "correct_answer": "Missing values and scaling",
+              "difficulty": "hard",
+              "bloom_level": "Understand",
+              "explanation": "Prepares data for fair learning, preventing bias from inconsistencies[3][4]. Analyzes purpose."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        }
+      ]
+    },
+    {
+      "module_id": "76101aa0-807e-4fb8-88a5-39d4f276e12b",
+      "module_title": "Module 2: Core Algorithms and Applications",
+      "module_description": "Now that you understand ML basics and workflow, this module introduces simple algorithms and hands-on application. You'll apply supervised techniques like regression and classification, building confidence to solve beginner problems.",
+      "lessons": [
+        {
+          "lesson_id": "21ce6424-d56f-409d-906c-32c0b8b0d13c",
+          "lesson_title": "Supervised Learning: Regression Basics",
+          "bloom_level": "Apply",
+          "learning_outcomes": [
+            "Implement a simple linear regression model step-by-step",
+            "Apply the ML workflow to predict continuous values like prices"
+          ],
+          "content": {
+            "introduction": "Great job so far! Now let's learn regression. Regression is a type of supervised learning. It predicts numbers, like house prices or temperatures. We'll use a simple tool called scikit-learn in Python to build your first model. This builds on what you know about the ML workflow.\n\nWhy learn this? Most real-world problems predict numbers, like sales or weather. It's easy with Python - you'll see your model predict in just minutes!",
+            "lesson_overview": [
+              "What is regression and linear regression",
+              "The easy step-by-step workflow",
+              "How to check if your model is good",
+              "Build a simple house price predictor"
+            ],
+            "core_concepts": [
+              {
+                "title": "What is Linear Regression?",
+                "explanation": "Linear regression predicts a number. It draws a straight line through your data points. The line follows y = mx + b. Here, m is the slope (how steep), x is your input (like house size), y is the output (price), and b is where the line starts on the y-axis.\n\nThe goal: Make the line as close as possible to all points. It does this by reducing the distance (errors) between points and the line.\n\nThink of it like this: You have dots on paper showing height and weight. Draw the best straight line to guess weight from height.\n\nReal uses: Predict house price from size. Predict temperature from cricket chirps. scikit-learn does the hard math for you.",
+                "code_example": "from sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(X, y)  # X is input, y is output numbers"
+              },
+              {
+                "title": "The ML Workflow for Regression",
+                "explanation": "Use the same steps you learned: 1) Get and clean data. 2) Split into train and test. 3) Train (fit) model on train data. 4) Predict on test data. 5) Check error.\n\nTo check: Use MSE (Mean Squared Error). It's the average of squared differences between real and predicted numbers. Low MSE = good model.\n\nExample: If real price is 100, predict 105, error squared is 25. Average over all predictions.\n\nCompare train MSE and test MSE:\n- Both high: Model too simple (underfit).\n- Train low, test high: Overfit (memorized train data).\n- Both low: Perfect!",
+                "code_example": null
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Get data. Use a simple list: house sizes = [1, 1.5, 2] (in 1000 sq ft), prices = [200, 300, 400] (in $1000s). No cleaning needed for this easy start.",
+              "Step 2: Split data. Use 80% for training, 20% for testing. Python code: from sklearn.model_selection import train_test_split; X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)",
+              "Step 3: Make and train model. from sklearn.linear_model import LinearRegression; model = LinearRegression(); model.fit(X_train, y_train)",
+              "Step 4: Predict and check. y_pred = model.predict(X_test); from sklearn.metrics import mean_squared_error; mse = mean_squared_error(y_test, y_pred); print(mse)  # Hope for low number!",
+              "Step 5: Try it! Predict price for size 1.2: model.predict([[1.2]])  # Should be around 260"
+            ],
+            "practical_examples": [
+              {
+                "description": "House Price Predictor",
+                "code": "X = [[1], [1.5], [2]]  # sizes\ny = [200, 300, 400]   # prices\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(X, y)\nprint(model.predict([[1.2]]))  # About 260",
+                "explanation": "See? Three data points. Model learns the line. Predicts new house size perfectly for straight data. This is your first working model!"
+              },
+              {
+                "description": "Check with MSE",
+                "code": "y_true = [200, 300]\ny_pred = [210, 290]\nerror1 = (200-210)**2  # 100\nerror2 = (300-290)**2  # 100\nmse = (100 + 100) / 2  # 100 - okay, not too bad",
+                "explanation": "Step by step: Subtract predict from real. Square it (makes all positive, big errors hurt more). Average them. Low number means good predictions."
+              },
+              {
+                "description": "Cricket Chirps Predict Temperature",
+                "code": null,
+                "explanation": "Real example: More chirps = higher temperature. Data: chirps per minute vs temp. Plot dots (upward line). Fit model. Predict: 50 chirps = 70\u00b0F. Fun and real!"
+              }
+            ],
+            "common_pitfalls": [
+              "Pitfall 1: Forgetting to split train/test. Fix: Always split so model doesn't cheat by seeing answers.",
+              "Pitfall 2: Data in wrong scales (size 1000s, price millions). Fix: Divide big numbers to make similar (size/1000).",
+              "Pitfall 3: Too few data points (under 10). Fix: Need 20+ for stable line."
+            ],
+            "mental_model": "Imagine pins on a board with heights and weights. Stretch a rubber band tightest around them - that's your prediction line for new pins.",
+            "summary": "You now know regression: Predict numbers with a straight line y=mx+b. Follow workflow: prep, split, fit, predict, check MSE. Practice with house prices to apply it!",
+            "further_thinking": [
+              "Try: Predict your height from shoe size. What data do you need?",
+              "Why square errors in MSE? (Hint: Punishes big mistakes.)",
+              "What if data curves? (Next: Add x^2 feature.)"
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "1390f9a2-5f25-4e6b-9fef-991e1623e8b8",
+              "question": "What does linear regression predict?",
+              "options": [
+                "Categories like cat or dog",
+                "Numbers like prices",
+                "Groups of data",
+                "Steps to take"
+              ],
+              "correct_answer": "Numbers like prices",
+              "difficulty": "easy",
+              "bloom_level": "Apply",
+              "explanation": "Regression predicts continuous numbers, not categories[1][3]."
+            },
+            {
+              "question_id": "fe9a3143-33cd-4e77-9b8c-b1313db9bf9a",
+              "question": "What is a good way to check regression?",
+              "options": [
+                "Accuracy percent",
+                "MSE (average squared error)",
+                "Number of groups",
+                "Speed of training"
+              ],
+              "correct_answer": "MSE (average squared error)",
+              "difficulty": "easy",
+              "bloom_level": "Apply",
+              "explanation": "MSE shows how far predictions are from real values[3][4]. Lower is better."
+            },
+            {
+              "question_id": "34a30be7-dfcc-4c3f-a2f3-20b00e073965",
+              "question": "When do you train (fit) the model?",
+              "options": [
+                "After splitting train/test data",
+                "Before getting data",
+                "Only on test data",
+                "At the very end"
+              ],
+              "correct_answer": "After splitting train/test data",
+              "difficulty": "easy",
+              "bloom_level": "Apply",
+              "explanation": "Split first, then fit on train data, predict on test[4]."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        },
+        {
+          "lesson_id": "0eb58cc3-c897-4efe-b4b5-a96f8513fd2b",
+          "lesson_title": "Classification and Model Evaluation",
+          "bloom_level": "Analyze",
+          "learning_outcomes": [
+            "Compare regression vs classification models",
+            "Analyze model performance using confusion matrix and accuracy"
+          ],
+          "content": {
+            "introduction": "You're applying ML like a pro\u2014regression was your first win! This lesson analyzes classification (predicting categories like 'spam/not') and evaluation tools to judge models critically. Building on supervised, we'll dissect why one model beats another. \n\nEvaluation matters: A 90% accurate model sounds great, but if it misclassifies critical cases (e.g., cancer detection), it's useless. You'll learn to analyze trade-offs, essential for real apps like email filters or image recognition.",
+            "lesson_overview": [
+              "Classification basics and simple algorithms like KNN",
+              "Key metrics: accuracy, confusion matrix",
+              "Analyzing overfitting and model choice",
+              "What you'll analyze: Pros/cons of models on datasets"
+            ],
+            "core_concepts": [
+              {
+                "title": "Classification Fundamentals",
+                "explanation": "Classification predicts categories (classes) like 'cat/dog'. Algorithms: KNN finds K nearest training examples, votes majority class. Why nearest? Similar inputs likely same output\u2014intuitive like 'birds of a feather.'\n\nDiffers from regression: Outputs discrete labels, not numbers. Workflow same, but metrics differ. Analogy: Sorting mail into bins vs measuring package weights.\n\nKNN simple, no training phase\u2014just store data, compute distances at predict time.",
+                "code_example": "// KNN pseudocode (K=3)\nfunction knn(query, data, k=3) {\n  const dists = data.map(p => distance(query, p));\n  const nearest = dists.sort()[0:k];\n  return majorityVote(nearest.labels);\n}"
+              },
+              {
+                "title": "Evaluating Classifiers",
+                "explanation": "Accuracy = correct predictions / total. But analyze deeper: Confusion matrix table shows true positives (TP: spam correct), false negatives (FN: spam missed), etc. Precision=TP/(TP+FP), Recall=TP/(TP+FN)\u2014trade-offs for imbalanced data.\n\nWhy analyze? High accuracy can hide biases (90% non-spam = easy wins). Compare models: KNN vs logistic regression (line separator). Overfitting: Complex models memorize.\n\nBuilds regression eval: MSE -> accuracy, but matrices reveal relationships.",
+                "code_example": null
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Prep labeled data, e.g., iris features -> species. Scale features. Why? Distances fair.",
+              "Step 2: Split/train. For KNN, 'train' = store data. Connection: No params to fit.",
+              "Step 3: Predict test, build confusion matrix: Rows actual, cols predicted.",
+              "Step 4: Compute metrics. Low recall? Adjust threshold. Full view: Balance precision/recall.",
+              "Step 5: Compare algos. Try KNN vs dummy (random). Analyze: Which generalizes?"
+            ],
+            "practical_examples": [
+              {
+                "description": "Iris classification with KNN",
+                "code": "// Simple KNN for iris (2 features, K=3)\nconst irisData = [[[5.1,3.5],'setosa'], [[4.9,3.0],'setosa'], [[7.0,3.2],'versicolor']];\nfunction distance(p1, p2) { return Math.hypot(p1-p2, p1[1]-p2[1]); }\nfunction knn(query, data, k=3) {\n  const dists = data.map((p,i) => ({d: distance(query, p), label: p[1], i}));\n  const nearest = dists.sort((a,b)=>a.d-b.d).slice(0,k);\n  const votes = {}; nearest.forEach(n => votes[n.label] = (votes[n.label]||0)+1);\n  return Object.entries(votes).reduce((a,b)=> b[1]>a[1]?b:a);\n}\nconsole.log(knn([5.0,3.4], irisData)); // 'setosa'",
+                "explanation": "Breakdown: 1) Distance euclidean (pythagoras), 2) Sort nearest, 3) Vote labels. Why? Similarity voting mimics human intuition. Test: New point near setosas -> setosa."
+              },
+              {
+                "description": "Confusion matrix analysis",
+                "code": "// Matrix example: [[TP, FP], [FN, TN]]\nconst matrix = [[50, 5], [10, 35]]; // Spam classifier\nconst accuracy = (50+35)/(50+5+10+35);\nconsole.log(accuracy); // 0.85\n// Precision = 50/(50+5)=0.909",
+                "explanation": "Analyze: Good TP/TN, but FN=10 missed spams (low recall). Step: Sum diag/ total=acc, col1 TP for prec. Reveals weaknesses."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: High K in KNN\u2014smooths too much, underfits. Why? Too many neighbors ignore local patterns.",
+              "Mistake 2: Accuracy on imbalanced data (95% one class). Cause: Ignores minority errors; use precision/recall.",
+              "Mistake 3: No distance scaling in KNN. Subtle: Feature units matter (km vs grams skew)."
+            ],
+            "mental_model": "Classification is like a voting neighborhood: Newcomer asks 5 nearest houses 'What party?' Majority decides affiliation. Confusion matrix is the vote tally sheet showing agreements/disagreements.",
+            "summary": "Classification (e.g., KNN) predicts categories, analyzed via accuracy and confusion matrices revealing TP/FP trade-offs. Compare to regression: Discrete vs continuous. Equips you to judge model quality critically.",
+            "further_thinking": [
+              "Analyze: Why prefer recall over accuracy for cancer detection?",
+              "Compare KNN vs linear regression on iris data\u2014pros/cons table.",
+              "Design evaluation for biased spam data (90% ham)."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "d225eb5e-b512-43f9-ac33-2adc301a4cc7",
+              "question": "What does KNN use to classify?",
+              "options": [
+                "Majority vote of nearest neighbors",
+                "A straight line",
+                "Clustering centers",
+                "Rewards"
+              ],
+              "correct_answer": "Majority vote of nearest neighbors",
+              "difficulty": "easy",
+              "bloom_level": "Analyze",
+              "explanation": "Core KNN mechanism[1][7]. Applies algorithm."
+            },
+            {
+              "question_id": "d6516b11-cd6e-4b53-8829-e5b307e3878c",
+              "question": "Confusion matrix shows what?",
+              "options": [
+                "Only accuracy",
+                "True/false pos/negatives",
+                "MSE values",
+                "Clusters"
+              ],
+              "correct_answer": "True/false pos/negatives",
+              "difficulty": "medium",
+              "bloom_level": "Analyze",
+              "explanation": "Detailed performance breakdown[1][2]. Analyzes components."
+            },
+            {
+              "question_id": "607447e4-3434-4e2f-8ed8-397a3295d0ea",
+              "question": "Why might accuracy mislead?",
+              "options": [
+                "Always accurate",
+                "Imbalanced classes favor majority",
+                "Too slow",
+                "No labels"
+              ],
+              "correct_answer": "Imbalanced classes favor majority",
+              "difficulty": "hard",
+              "bloom_level": "Analyze",
+              "explanation": "E.g., 95% non-spam -> 95% acc by guessing non-spam[5]. Critical analysis."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-01-29T13:11:58.924098",
+  "version": 2
+}

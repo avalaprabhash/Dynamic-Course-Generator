@@ -1,0 +1,229 @@
+[
+  {
+    "timestamp": "2026-01-29T14:09:39.756175",
+    "module_id": "76101aa0-807e-4fb8-88a5-39d4f276e12b",
+    "lesson_id": "21ce6424-d56f-409d-906c-32c0b8b0d13c",
+    "original": {
+      "lesson_id": "21ce6424-d56f-409d-906c-32c0b8b0d13c",
+      "lesson_title": "Supervised Learning: Regression Basics",
+      "bloom_level": "Apply",
+      "learning_outcomes": [
+        "Implement a simple linear regression model step-by-step",
+        "Apply the ML workflow to predict continuous values like prices"
+      ],
+      "content": {
+        "introduction": "Fantastic progress\u2014you've got the foundations! Now we apply them with supervised learning's workhorse: regression, predicting numbers like temperatures or sales. Building on the workflow, this lesson shows you hands-on how to build your first model. \n\nRegression matters because most real data involves numbers\u2014stock trends, energy use\u2014not just categories. It's encouraging: With Python's scikit-learn (a beginner-friendly library), you'll predict outcomes in minutes, gaining the 'aha' moment of seeing your model work.",
+        "lesson_overview": [
+          "What regression solves and linear regression details",
+          "Step-by-step implementation workflow",
+          "Simple evaluation metrics",
+          "What you'll build: A house price predictor"
+        ],
+        "core_concepts": [
+          {
+            "title": "Linear Regression Explained",
+            "explanation": "Regression predicts continuous values; linear regression fits a straight line to data: y = mx + b (m=slope, b=intercept). It minimizes squared errors between line and points. Why linear? Simplest assumption\u2014patterns are straight-ish; great starter before curves.\n\nHow: Algorithm adjusts m/b to best match training data. Analogy: Fitting a ruler to scattered height-weight dots to predict weight from height. For ML workflow, use after preprocessing numbers.\n\nApplications: House prices (size -> price), sales forecasting. scikit-learn handles math; you focus on data.",
+            "code_example": "// Python scikit-learn snippet (conceptual)\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(X_train, y_train) # X=features, y=targets"
+          },
+          {
+            "title": "Applying the Workflow to Regression",
+            "explanation": "Follow pipeline: Preprocess features (scale if needed), split data, fit model, predict/test. Evaluation: Mean Squared Error (MSE)\u2014average squared difference; lower is better. Why MSE? Penalizes big errors more, common for numbers.\n\nBuilds on unsupervised by using labels. Connection: Test MSE << train MSE? Underfit (too simple). Equal? Good. Train low/test high? Overfit.\n\nHands-on empowers: Small datasets work fine for learning.",
+            "code_example": null
+          }
+        ],
+        "guided_walkthrough": [
+          "Step 1: Prepare data. Load CSV with features (size) and target (price). Clean/scale: Divide size by 1000 for 1-5 range. Why? Equal weighting.",
+          "Step 2: Split 80/20 using train_test_split. Shuffle ensures randomness. Connection: Train learns, test validates.",
+          "Step 3: Initialize LinearRegression, call fit(X_train, y_train). Edge: Categorical? Encode first (next lessons).",
+          "Step 4: Predict on test: y_pred = model.predict(X_test). Compute MSE: mean((y_test - y_pred)**2).",
+          "Step 5: Verify: Plot line vs points. Watch high MSE (>10% avg error)? Gather more data or add features."
+        ],
+        "practical_examples": [
+          {
+            "description": "House price prediction",
+            "code": "// Full simple regression (Python pseudocode for clarity)\nconst X = [[1], [1.5], [2]]; // sizes in 1000sqft\nconst y = [200, 300, 400]; // prices in 1000s\n\nfunction linearRegression(X, y) {\n  const n = X.length;\n  const m = (n * sum(X*y) - sum(X)*sum(y)) / (n*sum(X*X) - sum(X)**2);\n  const b = (sum(y) - m*sum(X)) / n;\n  return {predict: (x) => m*x + b};\n}\nconst model = linearRegression(X, y);\nconsole.log(model.predict([1.2])); // ~260",
+            "explanation": "Detailed: Formulas compute slope m/intercept b from sums. Step1: Calc sums, 2: m measures tilt, 3: b shifts line, 4: predict linear. Why? Manual shows math; libraries automate. Accurate for straight trends."
+          },
+          {
+            "description": "Temperature prediction from humidity",
+            "code": "// Evaluation example\nconst y_true = [20, 25, 22];\nconst y_pred = [21, 24, 23];\nconst mse = ((20-21)**2 + (25-24)**2 + (22-23)**2) / 3;\nconsole.log(mse); // ~1.0 - low error!",
+            "explanation": "MSE step-by-step: Square diffs (1,1,1), average. Low means good fit. Matters for judging model quality post-workflow."
+          },
+          {
+            "description": "Cricket chirps vs temperature (real dataset classic)",
+            "code": null,
+            "explanation": "Chirps correlate linearly with temp. Workflow: Plot first (upward trend), fit line, predict. Builds confidence: Real science uses this."
+          }
+        ],
+        "common_pitfalls": [
+          "Mistake 1: No scaling\u2014features in wildly different ranges skew line. Why? Model weights big numbers more.",
+          "Mistake 2: Assuming linearity for curved data (e.g., exponential growth). Cause: High MSE; check scatterplot first.",
+          "Mistake 3: Tiny datasets (<20 points). Subtle: Unstable coefficients; noise dominates signal."
+        ],
+        "mental_model": "Linear regression is like stretching a rubber band between thumbtack points on a wall\u2014it finds the straightest path minimizing 'pull' (errors), predicting where new tacks land.",
+        "summary": "Linear regression applies supervised workflow to predict numbers by fitting y=mx+b, evaluated via MSE. You can now implement from data prep to prediction. Ties to foundations: Data quality drives success.",
+        "further_thinking": [
+          "Apply: Predict your commute time from distance\u2014list features, expected MSE.",
+          "Why MSE over absolute error? Pros/cons.",
+          "Modify code for quadratic (add x^2 feature)\u2014when needed?"
+        ]
+      },
+      "quiz": [
+        {
+          "question_id": "1390f9a2-5f25-4e6b-9fef-991e1623e8b8",
+          "question": "What does linear regression predict?",
+          "options": [
+            "Categories",
+            "Continuous numbers",
+            "Clusters",
+            "Rewards"
+          ],
+          "correct_answer": "Continuous numbers",
+          "difficulty": "easy",
+          "bloom_level": "Apply",
+          "explanation": "Regression for numbers like prices[1][5]. Applies core use."
+        },
+        {
+          "question_id": "fe9a3143-33cd-4e77-9b8c-b1313db9bf9a",
+          "question": "How do you evaluate regression?",
+          "options": [
+            "Accuracy %",
+            "MSE or MAE",
+            "Silhouette score",
+            "Reward total"
+          ],
+          "correct_answer": "MSE or MAE",
+          "difficulty": "medium",
+          "bloom_level": "Apply",
+          "explanation": "MSE measures prediction error magnitude[2][5]. Understands metrics."
+        },
+        {
+          "question_id": "34a30be7-dfcc-4c3f-a2f3-20b00e073965",
+          "question": "In workflow, when do you fit the model?",
+          "options": [
+            "After preprocessing, before predict",
+            "First step",
+            "Only on test data",
+            "After deployment"
+          ],
+          "correct_answer": "After preprocessing, before predict",
+          "difficulty": "hard",
+          "bloom_level": "Apply",
+          "explanation": "Fit on train post-prep, predict/eval next[3][4]. Applies full sequence."
+        }
+      ],
+      "estimated_duration_minutes": 30
+    },
+    "regenerated": {
+      "lesson_id": "21ce6424-d56f-409d-906c-32c0b8b0d13c",
+      "lesson_title": "Supervised Learning: Regression Basics",
+      "bloom_level": "Apply",
+      "learning_outcomes": [
+        "Implement a simple linear regression model step-by-step",
+        "Apply the ML workflow to predict continuous values like prices"
+      ],
+      "content": {
+        "introduction": "Great job so far! Now let's learn regression. Regression is a type of supervised learning. It predicts numbers, like house prices or temperatures. We'll use a simple tool called scikit-learn in Python to build your first model. This builds on what you know about the ML workflow.\n\nWhy learn this? Most real-world problems predict numbers, like sales or weather. It's easy with Python - you'll see your model predict in just minutes!",
+        "lesson_overview": [
+          "What is regression and linear regression",
+          "The easy step-by-step workflow",
+          "How to check if your model is good",
+          "Build a simple house price predictor"
+        ],
+        "core_concepts": [
+          {
+            "title": "What is Linear Regression?",
+            "explanation": "Linear regression predicts a number. It draws a straight line through your data points. The line follows y = mx + b. Here, m is the slope (how steep), x is your input (like house size), y is the output (price), and b is where the line starts on the y-axis.\n\nThe goal: Make the line as close as possible to all points. It does this by reducing the distance (errors) between points and the line.\n\nThink of it like this: You have dots on paper showing height and weight. Draw the best straight line to guess weight from height.\n\nReal uses: Predict house price from size. Predict temperature from cricket chirps. scikit-learn does the hard math for you.",
+            "code_example": "from sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(X, y)  # X is input, y is output numbers"
+          },
+          {
+            "title": "The ML Workflow for Regression",
+            "explanation": "Use the same steps you learned: 1) Get and clean data. 2) Split into train and test. 3) Train (fit) model on train data. 4) Predict on test data. 5) Check error.\n\nTo check: Use MSE (Mean Squared Error). It's the average of squared differences between real and predicted numbers. Low MSE = good model.\n\nExample: If real price is 100, predict 105, error squared is 25. Average over all predictions.\n\nCompare train MSE and test MSE:\n- Both high: Model too simple (underfit).\n- Train low, test high: Overfit (memorized train data).\n- Both low: Perfect!",
+            "code_example": null
+          }
+        ],
+        "guided_walkthrough": [
+          "Step 1: Get data. Use a simple list: house sizes = [1, 1.5, 2] (in 1000 sq ft), prices = [200, 300, 400] (in $1000s). No cleaning needed for this easy start.",
+          "Step 2: Split data. Use 80% for training, 20% for testing. Python code: from sklearn.model_selection import train_test_split; X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)",
+          "Step 3: Make and train model. from sklearn.linear_model import LinearRegression; model = LinearRegression(); model.fit(X_train, y_train)",
+          "Step 4: Predict and check. y_pred = model.predict(X_test); from sklearn.metrics import mean_squared_error; mse = mean_squared_error(y_test, y_pred); print(mse)  # Hope for low number!",
+          "Step 5: Try it! Predict price for size 1.2: model.predict([[1.2]])  # Should be around 260"
+        ],
+        "practical_examples": [
+          {
+            "description": "House Price Predictor",
+            "code": "X = [[1], [1.5], [2]]  # sizes\ny = [200, 300, 400]   # prices\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(X, y)\nprint(model.predict([[1.2]]))  # About 260",
+            "explanation": "See? Three data points. Model learns the line. Predicts new house size perfectly for straight data. This is your first working model!"
+          },
+          {
+            "description": "Check with MSE",
+            "code": "y_true = [200, 300]\ny_pred = [210, 290]\nerror1 = (200-210)**2  # 100\nerror2 = (300-290)**2  # 100\nmse = (100 + 100) / 2  # 100 - okay, not too bad",
+            "explanation": "Step by step: Subtract predict from real. Square it (makes all positive, big errors hurt more). Average them. Low number means good predictions."
+          },
+          {
+            "description": "Cricket Chirps Predict Temperature",
+            "code": null,
+            "explanation": "Real example: More chirps = higher temperature. Data: chirps per minute vs temp. Plot dots (upward line). Fit model. Predict: 50 chirps = 70\u00b0F. Fun and real!"
+          }
+        ],
+        "common_pitfalls": [
+          "Pitfall 1: Forgetting to split train/test. Fix: Always split so model doesn't cheat by seeing answers.",
+          "Pitfall 2: Data in wrong scales (size 1000s, price millions). Fix: Divide big numbers to make similar (size/1000).",
+          "Pitfall 3: Too few data points (under 10). Fix: Need 20+ for stable line."
+        ],
+        "mental_model": "Imagine pins on a board with heights and weights. Stretch a rubber band tightest around them - that's your prediction line for new pins.",
+        "summary": "You now know regression: Predict numbers with a straight line y=mx+b. Follow workflow: prep, split, fit, predict, check MSE. Practice with house prices to apply it!",
+        "further_thinking": [
+          "Try: Predict your height from shoe size. What data do you need?",
+          "Why square errors in MSE? (Hint: Punishes big mistakes.)",
+          "What if data curves? (Next: Add x^2 feature.)"
+        ]
+      },
+      "quiz": [
+        {
+          "question_id": "1390f9a2-5f25-4e6b-9fef-991e1623e8b8",
+          "question": "What does linear regression predict?",
+          "options": [
+            "Categories like cat or dog",
+            "Numbers like prices",
+            "Groups of data",
+            "Steps to take"
+          ],
+          "correct_answer": "Numbers like prices",
+          "difficulty": "easy",
+          "bloom_level": "Apply",
+          "explanation": "Regression predicts continuous numbers, not categories[1][3]."
+        },
+        {
+          "question_id": "fe9a3143-33cd-4e77-9b8c-b1313db9bf9a",
+          "question": "What is a good way to check regression?",
+          "options": [
+            "Accuracy percent",
+            "MSE (average squared error)",
+            "Number of groups",
+            "Speed of training"
+          ],
+          "correct_answer": "MSE (average squared error)",
+          "difficulty": "easy",
+          "bloom_level": "Apply",
+          "explanation": "MSE shows how far predictions are from real values[3][4]. Lower is better."
+        },
+        {
+          "question_id": "34a30be7-dfcc-4c3f-a2f3-20b00e073965",
+          "question": "When do you train (fit) the model?",
+          "options": [
+            "After splitting train/test data",
+            "Before getting data",
+            "Only on test data",
+            "At the very end"
+          ],
+          "correct_answer": "After splitting train/test data",
+          "difficulty": "easy",
+          "bloom_level": "Apply",
+          "explanation": "Split first, then fit on train data, predict on test[4]."
+        }
+      ],
+      "estimated_duration_minutes": 30
+    }
+  }
+]

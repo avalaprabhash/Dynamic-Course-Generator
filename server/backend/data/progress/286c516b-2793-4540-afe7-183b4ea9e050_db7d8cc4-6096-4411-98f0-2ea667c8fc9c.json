@@ -1,0 +1,83 @@
+{
+  "course_id": "286c516b-2793-4540-afe7-183b4ea9e050",
+  "user_id": "db7d8cc4-6096-4411-98f0-2ea667c8fc9c",
+  "current_module_index": 0,
+  "current_lesson_index": 0,
+  "completed_lessons": [
+    "c7b9e741-f13b-4853-9ffc-0ff25e8c50d9"
+  ],
+  "modules": {
+    "68c27b7d-9e39-40ab-9e38-d986548ed4b2": {
+      "module_id": "68c27b7d-9e39-40ab-9e38-d986548ed4b2",
+      "lessons": {
+        "c7b9e741-f13b-4853-9ffc-0ff25e8c50d9": {
+          "lesson_id": "c7b9e741-f13b-4853-9ffc-0ff25e8c50d9",
+          "completed": true,
+          "quiz_attempts": 4,
+          "best_score": 100.0,
+          "current_difficulty": "easy",
+          "current_bloom_level": "Remember",
+          "smoothed_score": 0.0,
+          "attempt_history": [
+            {
+              "attempt_number": 1,
+              "score": 100.0,
+              "passed": true,
+              "feedback": null,
+              "timestamp": "2026-01-29T17:56:57.027638"
+            },
+            {
+              "attempt_number": 2,
+              "score": 0.0,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-29T17:57:13.049126"
+            },
+            {
+              "attempt_number": 3,
+              "score": 0.0,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-29T17:57:48.706119"
+            },
+            {
+              "attempt_number": 4,
+              "score": 0.0,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-29T17:58:04.902420"
+            }
+          ]
+        },
+        "334d50ca-eb1e-489e-b675-978b6d3fb566": {
+          "lesson_id": "334d50ca-eb1e-489e-b675-978b6d3fb566",
+          "completed": false,
+          "quiz_attempts": 2,
+          "best_score": 0.0,
+          "current_difficulty": "easy",
+          "current_bloom_level": "Remember",
+          "smoothed_score": 0.0,
+          "attempt_history": [
+            {
+              "attempt_number": 1,
+              "score": 0.0,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-29T18:04:09.409438"
+            },
+            {
+              "attempt_number": 2,
+              "score": 0.0,
+              "passed": false,
+              "feedback": null,
+              "timestamp": "2026-01-29T18:04:22.556353"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "overall_progress": 25.0,
+  "started_at": "2026-01-29T17:55:54.314493",
+  "last_accessed_at": "2026-01-29T18:04:43.345284"
+}

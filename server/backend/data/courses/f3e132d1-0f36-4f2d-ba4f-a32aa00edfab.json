@@ -1,0 +1,363 @@
+{
+  "id": "f3e132d1-0f36-4f2d-ba4f-a32aa00edfab",
+  "title": "Python Programming Fundamentals for Absolute Beginners",
+  "topic": "Python Programming",
+  "overview": "In this beginner course, you will master the essential building blocks of Python programming, starting from installation and your first 'Hello, World!' program, progressing to variables, data types, and basic operations. By the end, you'll confidently write simple Python scripts, understand core syntax rules, and be ready to tackle more advanced topics. This course builds a strong foundation through hands-on examples and patient explanations, assuming no prior programming experience.",
+  "duration_hours": 1,
+  "difficulty": "Intermediate",
+  "confirmed": true,
+  "modules": [
+    {
+      "module_id": "f59e1e3b-fb07-411f-9c16-3636c9d0ccd0",
+      "module_title": "Module 1: Getting Started with Python",
+      "module_description": "This module covers the absolute essentials: installing Python, understanding its interactive environment, and writing your first programs. It matters because these foundations prevent common beginner frustrations and set you up for success in all future Python learning.",
+      "lessons": [
+        {
+          "lesson_id": "0e51d35d-e620-4117-8e6b-4a268fc2030d",
+          "lesson_title": "Installing Python and Your First Program",
+          "bloom_level": "Remember",
+          "learning_outcomes": [
+            "Install Python on your computer and verify it's working correctly",
+            "Write, run, and understand the classic 'Hello, World!' program",
+            "Recall key terms like interpreter, REPL, and script file"
+          ],
+          "content": {
+            "introduction": "Welcome to your very first step into Python programming! If you've never coded before, don't worry \u2013 we're starting from square one, just like learning to ride a bike with training wheels. Python is special because it's designed to be readable and straightforward, almost like writing English sentences. In this lesson, we'll get Python onto your computer and run your first program. This matters because without a working setup, you can't practice, and practice is how you build confidence in programming.\n\nThink of installation as setting up your kitchen before cooking: you need the right tools (oven, pots) before making your first meal. By the end of this lesson, you'll have Python running and see your own code come to life on screen, which is one of the most exciting 'aha!' moments in programming.",
+            "lesson_overview": [
+              "How to download and install Python correctly",
+              "Using the Python interpreter and REPL for instant feedback",
+              "Writing and running your first 'Hello, World!' program",
+              "You'll be able to set up a complete Python environment and execute basic scripts independently"
+            ],
+            "core_concepts": [
+              {
+                "title": "What is Python and Why Use It?",
+                "explanation": "Python is a programming language created by Guido van Rossum in 1991. It's like a versatile toolbox that lets you automate tasks, build websites, analyze data, and more. Unlike complex languages with curly braces and semicolons everywhere, Python uses simple indentation (spaces at the start of lines) to organize code, making it easier to read. Imagine trying to follow a recipe written in legalese versus plain English \u2013 Python is the plain English version.\n\nThe 'why' is simple: Python runs on Windows, Mac, Linux, and even tiny devices like Raspberry Pi. It's interpreted, meaning you write code and it runs immediately without compiling first, perfect for quick experiments. Key fact to remember: always use Python 3 (not the outdated Python 2). This lesson focuses on remembering these basics so you can spot them in tutorials later.\n\nHow it works: Python has an interpreter that reads your code line by line and executes instructions. This is why it's great for beginners \u2013 immediate feedback helps you learn faster.",
+                "code_example": "print(\"Hello, World!\")\n# This is your first Python program!"
+              },
+              {
+                "title": "The Python REPL: Your Interactive Playground",
+                "explanation": "REPL stands for Read-Evaluate-Print-Loop. It's Python's interactive shell where you type commands and see results instantly, like a conversation with your computer. Open your terminal (Command Prompt on Windows, Terminal on Mac/Linux), type 'python' or 'python3', and you're in! Type 'print(\"Hi\")' and press Enter \u2013 boom, 'Hi' appears. Exit with 'exit()' or Ctrl+D.\n\nWhy remember this? The REPL is for testing ideas quickly, like sketching on paper before painting a full picture. It's how pros experiment without creating files. To verify installation, type 'python --version' in terminal; it should show something like 'Python 3.12.0'. If not, we'll fix it in the walkthrough.\n\nConnection to prior concept: The REPL uses the same interpreter as full programs, so skills transfer directly.",
+                "code_example": "# In REPL:\nprint(\"Testing REPL\")\n# Output: Testing REPL\nexit()"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Download Python from python.org/downloads. Choose the latest Python 3 version for your OS (Windows/Mac/Linux). Why? Official site ensures safety and compatibility. Run the installer, check 'Add Python to PATH' on Windows.",
+              "Step 2: Verify installation. Open terminal/Command Prompt, type 'python --version' or 'python3 --version'. See version number? Great! This confirms the interpreter is ready. Connection: PATH lets your system find Python anywhere.",
+              "Step 3: Start REPL with 'python' or 'python3'. Type 'print(\"Hello from REPL!\")'. It prints immediately. Variation: Try '2 + 2' \u2013 outputs 4. Handles math too!",
+              "Step 4: Create first script. Open Notepad/TextEdit, write 'print(\"Hello, World!\")', save as 'hello.py'. In terminal, navigate to folder (cd path), run 'python hello.py'. Everything together: file-based execution.",
+              "Step 5: Watch for 'command not found' (fix PATH), or 'No module named...' (reinstall). Verify: run script twice, check output matches. Success!"
+            ],
+            "practical_examples": [
+              {
+                "description": "Personal greeting script: Customize 'Hello, World!' for yourself",
+                "code": "print(\"Hello, my name is [Your Name]!\")\nprint(\"I'm learning Python today.\")\n# Save as greet.py and run: python greet.py",
+                "explanation": "Line 1: print() is a function that outputs text to screen. The string inside quotes is what appears. Line 2: Another print adds more output. Each print() starts a new line automatically. Why each part? Quotes protect text from being code; print makes it visible. Run it \u2013 see your name printed! This builds memory of print syntax."
+              },
+              {
+                "description": "Quick math calculator in REPL for daily use",
+                "code": "# In REPL:\nprint(5 * 3)\nprint(10 / 2)\nprint(2 ** 3)  # Exponent",
+                "explanation": "Step-by-step: First print multiplies 5*3=15. Second divides 10/2=5.0 (float result). Third uses ** for power (8). Why? REPL shows results instantly, teaching operators. Notice no quotes for numbers \u2013 they're not strings. Great for shopping math: total = price * quantity."
+              },
+              {
+                "description": "Multi-line motivation script",
+                "code": "print(\"Step 1: Install Python\")\nprint(\"Step 2: Write code\")\nprint(\"Step 3: Run and celebrate!\")",
+                "explanation": "This simulates a checklist. Each print is independent. Indentation not needed yet (comes later). Run as script: motivates while reinforcing print. Why detailed? Builds habit of commenting goals in code."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Forgetting to add Python to PATH during install \u2013 'python not recognized'. Why? System can't find interpreter. Fix: Reinstall with PATH checked or add manually.",
+              "Mistake 2: Using Python 2 instead of 3 \u2013 syntax differences cause errors. Why? Old version phased out. Always type 'python3' on Mac/Linux.",
+              "Mistake 3: Saving file as .txt not .py \u2013 won't run as Python. Why? Extension tells system it's code. Use .py always."
+            ],
+            "mental_model": "Think of Python installation like setting up a new phone: download app (Python), grant permissions (PATH), open app (REPL), send first text (print). The interpreter is your phone's brain executing messages instantly.",
+            "summary": "You've learned Python is an easy, readable language run by an interpreter; installed it with PATH; used REPL for quick tests; and wrote 'Hello, World!' scripts. These fundamentals let you remember key terms and execute code confidently. Connects to objectives: now you can set up and run Python independently.",
+            "further_thinking": [
+              "What does REPL stand for, and why is the 'Loop' part important for learning?",
+              "Try installing on a friend's computer \u2013 what differences do you notice between OSes?",
+              "Challenge: Write a 5-line script listing your top 3 reasons to learn Python."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "14dc880f-5358-4542-b3b4-e6caa456f03b",
+              "question": "What does 'print(\"Hello, World!\")' do in Python?",
+              "options": [
+                "Displays 'Hello, World!' on screen",
+                "Saves text to a file",
+                "Defines a variable",
+                "Starts the REPL"
+              ],
+              "correct_answer": "Displays 'Hello, World!' on screen",
+              "difficulty": "easy",
+              "bloom_level": "Remember",
+              "explanation": "print() is Python's basic output function. It shows text inside quotes immediately, essential for seeing program results. Others are different concepts."
+            },
+            {
+              "question_id": "6e614158-69be-49b1-9f41-6d6e15c6a9ae",
+              "question": "What is the correct file extension for Python scripts?",
+              "options": [
+                ".py",
+                ".txt",
+                ".exe",
+                ".html"
+              ],
+              "correct_answer": ".py",
+              "difficulty": "medium",
+              "bloom_level": "Remember",
+              "explanation": "Files ending in .py are recognized as Python code. .txt is plain text; others are for different languages. Remembering this prevents 'not a Python file' errors."
+            },
+            {
+              "question_id": "6dae5809-00af-44ca-bba4-bf47aa71c49b",
+              "question": "Why check 'Add Python to PATH' during installation?",
+              "options": [
+                "Lets you run 'python' from any folder",
+                "Installs extra libraries",
+                "Creates a desktop shortcut",
+                "Enables graphics"
+              ],
+              "correct_answer": "Lets you run 'python' from any folder",
+              "difficulty": "hard",
+              "bloom_level": "Remember",
+              "explanation": "PATH is a system list of folders where executables live. Without it, terminal can't find python.exe, causing 'command not found'. Key for seamless use."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        },
+        {
+          "lesson_id": "f4f0484c-ecdf-4de3-8365-6963f6125b44",
+          "lesson_title": "Understanding Variables and Basic Data Types",
+          "bloom_level": "Understand",
+          "learning_outcomes": [
+            "Explain what variables are and how they store different data types like strings and integers",
+            "Use variables in print statements and simple calculations",
+            "Distinguish between strings, integers, and floats with real-world analogies"
+          ],
+          "content": {
+            "introduction": "Great job on your first program \u2013 you're officially a Python coder! Now that Python is running, let's store and reuse information using variables. This is like labeling jars in your pantry: 'sugar' holds sweetness, 'flour' holds baking powder. Variables let your program remember names, ages, prices \u2013 anything! Why this matters: real programs handle data, not just print fixed text. Building on installation, we'll use REPL and scripts to grasp why variables make code flexible and readable.\n\nImagine giving directions without addresses (variables): confusing! Variables name memory spots, making code human-friendly. This lesson helps you understand the 'why' so you intuitively use them.",
+            "lesson_overview": [
+              "What variables are and how to create them",
+              "Core data types: strings, integers, and floats",
+              "Basic operations with variables",
+              "You'll understand how data flows in Python programs"
+            ],
+            "core_concepts": [
+              {
+                "title": "Variables: Named Storage for Data",
+                "explanation": "A variable is a named box in computer memory holding data, like a sticky note on your fridge saying 'Milk expires 1/30'. In Python, create with name = value, no 'declare' needed. Rules: start with letter/underscore, no spaces, case-sensitive (age != Age). Python infers type automatically \u2013 dynamic typing.\n\nWhy understand this? Variables reuse values, avoid repetition. Change once, affects everywhere. Analogy: recipe variables \u2013 'temp = 350' used multiple times. How: assignment right-to-left, evaluates right first.\n\nBuilds on print: now print(variable) shows stored data.",
+                "code_example": "name = \"Alice\"\nage = 25\nprint(name)  # Outputs: Alice"
+              },
+              {
+                "title": "Data Types: Strings, Integers, Floats",
+                "explanation": "Data types classify info. String (str): text in quotes, like \"hello\" \u2013 words, names. Integer (int): whole numbers, 42 \u2013 counts, ages. Float: decimals, 3.14 \u2013 measurements, money.\n\nWhy? Operations differ: can't add string + int directly. Analogy: string like words in book, int like page count, float like price tag. Use str(5) to convert int to string.\n\nConnection: variables hold these types. print(type(age)) shows <class 'int'>.",
+                "code_example": "pi = 3.14\nprint(type(pi))  # <class 'float'>\nmessage = \"Hi \" + \"there\"  # String concat"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: In REPL, type name = \"Bob\". print(name). Why? Assignment stores, print retrieves. Builds basic storage.",
+              "Step 2: age = 30. print(age * 2). Connection: math on ints works. Outputs 60.",
+              "Step 3: price = 19.99. print(price + 5). Variation: float handles decimals. Outputs 24.99.",
+              "Step 4: Combine: full_name = name + \" is \" + str(age). print(full_name). Full picture: mixing types needs conversion.",
+              "Step 5: Watch TypeError (string + int). Fix with str(). Verify: print(type()) confirms."
+            ],
+            "practical_examples": [
+              {
+                "description": "Personal info profile",
+                "code": "first_name = \"Alex\"\nlast_name = \"Smith\"\nage = 28\nprint(f\"{first_name} {last_name} is {age} years old.\")",
+                "explanation": "Variables store parts. f-string (f before quotes) inserts variables. Why? Clean output. Step-by-step: assign, then format print. Teaches string basics."
+              },
+              {
+                "description": "Simple shopping total",
+                "code": "item_price = 12.50\nquantity = 3\ntotal = item_price * quantity\nprint(\"Total:\", total)",
+                "explanation": "Float * int = float. Print with comma adds space. Why matters: real calc. Steps: store, multiply, display. Avoids hardcoding."
+              },
+              {
+                "description": "Temperature converter snippet",
+                "code": "celsius = 25\nfahrenheit = celsius * 1.8 + 32\nprint(f\"{celsius}C = {fahrenheit}F\")",
+                "explanation": "Formula in variable. Builds math understanding. f-string for readability. Why: practical daily use."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: name = \"Bob\"; print(Name) \u2013 NameError. Why? Case-sensitive; must match exactly.",
+              "Mistake 2: age = \"25\"; print(age + 1) \u2013 TypeError. Why? String concat tries \"251\", not math. Convert with int().",
+              "Mistake 3: Using spaces in names like my age = 30 \u2013 SyntaxError. Why? Invalid identifier. Use my_age."
+            ],
+            "mental_model": "Variables are like labeled envelopes in a mailbox: 'name' envelope holds a letter (string), 'age' holds a number ticket (int). You can swap contents (reassign), but must address correctly.",
+            "summary": "Variables store data with =, holding strings (text), ints (whole numbers), floats (decimals). Understand they make code dynamic via assignment and operations. Ties to outcomes: now explain and use them with analogies like pantry labels.",
+            "further_thinking": [
+              "Why can't you add a string and int without conversion?",
+              "How would variables change a hardcoded shopping list?",
+              "Design a 3-variable script for your daily routine (e.g., wake_time, coffee_cups)."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "f8c65a1d-7296-4f84-8eab-7bf30e113253",
+              "question": "What is a variable in Python?",
+              "options": [
+                "A named storage for data",
+                "A type of loop",
+                "A print function",
+                "A file extension"
+              ],
+              "correct_answer": "A named storage for data",
+              "difficulty": "easy",
+              "bloom_level": "Understand",
+              "explanation": "Variables hold values for reuse, like boxes with labels. Assigned with =, e.g., x = 5."
+            },
+            {
+              "question_id": "cb554883-47b6-46f6-b39c-c319726b62d8",
+              "question": "Which data type holds decimal numbers like 3.14?",
+              "options": [
+                "String",
+                "Integer",
+                "Float",
+                "Boolean"
+              ],
+              "correct_answer": "Float",
+              "difficulty": "medium",
+              "bloom_level": "Understand",
+              "explanation": "Float for decimals/fractions. Int for wholes, str for text. Check with type()."
+            },
+            {
+              "question_id": "796d0889-6f83-4083-aec0-694c34959d20",
+              "question": "What error from print(\"age: \" + 25)?",
+              "options": [
+                "TypeError",
+                "NameError",
+                "SyntaxError",
+                "No error"
+              ],
+              "correct_answer": "TypeError",
+              "difficulty": "hard",
+              "bloom_level": "Understand",
+              "explanation": "Can't concat str + int. Fix: \"age: \" + str(25). Understands type mismatch."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        }
+      ]
+    },
+    {
+      "module_id": "62d70780-c417-49c6-a053-03f802b3d081",
+      "module_title": "Module 2: Basic Python Operations and Control Flow",
+      "module_description": "Building on variables, this module introduces math operations, comparisons, and simple decisions with if-statements. It matters for making programs interactive and logical, turning static scripts into smart responders.",
+      "lessons": [
+        {
+          "lesson_id": "0f818c9e-fafc-47d5-8997-7f13ecc9e200",
+          "lesson_title": "Operators and Making Decisions with If-Statements",
+          "bloom_level": "Apply",
+          "learning_outcomes": [
+            "Perform arithmetic and comparison operations on variables",
+            "Write if-statements to control program flow based on conditions",
+            "Apply logic to simple decision-making scenarios"
+          ],
+          "content": {
+            "introduction": "Fantastic progress \u2013 your variables are storing data like pros! Now apply them with operators (math symbols) and if-statements to make decisions. Like a recipe saying 'if oven hot, bake', programs check conditions. Why? Real apps react: 'if age >=18, allow entry'. Builds on types: now manipulate and decide.\n\nThis shifts to applying knowledge: write code that computes and chooses. Encouraging: small steps yield powerful results!",
+            "lesson_overview": [
+              "Arithmetic and comparison operators",
+              "Boolean logic and truth values",
+              "If-elif-else statements",
+              "You'll apply these to create interactive mini-programs"
+            ],
+            "core_concepts": [
+              {
+                "title": "Operators: Math and Comparisons",
+                "explanation": "Operators perform actions. Arithmetic: + add, - subtract, * multiply, / divide, ** power, % modulo (remainder). Like calculator keys. Comparisons: == equal, != not equal, > < >= <= \u2013 return True/False (booleans).\n\nApply why: compute totals, check eligibility. Analogy: shopping \u2013 total = price * qty % tax. Order matters (PEMDAS applies).\n\nHow: on variables, e.g., if age >= 18: True.",
+                "code_example": "x = 10\ny = 3\nprint(x + y)  # 13\nprint(x > y)  # True"
+              },
+              {
+                "title": "If-Statements: Conditional Logic",
+                "explanation": "If checks condition: if True, run indented block. Colon : starts block, indentation (4 spaces) defines it. Else: runs if False. Elif: else-if.\n\nWhy apply? Branches logic. Like fork in road: 'if raining, take umbrella'. Indentation is key \u2013 Python's structure.\n\nConnection: uses operators for conditions.",
+                "code_example": "age = 20\nif age >= 18:\n    print(\"Adult\")\nelse:\n    print(\"Minor\")"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: age = 16; if age >= 18: print('Yes'). Why? Applies comparison. Indent print!",
+              "Step 2: Add else: print('No'). Connection: handles both cases.",
+              "Step 3: temperature = 25; if temperature > 30: print('Hot') elif temperature < 10: print('Cold') else: print('Nice'). Variation: multiple paths.",
+              "Step 4: Combine with math: score = 85; if score >= 90: 'A' elif >=80: 'B' etc. Full decision tree.",
+              "Step 5: IndentationError common \u2013 use 4 spaces, consistent. Verify: test edge like score=90."
+            ],
+            "practical_examples": [
+              {
+                "description": "Age gatekeeper",
+                "code": "age = int(input(\"Enter age: \"))\nif age >= 18:\n    print(\"Welcome!\")\nelse:\n    print(\"Too young.\")",
+                "explanation": "input() gets user data (string, convert int). If applies condition. Why? Interactive. Steps: input, check, respond."
+              },
+              {
+                "description": "Grade calculator",
+                "code": "score = 92\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelse:\n    grade = 'C'\nprint(f\"Grade: {grade}\")",
+                "explanation": "Chained elifs cover ranges. Math not needed, but extendable. Why: school tool. Precise branching."
+              },
+              {
+                "description": "Even/odd checker",
+                "code": "num = 7\nif num % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+                "explanation": "% remainder: 7%2=1 !=0. Simple apply modulo + if."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Forgetting : after if \u2013 SyntaxError. Why? Required to start block.",
+              "Mistake 2: Wrong indentation (tabs vs spaces) \u2013 IndentationError. Why? Python strict on whitespace.",
+              "Mistake 3: Using = instead of == in if \u2013 assigns, always True. Why? = assigns, == compares."
+            ],
+            "mental_model": "If-statements are like a vending machine: insert condition (operator check), if valid (True), dispense (indented code); else, return coin.",
+            "summary": "Operators do math/comparisons yielding booleans; if-elif-else uses them for flow control via indentation. Apply by writing conditionals on variables. Achieves outcomes: compute and decide in scripts.",
+            "further_thinking": [
+              "How does input() + if make a program 'smart'?",
+              "Modify grade example for pass/fail only.",
+              "Create if-chain for traffic light: red/yellow/green actions."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "716e545a-85f4-44a0-badb-3cb8501e28c4",
+              "question": "What does num % 4 == 0 check?",
+              "options": [
+                "If num divisible by 4",
+                "If num > 4",
+                "num minus 4",
+                "num power 4"
+              ],
+              "correct_answer": "If num divisible by 4",
+              "difficulty": "easy",
+              "bloom_level": "Apply",
+              "explanation": "% is modulo (remainder). 0 means divides evenly."
+            },
+            {
+              "question_id": "c96e781a-46f4-4530-bfb7-c13dfa70c64c",
+              "question": "In 'if x > 5:', what follows the colon?",
+              "options": [
+                "Indented code block",
+                "Another condition",
+                "Semicolon",
+                "Variable assignment"
+              ],
+              "correct_answer": "Indented code block",
+              "difficulty": "medium",
+              "bloom_level": "Apply",
+              "explanation": "Colon starts block; 4 spaces indent defines what runs if True."
+            },
+            {
+              "question_id": "0e80a697-7d19-4426-91cb-9c1fa7b8d4e3",
+              "question": "Fix: if age = 18: print('Adult')",
+              "options": [
+                "if age == 18:",
+                "age = 18 else:",
+                "if age >= 18 print",
+                "No fix needed"
+              ],
+              "correct_answer": "if age == 18:",
+              "difficulty": "hard",
+              "bloom_level": "Apply",
+              "explanation": "= assigns (always True post); == compares. Colon needed."
+            }
+          ],
+          "estimated_duration_minutes": 30
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-01-27T17:50:11.555607",
+  "version": 1
+}

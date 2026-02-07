@@ -1,0 +1,467 @@
+{
+  "id": "27a72192-7b4b-467c-8277-2ca15ab5e34d",
+  "user_id": "6c39818f-d9bf-43f1-b3cd-d71d5a7816e5",
+  "title": "Linux Essentials: From Zero to Command Line Confidence",
+  "topic": "linux",
+  "overview": "In this beginner-friendly course, you'll master the foundational concepts of Linux, navigate the file system with ease, and execute essential commands confidently. By the end, you'll understand what makes Linux powerful, how to use the terminal effectively, and be ready to tackle real-world tasks like file management and basic system navigation. This 1-hour journey builds a solid base for further Linux exploration or professional IT roles.",
+  "duration_hours": 1,
+  "difficulty": "Beginner",
+  "confirmed": true,
+  "modules": [
+    {
+      "module_id": "27ce55ba-8e34-4170-b5f6-7337e9424388",
+      "module_title": "Module 1: Foundations of Linux",
+      "module_description": "This module introduces the core ideas behind Linux, its history, and basic navigation. It matters because understanding these fundamentals gives you confidence to explore any Linux system without fear, whether for development, servers, or personal use.",
+      "lessons": [
+        {
+          "lesson_id": "d847d62b-e404-48ef-a5f2-aec0c978ca61",
+          "lesson_title": "What is Linux? Understanding the Basics",
+          "bloom_level": "Remember",
+          "learning_outcomes": [
+            "Define Linux, its kernel, and common distributions",
+            "Recall the structure of the Linux file system hierarchy"
+          ],
+          "content": {
+            "introduction": "Welcome to your first step into the world of Linux! If you've ever wondered what powers most servers, supercomputers, and even Android phones, you're in the right place. Linux is an operating system that's free, powerful, and runs everything from your router to NASA's computers. In this lesson, we'll start from scratch\u2014no prior knowledge needed\u2014and build a clear picture of what Linux is, why it exists, and its basic building blocks. This foundation is crucial because every command you'll ever type makes sense only when you know the system underneath.\n\nThink of this like learning the layout of a new city before driving around. By the end, you'll recognize Linux terms instantly and feel excited to open a terminal.",
+            "lesson_overview": [
+              "What Linux is and how it differs from other operating systems",
+              "The Linux kernel and its role as the system's heart",
+              "Common Linux distributions and the file system hierarchy",
+              "What you'll be able to do after this lesson: Identify key Linux components and explain the file system structure"
+            ],
+            "core_concepts": [
+              {
+                "title": "What is Linux?",
+                "explanation": "Linux is an **operating system** (OS), which is software that acts as a bridge between your computer's hardware (like the processor and hard drive) and the applications you run (like web browsers or games). Unlike Windows or macOS, Linux is **open-source**, meaning its code is freely available for anyone to see, modify, and share. This started in 1991 when Linus Torvalds created the Linux kernel\u2014a core piece of software that manages hardware resources like memory, CPU time, and storage.\n\nWhy does this matter? Open-source means Linux is customizable, secure (because many eyes review the code), and free. It's like a community cookbook where everyone contributes recipes, making it better over time. Most internet servers run Linux because it's stable and efficient\u2014imagine it as the reliable engine in a race car that never breaks down.\n\nThe full Linux system combines the kernel with tools, utilities, and a user interface, often called a **GNU/Linux** system after the GNU project that provided many essential programs.",
+                "code_example": null
+              },
+              {
+                "title": "Linux Distributions and File System",
+                "explanation": "A **Linux distribution** (or distro) is a complete, ready-to-use package bundling the kernel with software, like Ubuntu, Fedora, or Debian. Each distro is tailored for different needs\u2014Ubuntu for beginners (user-friendly like a welcoming neighborhood), Fedora for cutting-edge features. There are hundreds, but they all share the same core.\n\nEverything in Linux is organized in a single **file system hierarchy** starting from the root directory '/'. Unlike Windows with drives like C:\\, Linux uses a tree structure: /home for user files (your personal folder), /etc for configuration (system settings), /bin for essential commands (basic tools). This is like a family tree where '/' is the trunk, and branches like /usr hold user-installed programs. Understanding this prevents getting lost when navigating.",
+                "code_example": "$ echo $PATH\n/usr/local/bin:/usr/bin:/bin\n# Shows directories where Linux looks for commands"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Open your terminal. On Ubuntu, press Ctrl+Alt+T or search 'terminal'. This is your command line window\u2014a text-based control center. Why? It's faster and more powerful than clicking icons.",
+              "Step 2: Type 'pwd' and press Enter. This prints your **current working directory** (e.g., /home/user). It shows where you are in the file tree\u2014connect this to the hierarchy we discussed.",
+              "Step 3: Type 'ls /' to list root contents. You'll see folders like bin, home, etc. This reveals the hierarchy\u2014no need for a file explorer yet.",
+              "Step 4: Type 'ls /home' to drill down. Everything connects: from root, navigate branches. Try 'cd /usr' then 'ls' to see user programs.",
+              "Step 5: Verify with 'whoami' (shows your username) and 'uname -a' (kernel details). Watch for typos\u2014commands are case-sensitive. If lost, 'cd ~' returns home."
+            ],
+            "practical_examples": [
+              {
+                "description": "Checking your Linux version to confirm it's Ubuntu",
+                "code": "lsb_release -a\n# Or\ncat /etc/os-release",
+                "explanation": "First, 'lsb_release -a' queries your distro info (e.g., Ubuntu 22.04). The '-a' flag means 'all details'. 'cat /etc/os-release' reads a config file\u2014cat means 'concatenate', displaying file contents. Why each part? lsb_release uses system standards; /etc/os-release is a standard file across distros. Run this to 'know thyself' before troubleshooting."
+              },
+              {
+                "description": "Exploring the file hierarchy safely",
+                "code": "pwd\nls /\nls /home",
+                "explanation": "Step-by-step: 'pwd' orients you (e.g., /home/ubuntu). 'ls /' shows root level (13 standard dirs). 'ls /home' lists users. Connection: Builds tree navigation habit. Each command is harmless\u2014practice builds muscle memory."
+              },
+              {
+                "description": "Seeing kernel info",
+                "code": "uname -r\n# Kernel version, e.g., 5.15.0",
+                "explanation": "'uname -r' extracts release info from 'uname' (Unix name). Why? Confirms kernel version for compatibility checks. Simple flags like -r make tools versatile\u2014no complex syntax yet."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: Typing 'LS' instead of 'ls'\u2014Linux commands are lowercase and case-sensitive, unlike Windows. Why? Unix tradition from 1970s; fix by using Tab for auto-complete.",
+              "Mistake 2: Forgetting the '/' in paths like 'ls home' (fails). Why? Absolute paths start from root; relative from current dir. Use 'pwd' to check location.",
+              "Mistake 3: Assuming GUI and CLI are the same\u2014'Desktop' folder is /home/user/Desktop, not C:\\. Why? Linux unifies everything as files; learn 'ls -la' later for hidden items."
+            ],
+            "mental_model": "Think of Linux like a giant filing cabinet with one infinite drawer tree starting at '/'. The kernel is the organizer who fetches files; distros add labels and tools. Navigate by asking 'where am I?' (pwd) and 'what's here?' (ls)\u2014never get lost if you trace back to root.",
+            "summary": "You've now grasped Linux as an open-source OS with a kernel managing hardware, packaged into distros like Ubuntu, all organized in a hierarchical file system from '/'. Key terms like pwd, ls, and uname are your first tools. This foundation lets you remember and recognize Linux everywhere, setting up success for hands-on commands next.",
+            "further_thinking": [
+              "What are three standard directories under '/' and what do they hold?",
+              "Why might someone choose Ubuntu over Fedora for their first Linux?",
+              "Sketch the file hierarchy from '/' to your home folder on paper."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "699da51b-afa4-4161-a67f-3b016e6ef2a2",
+              "question": "What is the Linux kernel?",
+              "options": [
+                "The graphical user interface",
+                "The core software that manages hardware",
+                "A type of file system",
+                "A package manager"
+              ],
+              "correct_answer": "The core software that manages hardware",
+              "difficulty": "easy",
+              "bloom_level": "Remember",
+              "explanation": "The kernel is the heart of Linux, handling memory, CPU, and devices directly. Remember it as the 'engine'\u2014without it, no OS works.[1][5]"
+            },
+            {
+              "question_id": "7e8ac4c1-2716-4f3b-8088-2e3a64c36dde",
+              "question": "Which command shows your current directory?",
+              "options": [
+                "ls",
+                "cd",
+                "pwd",
+                "whoami"
+              ],
+              "correct_answer": "pwd",
+              "difficulty": "medium",
+              "bloom_level": "Remember",
+              "explanation": " 'pwd' (print working directory) tells you exactly where you are in the hierarchy, essential for navigation.[1][6]"
+            },
+            {
+              "question_id": "d0e9b728-35ea-412e-b578-c34969bc7343",
+              "question": "What does '/' represent in Linux?",
+              "options": [
+                "Your home folder",
+                "A specific drive like C:\\",
+                "The root of the entire file system",
+                "Temporary files"
+              ],
+              "correct_answer": "The root of the entire file system",
+              "difficulty": "hard",
+              "bloom_level": "Remember",
+              "explanation": "Everything starts at '/', forming a single tree\u2014no separate drives. This unifies the system unlike Windows.[3][4]"
+            }
+          ],
+          "estimated_duration_minutes": 30
+        },
+        {
+          "lesson_id": "2516e239-0658-4cac-82cd-182b10940736",
+          "lesson_title": "Essential Navigation Commands",
+          "bloom_level": "Understand",
+          "learning_outcomes": [
+            "Explain how to navigate directories using cd, ls, and pwd",
+            "Describe absolute vs relative paths with examples"
+          ],
+          "content": {
+            "introduction": "Great job on the basics\u2014now that you know Linux's structure, let's move around it like a pro. Building on the file hierarchy, this lesson dives into **navigation commands**, your daily drivers for any Linux task. Why focus here? Most Linux work happens in the terminal; mastering movement builds confidence for editing files, installing software, or managing servers.\n\nImagine learning to walk before running\u2014this is your walking phase. We'll use simple analogies like exploring a house (directories are rooms) to make paths intuitive.",
+            "lesson_overview": [
+              "Core navigation commands: pwd, ls, cd",
+              "Absolute vs relative paths explained",
+              "Listing options and path shorthand",
+              "What you'll be able to do: Navigate any directory structure fluidly"
+            ],
+            "core_concepts": [
+              {
+                "title": "Understanding pwd, ls, and cd",
+                "explanation": " **pwd** (print working directory) is your GPS\u2014always shows your location, e.g., /home/user. Use it first when opening a terminal to orient yourself. **ls** (list) shows room contents: plain 'ls' for names, 'ls -l' for details (size, date\u2014like a inventory list). **cd** (change directory) moves you: 'cd /home' to absolute root path, 'cd ..' up one level.\n\nWhy these? They're universal across distros, used thousands of times daily. Analogy: pwd is 'where am I?', ls is 'what's in this room?', cd is 'go to that room'. Together, they let you explore without a map app.",
+                "code_example": "pwd\nls -l\ncd /tmp\npwd"
+              },
+              {
+                "title": "Absolute vs Relative Paths",
+                "explanation": "An **absolute path** starts from '/' (e.g., /home/user/Documents)\u2014precise like a full address. A **relative path** is from your current spot (e.g., from /home, 'cd user/docs' reaches the same). '~' means home, '..' parent, '.' current.\n\nThis matters for efficiency: absolute for scripts (unambiguous), relative for quick moves. Like giving directions: 'turn left at the library' (relative) vs '123 Main St' (absolute). Master this, and file ops become second nature.",
+                "code_example": "cd ~          # Home\ndoctoral thesis\ncd Documents   # Relative from home\ncd /home/user  # Absolute"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Start at home with 'cd ~' or just 'cd'. Run 'pwd' to confirm /home/yourname. Why? Home is your safe base\u2014like your bedroom.",
+              "Step 2: 'ls -la' lists all (including hidden .files). Note permissions\u2014builds on hierarchy knowledge.",
+              "Step 3: 'cd /var' (absolute), then 'ls'. Relative alternative from anywhere: 'cd /var'. Handles 'edge' like no such dir (error: No such file).",
+              "Step 4: From /var, 'cd ..' (to /), 'cd tmp', 'cd ../../home' (relative jumps). See full navigation flow.",
+              "Step 5: 'history | head' shows past commands. Verify with 'pwd'; Tab-complete prevents typos. Watch case-sensitivity!"
+            ],
+            "practical_examples": [
+              {
+                "description": "Quick home navigation and listing",
+                "code": "cd ~\npwd\nls -l",
+                "explanation": "'cd ~' goes home instantly (~ expands to /home/user). 'pwd' confirms. 'ls -l' shows long format: permissions, owner, size\u2014vital for understanding access. Each flag (-l) adds detail without new commands."
+              },
+              {
+                "description": "Using relative paths to create a project folder",
+                "code": "mkdir ~/projects/myapp\ncd ~/projects/myapp\npwd\nls ..",
+                "explanation": "'mkdir' makes directory (home for projects). 'cd' uses ~ relative. 'ls ..' lists parent. Why? Teaches nesting; '..' is your ladder up. Real-world: Organizing code repos."
+              },
+              {
+                "description": "Exploring system dirs safely",
+                "code": "cd /etc\nls | grep pass\ncd -\n# Back to previous",
+                "explanation": "'cd /etc' absolute to configs. 'grep pass' filters passwords file list. 'cd -' swaps to prior dir. Genius for jumping; grep previews text tools."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: 'cd users' instead of 'cd /home/user'\u2014relative assumes current dir has 'users'. Why? Path confusion; always pwd first.",
+              "Mistake 2: 'ls -L' (wrong flag)\u2014use Tab for completion. Why? Hundreds of options; man ls explains.",
+              "Mistake 3: Ignoring 'cd -'\u2014stuck switching? Why? Memory overload; this toggles like Alt+Tab."
+            ],
+            "mental_model": "Directories are rooms in a house: '/' is the front door, 'cd roomname' walks through doors, '..' steps back, '~' teleports home. ls shines a flashlight; pwd is your compass\u2014explore freely without walls.",
+            "summary": "Navigation hinges on pwd (location), ls (contents), cd (movement), with absolute (full path) and relative (~, ..) paths for flexibility. You've understood why they're efficient and interconnected. This unlocks file management next.",
+            "further_thinking": [
+              "Compare absolute and relative paths: when would you use each?",
+              "Why is 'ls -l' more useful than plain 'ls' for beginners?",
+              "Devise a 5-step path from '/' to '/home/user/Downloads' using relative moves."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "b871026b-7f67-4179-8f72-48601aa419f2",
+              "question": "What does 'cd ..' do?",
+              "options": [
+                "Go to root",
+                "Go to home",
+                "Move up one directory level",
+                "List parent contents"
+              ],
+              "correct_answer": "Move up one directory level",
+              "difficulty": "easy",
+              "bloom_level": "Understand",
+              "explanation": " '..' means parent directory, like going upstairs\u2014universal shortcut.[1][6]"
+            },
+            {
+              "question_id": "42d350b1-a849-46aa-a080-1ecfee8f933f",
+              "question": "What's the difference between '/home/user' and 'home/user'?",
+              "options": [
+                "No difference",
+                "Absolute vs relative path",
+                "One lists, one changes dir",
+                "One is Windows-style"
+              ],
+              "correct_answer": "Absolute vs relative path",
+              "difficulty": "medium",
+              "bloom_level": "Understand",
+              "explanation": "/ starts from root (absolute); without, it's from current dir (relative)\u2014key for precise navigation.[3][4]"
+            },
+            {
+              "question_id": "279eaebc-78e1-4b58-8f96-6660eba752fc",
+              "question": "Which command shows detailed file listings including sizes and permissions?",
+              "options": [
+                "ls",
+                "ls -l",
+                "pwd -l",
+                "cd -l"
+              ],
+              "correct_answer": "ls -l",
+              "difficulty": "hard",
+              "bloom_level": "Understand",
+              "explanation": "-l flag adds long format, crucial for security checks like permissions. Plain ls is basic.[1][6]"
+            }
+          ],
+          "estimated_duration_minutes": 30
+        }
+      ]
+    },
+    {
+      "module_id": "8eabcf6d-6dd2-419b-93f4-e25cadae9f07",
+      "module_title": "Module 2: Working with Files and Directories",
+      "module_description": "Now that you can navigate, learn to create, copy, move, and delete\u2014essential for daily Linux use. This builds practical skills for real tasks like setting up projects or managing configs.",
+      "lessons": [
+        {
+          "lesson_id": "08990282-5878-4728-af66-87151c08e975",
+          "lesson_title": "File Management Basics: Create, Copy, Move",
+          "bloom_level": "Apply",
+          "learning_outcomes": [
+            "Use mkdir, touch, cp, mv to manage files and folders",
+            "Apply commands in sequence for common workflows"
+          ],
+          "content": {
+            "introduction": "Fantastic progress navigating! Now apply that knowledge to manipulate files\u2014like setting up a workspace. We'll cover creating, copying, moving with mkdir, touch, cp, mv. These are workhorses; pros use them hourly for backups, deployments.\n\nWhy now? Navigation without editing is sightseeing without shopping. Hands-on examples simulate real setups, building 'I can do this' confidence.",
+            "lesson_overview": [
+              "Creating files and directories",
+              "Copying (cp) and moving/renaming (mv)",
+              "Combining commands for workflows",
+              "What you'll be able to do: Set up a complete project directory"
+            ],
+            "core_concepts": [
+              {
+                "title": "Creating with mkdir and touch",
+                "explanation": "**mkdir** (make directory) builds folders: 'mkdir folder' simple, '-p' creates nested like 'mkdir -p path/to/deep'. **touch** creates empty files or updates timestamps: 'touch file.txt'\u2014handy for placeholders.\n\nWhy? Folders organize (like drawers), files hold data. Analogy: mkdir builds shelves, touch places empty boxes. '-p' ignores errors if parent missing\u2014like auto-building paths.",
+                "code_example": "mkdir -p ~/projects/app/src\ntouch ~/projects/app/README.md"
+              },
+              {
+                "title": "Copying with cp, Moving with mv",
+                "explanation": "**cp** (copy) duplicates: 'cp source dest', '-r' for recursive dirs. **mv** (move) relocates/renames: 'mv old new'. Both overwrite by default\u2014use '-i' for prompts.\n\nUnderstand the power: cp for backups (safety net), mv for organizing (file cabinet shuffle). Like photocopying docs or moving furniture\u2014cp leaves original, mv takes it away.",
+                "code_example": "cp file.txt file_backup.txt\nmv file_backup.txt ~/backup/"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: 'mkdir -p ~/myproject/{docs,src}'\u2014creates nested. Why? Braces {} expand for efficiency.",
+              "Step 2: 'touch ~/myproject/{docs/index.md,src/main.py}'\u2014files ready. Connects creation to nav.",
+              "Step 3: 'cp ~/myproject/src/main.py ~/myproject/docs/'\u2014copy variation. Handles overwrite prompt.",
+              "Step 4: 'mv ~/myproject ~/work/project'\u2014relocate whole. 'ls ~/work' verifies.",
+              "Step 5: 'ls -la ~/work/project' checks. Watch spaces in names (quote them); use Tab."
+            ],
+            "practical_examples": [
+              {
+                "description": "Setting up a simple website folder",
+                "code": "mkdir -p ~/site/{css,js,images}\ntouch ~/site/index.html ~/site/css/style.css",
+                "explanation": " '-p' ensures css/js/images nest under site. touch creates web stubs. Why? Real dev workflow\u2014organizes assets. Sequence: dirs first, then files."
+              },
+              {
+                "description": "Backing up a config file",
+                "code": "cp ~/.bashrc ~/.bashrc.backup\nls -l ~/.bashrc*",
+                "explanation": "~/.bashrc is shell config. cp creates safety copy. 'ls -l *' shows both with timestamps. Why matters: Prevents data loss on edits."
+              },
+              {
+                "description": "mv renames with date stamp. $( ) runs command inside. Why? Timestamping for versions\u2014pro habit.",
+                "code": "mv /tmp/app.log ~/logs/\nmv ~/logs/app.log ~/logs/app-$(date +%Y%m%d).log",
+                "explanation": "Explanation"
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: 'mkdir a/b' fails if a missing\u2014use '-p'. Why? mkdir needs parents.",
+              "Mistake 2: 'cp -r dir file'\u2014wrong order. Why? cp src then dest; man cp clarifies.",
+              "Mistake 3: mv overwrites silently\u2014add '-i' for interact. Why? Habit saves disasters."
+            ],
+            "mental_model": "Files are sticky notes, dirs are binders. mkdir adds binders, touch adds notes, cp photocopies stacks, mv relocates binders\u2014efficient office organization without mess.",
+            "summary": "Apply mkdir/touch for creation, cp (-r) for backups, mv for moves/renames in workflows. You've practiced sequences for real setups. Next: safe deletion and verification.",
+            "further_thinking": [
+              "Walk through creating /a/b/c then copying a file there.",
+              "Why use 'cp -r' for dirs but not files?",
+              "Design a backup script outline using these commands."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "f3736f8f-1521-4d4d-b5c4-6c343953a0e7",
+              "question": "Which flag with mkdir creates nested directories?",
+              "options": [
+                "-a",
+                "-p",
+                "-r",
+                "-l"
+              ],
+              "correct_answer": "-p",
+              "difficulty": "easy",
+              "bloom_level": "Apply",
+              "explanation": "'mkdir -p a/b/c' builds all levels\u2014no errors if parents missing.[1]"
+            },
+            {
+              "question_id": "f9d0ee5c-3745-4c4a-bce6-051601381742",
+              "question": "What does 'mv old.txt new.txt' accomplish?",
+              "options": [
+                "Copies",
+                "Deletes old",
+                "Renames/moves old to new",
+                "Lists both"
+              ],
+              "correct_answer": "Renames/moves old to new",
+              "difficulty": "medium",
+              "bloom_level": "Apply",
+              "explanation": "mv handles both rename (same dir) and move (different dir)\u2014versatile.[1][6]"
+            },
+            {
+              "question_id": "b82c8d11-0076-4568-a453-c4e41b7fecf2",
+              "question": "To copy a directory and contents, use:",
+              "options": [
+                "cp dir dest",
+                "cp -r dir dest",
+                "mv -r dir dest",
+                "touch -r dir dest"
+              ],
+              "correct_answer": "cp -r dir dest",
+              "difficulty": "hard",
+              "bloom_level": "Apply",
+              "explanation": "-r (recursive) includes subdirs/files\u2014essential for backups.[1][3]"
+            }
+          ],
+          "estimated_duration_minutes": 30
+        },
+        {
+          "lesson_id": "45a1cb17-f2de-40a9-9b4b-70ba500af1e5",
+          "lesson_title": "Safe Deletion and Verification",
+          "bloom_level": "Analyze",
+          "learning_outcomes": [
+            "Analyze risks of rm and use safe alternatives",
+            "Verify file operations with ls and checks"
+          ],
+          "content": {
+            "introduction": "You're building a toolkit\u2014now handle removal carefully and verify everything. We'll analyze rm (remove), its dangers, and safe habits like trash-cli. Building on prior lessons, this teaches critical thinking for irreversible actions.\n\nWhy analyze? One wrong rm can delete hours of work. Like surgery: precise cuts, always check afterward.",
+            "lesson_overview": [
+              "The rm command and its risks",
+              "Safe deletion with aliases and tools",
+              "Verifying operations",
+              "What you'll be able to do: Manage files safely end-to-end"
+            ],
+            "core_concepts": [
+              {
+                "title": "Understanding rm",
+                "explanation": "**rm** (remove) deletes: 'rm file', '-r' recursive dirs, '-f' force no prompts. Dangerous\u2014no recycle bin! Analyze: permanent because filesystems mark space free instantly.\n\nWhy risky? Wildcards like 'rm *.log' can match wrong. Analogy: shredder vs trash can\u2014gone forever. Always ls first.",
+                "code_example": "rm file.txt\nrm -r dir/  # Careful!"
+              },
+              {
+                "title": "Safe Practices and Verification",
+                "explanation": "Use 'rm -i' (interactive prompts), alias 'rm=rm -i' in ~/.bashrc. Install trash-cli: 'sudo apt install trash-cli' for movable trash.\n\nVerify: 'ls -l' before/after, 'du -sh .' for space. Analyze relationships: deletion frees inodes (file metadata)\u2014check with 'df -i'. Builds error-proof habits.",
+                "code_example": "ls -l\nrm -i *.tmp\nls -l  # Verify"
+              }
+            ],
+            "guided_walkthrough": [
+              "Step 1: Create test: 'mkdir ~/test; touch ~/test/{a,b,c}.txt'. ls confirms.",
+              "Step 2: 'rm ~/test/a.txt'. Check 'ls ~/test'\u2014gone.",
+              "Step 3: 'rm -r ~/test'\u2014recursive. Risk: prompts off with -f.",
+              "Step 4: Full cycle: recreate, trash-put 'trash-put ~/test/*', 'trash-list'.",
+              "Step 5: Verify 'df -h' space change. Pitfall: sudo rm\u2014superuser deletes anything."
+            ],
+            "practical_examples": [
+              {
+                "description": "Cleaning temp files safely",
+                "code": "ls /tmp/*.txt\nrm -i /tmp/*.txt\nls /tmp/*.txt",
+                "explanation": "-i prompts each. Before/after ls analyzes impact. Why? Prevents bulk deletes."
+              },
+              {
+                "description": "Using trash for recovery",
+                "code": "sudo apt install trash-cli  # Once\ntouch junk.txt\ntrash-put junk.txt\ntrash-list\ntrash-restore 0",
+                "explanation": "trash-* mimics GUI trash. Numbers for restore. Analyzes: safer than rm for beginners."
+              }
+            ],
+            "common_pitfalls": [
+              "Mistake 1: 'rm -rf /'\u2014deletes everything. Why? Recursive root\u2014never!",
+              "Mistake 2: No confirmation\u2014alias rm='rm -i' in bashrc.",
+              "Mistake 3: Forgetting verify\u2014always ls/du post-op."
+            ],
+            "mental_model": "rm is a delete button with no undo; analyze like defusing a bomb: ls (scan), -i (ask), verify (check pulse). Trash is training wheels.",
+            "summary": "rm deletes irreversibly (-r dirs, -f force); analyze risks, use -i/trash-cli, verify with ls/df. You've learned safe full-cycle management.",
+            "further_thinking": [
+              "Compare rm vs trash-cli: pros/cons?",
+              "Why might 'df -i' show issues after deletion?",
+              "Create a safe-delete checklist for any op."
+            ]
+          },
+          "quiz": [
+            {
+              "question_id": "5ca2fe56-e19f-47cf-ac75-af4966af5365",
+              "question": "What does 'rm -rf' do?",
+              "options": [
+                "Safe recursive delete",
+                "Recursive force delete",
+                "Interactive recursive",
+                "List before delete"
+              ],
+              "correct_answer": "Recursive force delete",
+              "difficulty": "easy",
+              "bloom_level": "Analyze",
+              "explanation": "-r recurses dirs, -f skips prompts\u2014very dangerous without care.[1]"
+            },
+            {
+              "question_id": "ddced2f4-4a32-4ad8-a837-c1437df941d0",
+              "question": "How to make rm always prompt?",
+              "options": [
+                "rm -i always",
+                "Alias in .bashrc",
+                "Use trash",
+                "rm -f"
+              ],
+              "correct_answer": "Alias in .bashrc",
+              "difficulty": "medium",
+              "bloom_level": "Analyze",
+              "explanation": "echo 'alias rm=\"rm -i\"' >> ~/.bashrc reloads shell\u2014permanent safety net.[6]"
+            },
+            {
+              "question_id": "ae1e0627-8260-4008-a5f7-c2dd6ee8ee2f",
+              "question": "Which verifies disk space after deletion?",
+              "options": [
+                "ls",
+                "pwd",
+                "df -h",
+                "cd"
+              ],
+              "correct_answer": "df -h",
+              "difficulty": "hard",
+              "bloom_level": "Analyze",
+              "explanation": "df (disk free) shows usage; -h human-readable. Analyzes if space freed.[3]"
+            }
+          ],
+          "estimated_duration_minutes": 30
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-01-30T13:49:11.941667",
+  "version": 1
+}
