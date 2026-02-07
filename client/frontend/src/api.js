@@ -5,7 +5,7 @@
  * Uses the Vite proxy in development, direct URL in production.
  */
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL;
 const TOKEN_KEY = 'quiz_app_token';
 
 /**
